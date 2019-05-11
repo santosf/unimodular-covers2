@@ -1,0 +1,141 @@
+\documentclass{amsart}
+
+\textheight=22.5cm
+\topmargin=0.5cm
+
+\usepackage{amssymb}
+\usepackage{graphicx,color}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[colorlinks=true]{hyperref}
+
+\usepackage{cleveref}
+\Crefname{counterexample}{counterexample}{counterexamples}
+\Crefname{counterexample}{Counterexample}{Counterexamples}
+\Crefname{conjecture}{conjecture}{conjectures}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+
+
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+
+
+\newcommand{\limites}{}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+
+
+% Macros in general
+
+\newcommand{\F}{ \ensuremath{\mathbb{F}}}
+\newcommand{\N}{ \ensuremath{\mathbb{N}}}
+\newcommand{\Z}{ \ensuremath{\mathbb{Z}}}
+\newcommand{\C}{ \ensuremath{\mathbb{C}}}
+\newcommand{\R}{ \ensuremath{\mathbb{R}}}
+
+\newcommand{\bb}{{\mathbf{b}}}
+\newcommand{\cc}{{\mathbf{c}}}
+\newcommand{\ttt}{\mathbf{t}}
+\newcommand{\GL}{{GL}_r (K)}
+\newcommand{\Gin}{\ensuremath{\mathrm{Gin}}}
+\newcommand{\gin}{\ensuremath{\mathrm{gin}}}
+\newcommand{\GIN}{\ensuremath{\mathrm{GIN}}}
+\newcommand{\Gins}{\ensuremath{\mathrm{Gins}}}
+\newcommand{\gins}{\ensuremath{\mathrm{gins}}}
+\newcommand{\Lex}{\ensuremath{\mathrm{Lex}}}
+\newcommand{\dele}[1]{\ensuremath{\Delta^e({#1})}}
+\newcommand{\dels}[1]{\ensuremath{\Delta^s({#1})}}
+\newcommand{\delc}[1]{\ensuremath{\Delta^c({#1})}}
+\newcommand{\Shift}{\ensuremath{\mathrm{Shift}}}
+
+
+\renewcommand{\int}{\operatorname{int}}
+\newcommand{\width}{\operatorname{width}}
+\newcommand{\length}{\operatorname{length}}
+
+
+\newcommand{\cone}{\ensuremath{\mathrm{cone}}\hspace{1pt}}
+\newcommand{\conv}{\ensuremath{\mathrm{conv}}\hspace{1pt}}
+\newcommand{\cayley}{\ensuremath{\mathrm{Cay}}\hspace{1pt}}
+\newcommand{\rank}{\ensuremath{\mathrm{rank}}\hspace{1pt}}
+\newcommand{\reg}{\ensuremath{\mathrm{reg}}\hspace{1pt}}
+\newcommand{\depth}{\ensuremath{\mathrm{depth}}\hspace{1pt}}
+
+\newcommand{\Image}{\ensuremath{\mathrm{Im}}\hspace{1pt}}
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+\newcommand{\giulia}[1]{\todo[size=\tiny,color=blue!30]{#1 \\ \hfill --- G.}}
+\newcommand{\Giulia}[1]{\todo[size=\tiny,inline,color=blue!30]{#1 \\ \hfill --- G.}}
+
+\newcommand{\paco}[1]{\todo[size=\tiny,color=green!30]{#1 \\ \hfill --- P.}}
+\newcommand{\Paco}[1]{\todo[size=\tiny,inline,color=green!30]{#1 \\ \hfill --- P.}}
+
+
+
+\date{\today}
+
+\author[G.~Codenotti]{Giulia Codenotti}
+\author[F.~Santos]{Francisco Santos}
+
+\address[G.~Codenotti]
+{
+Institut f\"ur Mathematik, Freie Universit\"at Berlin, Germany
+}
+\email{giulia.codenotti@fu-berlin.de}
+
+\address[F.~Santos]
+{
+Department of Mathematics, Statistics and Computer Science, University of Cantabria, Spain
+}
+\email{francisco.santos@unican.es}
+
+\thanks{The authors were supported by the Einstein Foundation Berlin under grant EVF-2015-230 and, while they were in residence at the Mathematical Sciences Research Institute in Berkeley, California during the Fall 2017 semester, by the Clay Institute and the National Science Foundation (Grant No. DMS-1440140).
+ Work of F. Santos is also supported by project MTM2017-83750-P of the Spanish Ministry of Science (AEI/FEDER, UE)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Unimodular covers of 3-dimensional parallelepipeds and Cayley sums}
+
+\begin{document}
+
+\begin{abstract}
+We show that the following classes of three-dimensional lattice polytopes have unimodular covers: the class of all parallelepipeds, the class of all centrally symmetric polytopes, and the class of all three-dimensional Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al. (2018) and Haase et al. (2008) where the last two classes were shown to be IDP.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+
+\subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, Gaku Liu, Johannes Hofscheier, Christian Haase, .... et al.
+
+
+\section{Parallelepipeds (and centrally symmetric polytopes)}
+
+
+\section{nef Calyley polytopes}
+
+\begin{thebibliography}{99}
+
+
+\end{thebibliography}
+
+
+\end{document}
+
