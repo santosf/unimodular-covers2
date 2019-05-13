@@ -275,23 +275,89 @@ In turn, our proof of \Cref{lemma:3<4} relies on the fact that parallelepipeds h
 In both cases, the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope.
 \end{remark}
 
+\begin{question}
+Does every smooth 3-polytope have the circumscribed parallelepiped property? By the above remark, if the answer is yes then every smooth $3$-polytope has a unimodular cover.
+\end{question}
 
 
-So, the questions to look at are:
-
-1) Does every lattice $3$-parallelepiped have the circumscribed parallelepiped property? I think yes.
-
-2) Does the Cayley embedding of a $P$ and a $Q$ such that one normal fan refines the other have the circumscribed parallelepiped property? Probably not in general, but perhaps yes in some cases; probably yes if one of them is a Minkowski summand of the other. 
-
-2Õ) Even if the answer to (2) is negative, the following can be enough to prove unimodular cover: find a triangulation of $Cayley(P,Q)$ in which all the tetrahedra with an edge in $P$ and an edge in $Q$ have the 
-
-3) The long shot: does every smooth 3-polytope have the circumscribed parallelepiped property?
-
-Paco
-
-
-\section{nef Cayley polytopes}
+\section{nef Cayley sums}
 \label{sec:cayley}
+
+Throughout this section let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
+\[
+P + Q := \{ p+q \in \R^d: p\in P, q \in Q\}.
+\]
+The \emph{Cayley sum} of $P$ and $Q$ is defined as
+\[
+\cayley (P,Q) = \conv( P\times\{0\} \cup Q\times \{1\}) \in \R^{d+1}.
+\]
+The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ is a $(d+1)$-dimensional.
+
+We introduce the following two concepts.
+
+\begin{definition}
+In the above conditions, we say that $Q$ \emph{is nef for $P$} if the normal fan of $Q$ refines that of $P$. If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.
+
+We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
+\paco{``mixed IDP'' is not the right property, since this is weaker than IDP}
+\[
+(P\cap \Z^d) + (Q\cap \Z^d) = (P+Q)\cap \Z^d.
+\]
+\end{definition}
+
+In this language, Problems 3 and 4 i \cite{Oda1997} translate to
+
+\begin{question}
+If $Q$ is nef for $P$, is the pair $(P,Q)$ mixed IDP?
+\end{question}
+
+In dimension two, the answer is always yes by \cite{HNPS2008}. In dimension three it is easy to construct counter-examples (e.g., let $P=Q$ be the empty simplex of volume two), but the case where $P$ is smooth is open, and attributed as a conjecture of Oda.
+
+\begin{proposition}
+If $\cayley(P,Q)$ is IDP then the pair $(P,Q)$ is mixed IDP.
+\end{proposition}
+
+The so-called \emph{Cayley Trick} is the isomorphism
+\[
+2\cayley(P, Q) \cap (\R^d\times \{1\}) \cong P+Q,
+\]
+which induces the following canonical bijections:
+\begin{align*}
+\text{polyhedral subdivisions of $\cayley(P,Q)$} &\leftrightarrow \text{mixed subdivisions of $P + Q$}\\
+\text{triangulations of $\cayley(P,Q)$} &\leftrightarrow \text{fine mixed subdivisions of $P + Q$}\\
+\text{unimodular simplices in $\cayley(P,Q)$} &\leftrightarrow \text{unimodular prod-simplices in $P + Q$}.
+\end{align*}
+See \cite{DLRS2010} for more details on the Cayley Trick and on triangulations and polyhedral subdivisions of polytopes.
+In fact these bijections can be taken as definitions of the objects in the right-hand sides. In particular, 
+we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\subset P$ and $T_2\subset Q$ are simplices with complementary affine spans. A prod-simplex is \emph{unimodular} if the edge vectors from a vertex of $T_1$ and from a vertex of $T_2$ form a unimodular basis.
+
+%As a consequence, we also have that:
+%\begin{align*}
+%\text{$\cayley(P,Q)$ has a unimodular cover} &\leftrightarrow \text{$P+Q$ can be covered by unimodular prod-simplices}.
+%\end{align*}
+
+Our proof of \Cref{thm:cayley} is based on the following result:
+
+\begin{lemma}
+\label{lemma:cayley}
+Let $P$ and $Q$ be two lattice polygons with $Q$ nef with respect to $P$. Let $p_1p_2 \subset P$ and $q_1q_2\subset Q$ be two primitive and non-parallel segments, and assume that the prod-simplex (parallelogram)  $p_1p_2 + q_1q_2$ is not unimodular. Then,
+at least one of the strips
+\paco{add picture for these strips, and perhaps for the proof}
+\[
+(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle) \cap P
+\qquad \text{and} \qquad
+(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle) \cap Q
+\]
+has a lattice point in its interior.
+\end{lemma}
+
+\begin{proof}
+To DO
+\end{proof}
+
+\begin{proof}[Proof of \Cref{thm:cayley}]
+TO DO 
+\end{proof}
 
 \begin{thebibliography}{99}
 
