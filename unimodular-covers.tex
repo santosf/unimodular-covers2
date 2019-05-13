@@ -71,10 +71,10 @@
 
 \newcommand{\cone}{\ensuremath{\mathrm{cone}}\hspace{1pt}}
 \newcommand{\conv}{\ensuremath{\mathrm{conv}}\hspace{1pt}}
-\newcommand{\cayley}{\ensuremath{\mathrm{Cay}}\hspace{1pt}}
-\newcommand{\rank}{\ensuremath{\mathrm{rank}}\hspace{1pt}}
-\newcommand{\reg}{\ensuremath{\mathrm{reg}}\hspace{1pt}}
-\newcommand{\depth}{\ensuremath{\mathrm{depth}}\hspace{1pt}}
+\newcommand{\cayley}{\operatorname{Cay}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\reg}{\operatorname{reg}}
+\newcommand{\depth}{\operatorname{depth}}
 
 \newcommand{\Image}{\ensuremath{\mathrm{Im}}\hspace{1pt}}
 
@@ -105,8 +105,8 @@ Department of Mathematics, Statistics and Computer Science, University of Cantab
 }
 \email{francisco.santos@unican.es}
 
-\thanks{The authors were supported by the Einstein Foundation Berlin under grant EVF-2015-230 and, while they were in residence at the Mathematical Sciences Research Institute in Berkeley, California during the Fall 2017 semester, by the Clay Institute and the National Science Foundation (Grant No. DMS-1440140).
- Work of F. Santos is also supported by project MTM2017-83750-P of the Spanish Ministry of Science (AEI/FEDER, UE)}
+\thanks{The authors were supported by the Einstein Foundation Berlin under grant EVF-2015-230. 
+Work of F. Santos is also supported by project MTM2017-83750-P of the Spanish Ministry of Science (AEI/FEDER, UE)}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -122,7 +122,7 @@ We show that the following classes of three-dimensional lattice polytopes have u
 
 \section{Introduction}
 
-A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of some ten properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097f]{mfo2004}, \cite[p. 2313ff]{mfo2007}.
+A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of several properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097f]{mfo2004}, \cite[p. 2313f]{mfo2007}.
 \paco{cite Bruns-Gubeladze book?}
 Let us here only mention that
 \[
@@ -133,68 +133,77 @@ P \text{ is IDP.}
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
 \paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions}
-Related to this, a lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
-
-Oda~\cite{Oda1997} posed several questions/conjectures regarding IDP polytopes, among which are the following two:
-\begin{question}
+A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
+%
+Oda~\cite{Oda1997} posed several questions regarding IDP polytopes which are now considered conjectures (REFERENCES). 
+Among them:
+\begin{conjecture}
+\label{conj:Oda}
 \begin{enumerate}
 \item Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
-\[
-(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d
-\]
+\begin{align*}
+\label{eq:mixedIDP}
+(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+\end{align*}
 \paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
 
-\item Suppose $P$ is smooth. Then $P$ is IDP.
+\item Every smooth lattice polytope is IDP.
 \end{enumerate}
-\end{question}
+\end{conjecture}
 
-Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. In particular:
-\begin{enumerate}
-\item Haase et al.~\cite{HNPS2008} proved the mixed IDP property for $2$-polytopes $P$ and $Q$ when $N(Q) \le N(P)$.
+Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
 
-\item Beck et al.~\cite{BHHHJKM2018} proved IDP for smooth centrally symmetric $3$-polytopes.
-\end{enumerate}
+For example,  very recently
+Beck et al.~\cite{BHHHJKM2019} proved that all smooth centrally symmetric $3$-polytopes are IDP.
+More precisely, they show that any such polytope can be covered by lattice 
+parallelepipeds and unimodular simplices, both of which are trivially IDP.
 
-We improve both of these results to the level of unimodular covers. 
-
-The structure of the paper is as follows: 
-%after introducing the necessary tools and concepts in \Cref{sec:prelim},  
-\Cref{sec:parallelepipeds} is devoted to $3$-dimensional lattice parallelepipeds. 
-Observe that lattice parallelotopes in arbitrary dimension are trivially IDP. Here we show:
+Partially motivated by this result in \Cref{sec:parallelepipeds} we show:
 
 \begin{theorem}
 \label{thm:parallelepipeds}
 Every $3$-dimensional lattice parallelepiped has a unimodular cover.
 \end{theorem}
 
-This, in turn, implies our improvement of Beck. et al.'s result on smooth c.s. 3-polytopes:
+As a consequence:
 
 \begin{corollary}
 \label{coro:3cs}
 Every smooth centrally symmetric lattice $3$-polytope has a unimodular cover. 
+\qed
 \end{corollary}
 
-\begin{proof}
-Let $P$ be a smooth centrally symmetric lattice $3$-polytope.
-Beck et al.~\cite{BHHHJKM2018} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
-\end{proof}
+\begin{remark}
+Higher dimensional parallelotopes (affine images of cubes) are also IDP, but we do not know whether 
+they have unimodular covers, or whether $3$-dimensional ones have unimodular triangulations.
+\end{remark}
 
-Then in \Cref{sec:cayley} we look at Cayley sums and show:
+%\begin{proof}
+%Let $P$ be a smooth centrally symmetric lattice $3$-polytope.
+%Beck et al.~\cite{BHHHJKM2019} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
+%\end{proof}
+
+Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}(1), with three different proofs by
+Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
+An alternative approach to \Cref{conj:Oda}(1) is via Cayley sums. As we note in \Cref{sec:cayley} (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
+\[
+\cayley(P,Q) \text{ is IDP} 
+\Rightarrow
+(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+\]
+In \Cref{sec:cayley} we show the following even stronger result, in the two-dimensional case:
 
 \begin{theorem}
 \label{thm:cayley}
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
+As an application of this, we prove \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
 
 \begin{corollary}
-\label{coro:3cs}
-Every smooth $3$-dimensional prismatoid has a unimodular cover.
+\label{coro:prismatoid}
+Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
-
-\Paco{This corollary can be made stronger: it works for every $3$-prismatoid 
-$P= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}$ with $k\ge 2$ and such that $P\cap\{z=i\}$ is a lattice polytope for every $i=0,\dots, k$.}
-
 
 We believe that the $3$-polytopes in these four statements all have unimodular triangulations, but we do not have a proof.
 
@@ -314,6 +323,7 @@ If $Q$ is nef for $P$, is the pair $(P,Q)$ mixed IDP?
 In dimension two, the answer is always yes by \cite{HNPS2008}. In dimension three it is easy to construct counter-examples (e.g., let $P=Q$ be the empty simplex of volume two), but the case where $P$ is smooth is open, and attributed as a conjecture of Oda.
 
 \begin{proposition}
+\label{prop:mixedIDP}
 If $\cayley(P,Q)$ is IDP then the pair $(P,Q)$ is mixed IDP.
 \end{proposition}
 
@@ -359,7 +369,64 @@ To DO
 TO DO 
 \end{proof}
 
+\Cref{coro:prismatoid} is a particular case of the following situation. 
+Let $Q_1$ and $Q_2$ be two polygons and consider the prismatoid 
+\[
+P= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
+\]
+with $k\ge 2$. 
+%Assume that $P\cap(\R^2\times\{i\})$ is a lattice polytope for every $i=0,\dots, k$. This is equivalent to assuming that $P\cap(\R^2\times\{1\})$ is a lattice polytope:
+
+\begin{corollary}
+If $P\cap(\R^2\times\{1\})$ is a lattice polygon then $P$ has a unimodular cover.
+\end{corollary}
+
+\begin{proof}
+\paco{perhaps add details}
+The condition that $P\cap(\R^2\times\{1\})$ is a lattice polygon implies the same for $P\cap(\R^2\times\{i\})$, for every $i$.
+Then, each slice
+\[
+P \cap (\R^2\times[i,i+1])
+\]
+is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
+\end{proof}
+
+
 \begin{thebibliography}{99}
+
+\bibitem{BHHHJKM2019}
+Matthias Beck, Christian Haase, Akihiro Higashitani, Johannes Hofscheier, Katharina Jochemko, Lukas Katth\"an, Mateusz Micha{\l}ek,
+Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
+\emph{Ann.~Combin.}, in press, 2019.
+\url{https://doi.org/10.1007/s00026-019-00418-x}
+
+\bibitem{DLRS2010}
+J. A. De Loera, J. Rambau, F. Santos
+Triangulations: Structures for Algorithms and Applications, 539 pp.
+Algorithms and Computation in Mathematics, Vol. 25, Springer-Verlag. 
+ISBN: 978-3-642-12970-4
+
+\bibitem{HPPS-survey}
+Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
+%Preprint May 2014, updated December 2017, 89 pages. 
+ \emph{Mem. Amer. Math. Soc.}, to appear.
+ Available as arXiv preprint \href{https://arxiv.org/abs/1405.1687}{arXiv:1405.16878}
+ 
+\bibitem{HNPS2008}
+Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattice points in Minkowski sums, 
+Electron J. Combin., 15 (2008), no. 1, Note 11, 5 pp.
+
+\bibitem{mfo2004}
+Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071–2101, Abstracts from the mini-workshop held August 15–21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
+
+\bibitem{mfo2007}
+Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12–18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
+
+
+\bibitem{Oda1997}
+Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
+Abstract submitted at the Oberwolfach Conference “Combinatorial Convexity and Algebraic Geometry” 26.10--01.11, 1997.
+Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
 
 
 \end{thebibliography}
