@@ -122,14 +122,176 @@ We show that the following classes of three-dimensional lattice polytopes have u
 
 \section{Introduction}
 
+A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of some ten properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097f]{mfo2004}, \cite[p. 2313ff]{mfo2007}.
+\paco{cite Bruns-Gubeladze book?}
+Let us here only mention that
+\[
+P \text{ has a unimodular triangulation}\Rightarrow
+P \text{ has a unimodular cover}\Rightarrow
+P \text{ is IDP.}
+\]
+Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
+
+\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions}
+Related to this, a lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
+
+Oda~\cite{Oda1997} posed several questions/conjectures regarding IDP polytopes, among which are the following two:
+\begin{question}
+\begin{enumerate}
+\item Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
+\[
+(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d
+\]
+\paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
+
+\item Suppose $P$ is smooth. Then $P$ is IDP.
+\end{enumerate}
+\end{question}
+
+Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. In particular:
+\begin{enumerate}
+\item Haase et al.~\cite{HNPS2008} proved the mixed IDP property for $2$-polytopes $P$ and $Q$ when $N(Q) \le N(P)$.
+
+\item Beck et al.~\cite{BHHHJKM2018} proved IDP for smooth centrally symmetric $3$-polytopes.
+\end{enumerate}
+
+We improve both of these results to the level of unimodular covers. 
+
+The structure of the paper is as follows: 
+%after introducing the necessary tools and concepts in \Cref{sec:prelim},  
+\Cref{sec:parallelepipeds} is devoted to $3$-dimensional lattice parallelepipeds. 
+Observe that lattice parallelotopes in arbitrary dimension are trivially IDP. Here we show:
+
+\begin{theorem}
+\label{thm:parallelepipeds}
+Every $3$-dimensional lattice parallelepiped has a unimodular cover.
+\end{theorem}
+
+This, in turn, implies our improvement of Beck. et al.'s result on smooth c.s. 3-polytopes:
+
+\begin{corollary}
+\label{coro:3cs}
+Every smooth centrally symmetric lattice $3$-polytope has a unimodular cover. 
+\end{corollary}
+
+\begin{proof}
+Let $P$ be a smooth centrally symmetric lattice $3$-polytope.
+Beck et al.~\cite{BHHHJKM2018} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
+\end{proof}
+
+Then in \Cref{sec:cayley} we look at Cayley sums and show:
+
+\begin{theorem}
+\label{thm:cayley}
+Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
+\end{theorem}
+
+
+\begin{corollary}
+\label{coro:3cs}
+Every smooth $3$-dimensional prismatoid has a unimodular cover.
+\end{corollary}
+
+\Paco{This corollary can be made stronger: it works for every $3$-prismatoid 
+$P= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}$ with $k\ge 2$ and such that $P\cap\{z=i\}$ is a lattice polytope for every $i=0,\dots, k$.}
+
+
+We believe that the $3$-polytopes in these four statements all have unimodular triangulations, but we do not have a proof.
+
+
 
 \subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, Gaku Liu, Johannes Hofscheier, Christian Haase, .... et al.
 
+%\section{Preliminaries}
+%\label{sec:prelim}
 
-\section{Parallelepipeds (and centrally symmetric polytopes)}
+
+\section{Parallelepipeds}
+\label{sec:parallelepipeds}
+
+The main tool is what I call the “parallelepiped circumscribed to a given tetrahedron, defined as follows:
+
+\begin{definition}
+Definition: Let $T$ be a tetrahedron with vertex set $p_1,p_2,p_3,p_4$. Consider points $q_1,q_2,q_3,q_4$ defined as $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$ and let $S$ be the convex hull of the $p_i$’s and the $q_i$’s. $S$ is called the \emph{parallelepiped circumscribed} to $T$.
+\end{definition}
+\paco{define the ``corner tetrahedra''}
+
+The idea to have in mind is that of the regular tetrahedron inscribed in a cube. Modulo an affine transformation this is exactly the situation of $T$ and $S$.
+
+Some properties of this construction:
+
+1) $S$ is ``half a fundamental domain’’ for the affine lattice $\Lambda_P$ generated by $p_1,…,p_4$, in the following precise sense: if $x$ is an arbitrary point, then $S$ intersects either $\Lambda_P + x$ or $\Lambda_P -x$ (and, if $x$ is generic then the intersection is unique). Proof: think of this property for the standard cube and the lattice $\{sum of coordinates is even\}$ generated by the vertices of the regular tetrahedron inscribed in it. (Remark: let us assume without loss of generality that $\Lambda_P$ contains the origin, so that $\Lambda + x$ is the class of $x$ modulo $\Lambda$).
 
 
-\section{nef Calyley polytopes}
+\begin{lemma}
+\label{lemma:corner}
+Let $T=\conv\{p_1,p_2,p_3,p_4\}$ be lattice tetrahedron and $C(T)$ be the parallelepiped circumscribed to $T$. Let $T_1, T_2,T_3$ and $T_4$ be the corresponding corner tetrahedra in $C(T)$. Then, every $T_i$ contains at least one lattice point different from $\{p_1,\dots,p_4\}$.
+\end{lemma}
+
+\begin{proof}
+%2) As a corollary, if $T$ is a non-unimodular lattice tetrahedron with respect to a certain lattice $\Lambda$ then $S$ contains some additional lattice point $p_5$. Proof: since $T$ is not unimodular, there is a lattice point $x \in \Lambda \setminus \Lambda_P$. Then either $x + \Lambda_P$ or $x-\Lambda_P$ contains the desired lattice point.
+%
+%3) Even more so, if $T$ is a non-unimodular   **empty**  lattice tetrahedron then each of the four ``corner tetrahedra’’ in $S$ (the tetrahedra $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$) contains a lattice point $x \in \Lambda \setminus \Lambda_P$. Proof: 
+This requires using the classification of empty tetrahedra, which can be rephrased as follows: let $T$ be an empty tetrahedron and consider the tiling of 3-space by copies of $T$, its opposite, and octahedra. (Think of the tiling of $\R^3$ by hyperplanes of the form $\pm x \pm y \pm z = even$). Then, all lattice points lie in parallelograms that divide the octahedra in two. Moreover, the lattice points in each of the parallelograms are a discrete cyclic group of the torus obtained gluing opposite sides of it. The key property now is that one fourth of the fundamental parallelogram goes to each of the corner tetrahedra (where by “one fourth” I mean the triangle obtained joining the center of the parallelogram of one of the edges). And, by the classification of empty tetrahedra, each of these fourths of parallelogram necessarily contains at least a lattice point of $\Lambda \setminus \Lambda_P$. (This last assertion is essentially Lemma 3.2(2) in my paper with Monica https://arxiv.org/abs/1409.6701).
+\end{proof}
+
+
+\begin{lemma}
+\label{lemma:3<4}
+Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron. Then, at least one of the four corner tetrahedra in $C(T)$ is fully contained in $P$.
+\end{lemma}
+
+\begin{proof}
+\paco{fill in details...}
+Each of the three pairs of parallel facets of $P$ cuts out at most one of the four new vertices in $C(T)$.
+\end{proof}
+
+
+\begin{proof}[Proof of \Cref{thm:parallelepipeds}]
+\paco{rewrite}
+4) For every point $p_5 \in S \setminus T$ we have that $\conv(T\cup \{p_5\})$ can be triangulated into three tetrahedra of volume strictly smaller than that of $T$. Proof: $S$ is naturally divided into five tetrahedra: $T$ plus the four ``corner tetrahedra’’ $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$. Suppose wlog that $p_5 \in \conv(p_1,p_2,p_3, q_4)$. Then $\conv(T\cup \{p_5\})$ can be triangulated into 
+\[
+\conv(p_1,p_2,p_4, p_5),
+\conv(p_1,p_3,p_4, p_5),
+\conv(p_2,p_3,p_4, p_5).
+\]
+
+Putting these properties together we get the following: Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if: ``for every empty tetrahedron $T$ contained in $P$ at least one of the other four vertices of the circumscribed parallelepiped $S$ is also in $P$’'.
+
+Theorem: Every lattice polytope with the circumscribed parallelepiped property has a unimodular cover.
+
+Proof: triangulate $P$ into empty simplices and iteratively apply properties (3) and (4) to them. This allows to cover every non-unimudular lattice simplex contained in $P$ with lattice simplices of smaller volume, until you cover by unimodular ones. QED
+\end{proof}
+
+\begin{remark}
+\label{rem:octahedra_and_tri-prisms}
+Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if it satisfies the conclusion of \Cref{lemma:3<4}:  ``for every empty tetrahedron $T$ contained in $P$ at least one of the four corner tetrahedra in $C(T)$ is 
+contained in $P$’'. Then, $P$ has a unimodular cover, since the proof of \Cref{thm:parallelepipeds} works for $P$.
+
+In turn, our proof of \Cref{lemma:3<4} relies on the fact that parallelepipeds have only three (pairs of) normal vectors. The proof fails if $P$ has four of them, as the following non-IDP octahedron and triangular prism show:
+\[
+\text{ write the octa and tri prism}.
+\]
+In both cases, the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope.
+\end{remark}
+
+
+
+So, the questions to look at are:
+
+1) Does every lattice $3$-parallelepiped have the circumscribed parallelepiped property? I think yes.
+
+2) Does the Cayley embedding of a $P$ and a $Q$ such that one normal fan refines the other have the circumscribed parallelepiped property? Probably not in general, but perhaps yes in some cases; probably yes if one of them is a Minkowski summand of the other. 
+
+2’) Even if the answer to (2) is negative, the following can be enough to prove unimodular cover: find a triangulation of $Cayley(P,Q)$ in which all the tetrahedra with an edge in $P$ and an edge in $Q$ have the 
+
+3) The long shot: does every smooth 3-polytope have the circumscribed parallelepiped property?
+
+Paco
+
+
+\section{nef Cayley polytopes}
+\label{sec:cayley}
 
 \begin{thebibliography}{99}
 
