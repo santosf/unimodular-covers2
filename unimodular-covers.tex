@@ -140,7 +140,7 @@ Among them:
 \begin{conjecture}
 \label{conj:Oda}
 \begin{enumerate}
-\item Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
+\item (Problems 3 and 4 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
 \begin{align*}
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
@@ -173,10 +173,13 @@ Every smooth centrally symmetric lattice $3$-polytope has a unimodular cover.
 \qed
 \end{corollary}
 
-\begin{remark}
-Higher dimensional parallelotopes (affine images of cubes) are also IDP, but we do not know whether 
-they have unimodular covers, or whether $3$-dimensional ones have unimodular triangulations.
-\end{remark}
+\begin{question}
+Do $3$-dimensional parallelepipeds have unimodular triangulations?
+\end{question}
+
+\begin{question}
+Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have unimodular covers? 
+\end{question}
 
 %\begin{proof}
 %Let $P$ be a smooth centrally symmetric lattice $3$-polytope.
@@ -185,6 +188,8 @@ they have unimodular covers, or whether $3$-dimensional ones have unimodular tri
 
 Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}(1), with three different proofs by
 Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
+In dimension three however the statement fails without the smoothness assumptin, as shown by letting $P=Q$ be the empty simplex of volume two.
+
 An alternative approach to \Cref{conj:Oda}(1) is via Cayley sums. As we note in \Cref{sec:cayley} (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
 \[
 \cayley(P,Q) \text{ is IDP} 
@@ -206,7 +211,6 @@ Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
 We believe that the $3$-polytopes in these four statements all have unimodular triangulations, but we do not have a proof.
-
 
 
 \subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, Gaku Liu, Johannes Hofscheier, Christian Haase, .... et al.
@@ -314,13 +318,9 @@ We say that the pair $(P,Q)$ is \emph{mixed IDP} if
 \]
 \end{definition}
 
-In this language, Problems 3 and 4 i \cite{Oda1997} translate to
+In this language, \Cref{conj:Oda}(1) translates to:
+\emph{If $Q$ is nef for $P$ and $P$ is smooth then the pair $(P,Q)$ mixed IDP.}
 
-\begin{question}
-If $Q$ is nef for $P$, is the pair $(P,Q)$ mixed IDP?
-\end{question}
-
-In dimension two, the answer is always yes by \cite{HNPS2008}. In dimension three it is easy to construct counter-examples (e.g., let $P=Q$ be the empty simplex of volume two), but the case where $P$ is smooth is open, and attributed as a conjecture of Oda.
 
 \begin{proposition}
 \label{prop:mixedIDP}
