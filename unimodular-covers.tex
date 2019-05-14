@@ -122,7 +122,7 @@ We show that the following classes of three-dimensional lattice polytopes have u
 
 \section{Introduction}
 
-A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of several properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097f]{mfo2004}, \cite[p. 2313f]{mfo2007}.
+A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of several properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097]{mfo2004}, \cite[p. 2313]{mfo2007}.
 \paco{cite Bruns-Gubeladze book?}
 Let us here only mention that
 \[
@@ -140,14 +140,15 @@ Among them:
 \begin{conjecture}
 \label{conj:Oda}
 \begin{enumerate}
-\item (Problems 3 and 4 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
+\item (Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
 \begin{align*}
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
 \paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
 
-\item Every smooth lattice polytope is IDP.
+\item (Related to problems 2 and 5 in \cite{Oda1997})
+Every smooth lattice polytope is IDP.
 \end{enumerate}
 \end{conjecture}
 
@@ -238,14 +239,38 @@ Some properties of this construction:
 
 \begin{lemma}
 \label{lemma:corner}
-Let $T=\conv\{p_1,p_2,p_3,p_4\}$ be lattice tetrahedron and $C(T)$ be the parallelepiped circumscribed to $T$. Let $T_1, T_2,T_3$ and $T_4$ be the corresponding corner tetrahedra in $C(T)$. Then, every $T_i$ contains at least one lattice point different from $\{p_1,\dots,p_4\}$.
+Let $T=\conv\{p_1,p_2,p_3,p_4\}$ be an empty lattice tetrahedron that is not unimodular and $C(T)$ be the parallelepiped circumscribed to $T$. Let $T_1, T_2,T_3$ and $T_4$ be the corresponding corner tetrahedra in $C(T)$. Then, every $T_i$ contains at least one lattice point different from $\{p_1,\dots,p_4\}$.
 \end{lemma}
 
 \begin{proof}
+By White's classification of empty tetrahedra (\cite{White1964}, see also, e.~g.~\cite[Sect.~4.1]{HPPS-survey}), there is no loss of generality in assuming $T=\conv(p_1,p_2,p_3,p_4)$ with
+\[
+p_1=(0,0,0), \quad
+p_2=(1,0,0), \quad
+p_3=(0,0,1), \quad
+p_4=(a,b,1).
+\]
+where $b\ge 2$ is the (normalized) volume of $T$, and $a\in \{1,\dots,b-1\}$ satisfies $\gcd(a,b)=1$. This gives 
+\paco{picture of the quadrilaterals $p_1q_4p_2q_3$ and $q_2p_3q_1p_4$ would be good.}
+\begin{align*}
+q_1=\left(\frac{1+a}2,\frac{b}2,1\right), &&
+q_2=\left(\frac{a-1}2,\frac{b}2,1\right), \quad\\
+q_3=\left(\frac{1+a}2,\frac{b}2,0\right), &&
+q_4=\left(\frac{a-1}2,-\frac{b}2,0\right).
+\end{align*}
+
+Then, the inequalities $b\ge 1+a$ and $b\ge 2$ imply:
+\[
+(1,1,0)\in \conv(p_1p_2q_3) \subset T_4, \quad
+(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
+\]
+\paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
+Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
+%
 %2) As a corollary, if $T$ is a non-unimodular lattice tetrahedron with respect to a certain lattice $\Lambda$ then $S$ contains some additional lattice point $p_5$. Proof: since $T$ is not unimodular, there is a lattice point $x \in \Lambda \setminus \Lambda_P$. Then either $x + \Lambda_P$ or $x-\Lambda_P$ contains the desired lattice point.
 %
-%3) Even more so, if $T$ is a non-unimodular   **empty**  lattice tetrahedron then each of the four ``corner tetrahedraï¿½ï¿½F in $S$ (the tetrahedra $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$) contains a lattice point $x \in \Lambda \setminus \Lambda_P$. Proof: 
-This requires using the classification of empty tetrahedra, which can be rephrased as follows: let $T$ be an empty tetrahedron and consider the tiling of 3-space by copies of $T$, its opposite, and octahedra. (Think of the tiling of $\R^3$ by hyperplanes of the form $\pm x \pm y \pm z = even$). Then, all lattice points lie in parallelograms that divide the octahedra in two. Moreover, the lattice points in each of the parallelograms are a discrete cyclic group of the torus obtained gluing opposite sides of it. The key property now is that one fourth of the fundamental parallelogram goes to each of the corner tetrahedra (where by 'one fourth' I mean the triangle obtained joining the center of the parallelogram of one of the edges). And, by the classification of empty tetrahedra, each of these fourths of parallelogram necessarily contains at least a lattice point of $\Lambda \setminus \Lambda_P$. (This last assertion is essentially Lemma 3.2(2) in my paper with Monica https://arxiv.org/abs/1409.6701).
+%3) Even more so, if $T$ is a non-unimodular   **empty**  lattice tetrahedron then each of the four ``corner tetrahedraï¿½ï¿½F in $S$ (the tetrahedra $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$) contains a lattice point $x \in \Lambda \setminus \Lambda_P$. %Proof: 
+%This requires using the classification of empty tetrahedra, which can be rephrased as follows: let $T$ be an empty tetrahedron and consider the tiling of 3-space by copies of $T$, its opposite, and octahedra. (Think of the tiling of $\R^3$ by hyperplanes of the form $\pm x \pm y \pm z = even$). Then, all lattice points lie in parallelograms that divide the octahedra in two. Moreover, the lattice points in each of the parallelograms are a discrete cyclic group of the torus obtained gluing opposite sides of it. The key property now is that one fourth of the fundamental parallelogram goes to each of the corner tetrahedra (where by 'one fourth' I mean the triangle obtained joining the center of the parallelogram of one of the edges). And, by the classification of empty tetrahedra, each of these fourths of parallelogram necessarily contains at least a lattice point of $\Lambda \setminus \Lambda_P$. (This last assertion is essentially Lemma 3.2(2) in my paper with Monica https://arxiv.org/abs/1409.6701).
 \end{proof}
 
 
@@ -428,6 +453,10 @@ Tadao Oda. Problems on Minkowski sums of convex lattice polytopes.
 Abstract submitted at the Oberwolfach Conference ÒCombinatorial Convexity and Algebraic GeometryÓ 26.10--01.11, 1997.
 Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
 
+\bibitem{White1964}
+G.~K.~White.
+Lattice tetrahedra.
+\emph{Canadian J.~Math.} 16 (1964), 389--396.
 
 \end{thebibliography}
 
