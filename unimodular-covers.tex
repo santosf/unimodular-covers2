@@ -223,14 +223,17 @@ We believe that the $3$-polytopes in these four statements all have unimodular t
 \section{Parallelepipeds}
 \label{sec:parallelepipeds}
 
-The main tool is what I call the parallelepiped circumscribed to a given tetrahedron, defined as follows:
+The main tool is what we call the parallelepiped circumscribed to a given tetrahedron, defined as follows:
 
 \begin{definition}
-Definition: Let $T$ be a tetrahedron with vertex set $p_1,p_2,p_3,p_4$. Consider points $q_1,q_2,q_3,q_4$ defined as $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$ and let $S$ be the convex hull of the $p_i$s and the $q_i$s. $S$ is called the \emph{parallelepiped circumscribed} to $T$.
+Let $T$ be a tetrahedron with vertex set $p_1,p_2,p_3,p_4$. Consider points $q_1,q_2,q_3,q_4$ defined as $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$ and define $C(T)=\conv(p_i,q_i: i\in[4])$. $C(T)$ is a parallelepiped whose faces are of the form $\conv(p_i, p_j, q_k, q_l)$ for all $\{i,j,k,l\}=[4]$. We call $C(T)$ the \emph{parallelepiped circumscribed} to $T$.
+
+For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. These along with $T$ form a triangulation of $C(T)$.
 \end{definition}
 \paco{define the ``corner tetrahedra''}
 
 The idea to have in mind is that of the regular tetrahedron inscribed in a cube. Modulo an affine transformation this is exactly the situation of $T$ and $S$.
+\giulia{we should add a picture of the standard cube}
 
 Some properties of this construction:
 
@@ -266,45 +269,56 @@ Then, the inequalities $b\ge 1+a$ and $b\ge 2$ imply:
 \]
 \paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
 Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
-%
-%2) As a corollary, if $T$ is a non-unimodular lattice tetrahedron with respect to a certain lattice $\Lambda$ then $S$ contains some additional lattice point $p_5$. Proof: since $T$ is not unimodular, there is a lattice point $x \in \Lambda \setminus \Lambda_P$. Then either $x + \Lambda_P$ or $x-\Lambda_P$ contains the desired lattice point.
-%
-%3) Even more so, if $T$ is a non-unimodular   **empty**  lattice tetrahedron then each of the four ``corner tetrahedraï¿½ï¿½F in $S$ (the tetrahedra $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$) contains a lattice point $x \in \Lambda \setminus \Lambda_P$. %Proof: 
-%This requires using the classification of empty tetrahedra, which can be rephrased as follows: let $T$ be an empty tetrahedron and consider the tiling of 3-space by copies of $T$, its opposite, and octahedra. (Think of the tiling of $\R^3$ by hyperplanes of the form $\pm x \pm y \pm z = even$). Then, all lattice points lie in parallelograms that divide the octahedra in two. Moreover, the lattice points in each of the parallelograms are a discrete cyclic group of the torus obtained gluing opposite sides of it. The key property now is that one fourth of the fundamental parallelogram goes to each of the corner tetrahedra (where by 'one fourth' I mean the triangle obtained joining the center of the parallelogram of one of the edges). And, by the classification of empty tetrahedra, each of these fourths of parallelogram necessarily contains at least a lattice point of $\Lambda \setminus \Lambda_P$. (This last assertion is essentially Lemma 3.2(2) in my paper with Monica https://arxiv.org/abs/1409.6701).
 \end{proof}
 
 
 \begin{lemma}
 \label{lemma:3<4}
-Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron. Then, at least one of the four corner tetrahedra in $C(T)$ is fully contained in $P$.
+Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron. Then, at least one of the four corner tetrahedra $T_i$ of the circumscribed parallelogram $C(T)$ is fully contained in $P$.
 \end{lemma}
 
 \begin{proof}
-\paco{fill in details...}
-Each of the three pairs of parallel facets of $P$ cuts out at most one of the four new vertices in $C(T)$.
-\end{proof}
+We denote the vertices of $T$ by $p_1, p_2, p_3, p_4$ and by $q_1, q_2, q_3, q_4$ the vertices of $C(T)$ not in $T$, as before. Let $f\in (\R^3)^*$ be any functional. Fix $i \in [4]$; observe that if $f(q_i) > f( p_j)$ for all $j\neq i$, then 
+\begin{gather*}
+f(q_i) \overset{(i)}{>} f(q_j) \overset{(ii)}{>} f(p_i) \\
+f(q_i) \overset{(iii)}{>} f(p_j) \overset{(iv)}{>} f(p_i) \\
+f(p_j)\overset{(v)}{>}f(q_k)
+\end{gather*}
+for all $j \neq i$, $k \notin \{j, i\}$. 
 
+Indeed, for any $\{i,j,k,l\}=[4]$ we have 
+
+\begin{align*}
+f(q_i) > f( p_j) \Leftrightarrow \frac12 f(p_l+&p_k -p_j-p_i) > 0  \Leftrightarrow f(q_j) > f(p_i)\\
+& \Updownarrow \\
+ f(q_l) < f(p_k) \Leftrightarrow \frac12 f(-p_l-&p_k +p_j+p_i) < 0 \Leftrightarrow f(q_k) < f(p_l),
+\end{align*}
+which shows the equivalence of $(i)$, $(iii)$ and $(v)$; note that $(iii)$ is our assumption. Inequalities $(ii)$ and $(iv)$ follow by taking the sum of two inequalities of the form $\frac12 f(p_l+p_k -p_j-p_i) > 0$. 
+
+Using this observation, we can show that each of pairs of parallel facets of $P$ cuts out at most one of the $q_i$s:
+if $q_i$ lies outside of $P$, it must violate a facet-defining inequality $f(x) \leq a$.Thus $f(q_i) > a \geq f(p_j)$, and by our observation, it follows that all remaining $q_j$ satisfy the inequality $f(x) \leq a$. Since $P$ is a parallelogram, there is a facet with inequality $f(x) \geq b$; by what is said above, the minimum value of $f(x)$ is attained at $p_i$, which is in $P$. Thus $f(q_j) > f(p_i) \geq b$, that is, the inequality is satisfied by all the $q_j$.
+
+Since at most one of the $q_i$ does not satisfy the inequalities corresponding to a pairs of parallel facets of $P$, and there are only three pairs of facets, one of $q_i$s must satisfy all the inequalities and therefore be inside of $P$.
+\end{proof}
+\giulia{here it may also be nice to add a picture}
 
 \begin{proof}[Proof of \Cref{thm:parallelepipeds}]
-\paco{rewrite}
-4) For every point $p_5 \in S \setminus T$ we have that $\conv(T\cup \{p_5\})$ can be triangulated into three tetrahedra of volume strictly smaller than that of $T$. Proof: $S$ is naturally divided into five tetrahedra: $T$ plus the four ``corner tetrahedra'' $\conv(p_i,p_j,p_k,q_l\}$ where $\{i,j,k,l\}= \{1,2,3,4\}$. Suppose wlog that $p_5 \in \conv(p_1,p_2,p_3, q_4)$. Then $\conv(T\cup \{p_5\})$ can be triangulated into 
+Let $P \subseteq \R^3$ be a parallelopiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is be empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $l$. 
+
+Then $\conv(T\cup \{p_5\})$ can be triangulated into 
 \[
-\conv(p_1,p_2,p_4, p_5),
-\conv(p_1,p_3,p_4, p_5),
-\conv(p_2,p_3,p_4, p_5).
+\conv(p_1,p_2,p_4, l),
+\conv(p_1,p_3,p_4, l),
+\conv(p_2,p_3,p_4, l).
 \]
 
-Putting these properties together we get the following: Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if: ``for every empty tetrahedron $T$ contained in $P$ at least one of the other four vertices of the circumscribed parallelepiped $S$ is also in $P$''.
-
-Theorem: Every lattice polytope with the circumscribed parallelepiped property has a unimodular cover.
-
-Proof: triangulate $P$ into empty simplices and iteratively apply properties (3) and (4) to them. This allows to cover every non-unimudular lattice simplex contained in $P$ with lattice simplices of smaller volume, until you cover by unimodular ones. QED
+Since these all have volume strictly smaller than $T$ \giulia{not convinced this is so obvious or true for any $l$: the volume of $\conv(T \cup q_4)$ is 3/2 times that of $T$, and if two of the three have very small volume... But I think (perhaps check in coordinates) we can choose $l$ wisely.}, this allows us to cover $T$ with lattice simplices of smaller volume recursively, until it is covered by unimodular ones.
 \end{proof}
 
 \begin{remark}
 \label{rem:octahedra_and_tri-prisms}
 Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if it satisfies the conclusion of \Cref{lemma:3<4}:  ``for every empty tetrahedron $T$ contained in $P$ at least one of the four corner tetrahedra in $C(T)$ is 
-contained in $P$''. Then, $P$ has a unimodular cover, since the proof of \Cref{thm:parallelepipeds} works for $P$.
+contained in $P$''. Then $P$ has a unimodular cover, since the proof of \Cref{thm:parallelepipeds} works for $P$.
 
 In turn, our proof of \Cref{lemma:3<4} relies on the fact that parallelepipeds have only three (pairs of) normal vectors. The proof fails if $P$ has four of them, as the following non-IDP octahedron and triangular prism show:
 \[
@@ -442,15 +456,15 @@ Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattic
 Electron J. Combin., 15 (2008), no. 1, Note 11, 5 pp.
 
 \bibitem{mfo2004}
-Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071Ð2101, Abstracts from the mini-workshop held August 15Ð21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
+Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
 
 \bibitem{mfo2007}
-Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12Ð18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
+Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
 
 
 \bibitem{Oda1997}
 Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
-Abstract submitted at the Oberwolfach Conference ÒCombinatorial Convexity and Algebraic GeometryÓ 26.10--01.11, 1997.
+Abstract submitted at the Oberwolfach Conference ''Combinatorial Convexity and Algebraic Geometry'' 26.10--01.11, 1997.
 Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
 
 \bibitem{White1964}
