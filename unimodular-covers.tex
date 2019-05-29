@@ -48,6 +48,8 @@
 \newcommand{\C}{ \ensuremath{\mathbb{C}}}
 \newcommand{\R}{ \ensuremath{\mathbb{R}}}
 
+\newcommand{\T}{ \ensuremath{\mathcal{T}}}
+
 \newcommand{\bb}{{\mathbf{b}}}
 \newcommand{\cc}{{\mathbf{c}}}
 \newcommand{\ttt}{\mathbf{t}}
@@ -407,13 +409,16 @@ at least one of the strips
 \]
 has a lattice point in its interior.
 \end{lemma}
+\giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $\{p_1, p_2\} + \{q_1, q_2\}$}
 
 \begin{proof}
 To DO
 \end{proof}
-
+]
 \begin{proof}[Proof of \Cref{thm:cayley}]
-TO DO 
+Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $Px\{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). \giulia{is it usually denoted by dimension or cardinality? that is, (2,0) or (3,1)?} A triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained by simply unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can I be without being confusing?}.
+
+Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
 
 \Cref{coro:prismatoid} is a particular case of the following situation. 
