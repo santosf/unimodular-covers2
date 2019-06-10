@@ -409,10 +409,16 @@ at least one of the strips
 \]
 has a lattice point in its interior.
 \end{lemma}
-\giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $\{p_1, p_2\} + \{q_1, q_2\}$}
+\giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
 
 \begin{proof}
-To DO
+Suppose by contraddiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
+
+Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i$ and vertex $q_i-l$ of $S-l$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
+
+Consider the segments on the lattice lines parallel to $p_1 p_2$ cut out by the edges $f_1$ and $f_2$ \giulia{this should be formulated more comprehensively}. Since these segments do not contain lattice points, they must have lattice length stricly less than $1$ (or the width wrt $q$ is less than $k$, the index of $p,q$), which means that the smallest width in direction of $p_1 p_2$ between a "consecutive" vertices of $f_1$ and of $f_2$ must also be strictly less than $k$. 
+
+Further, we observe that both vertices of $f_1$ (or $f_2$) cannot lie strictly above the line through $q_1$ and $q_2$, else the strip would contain a lattice point. 
 \end{proof}
 ]
 \begin{proof}[Proof of \Cref{thm:cayley}]
