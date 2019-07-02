@@ -479,7 +479,30 @@ has a lattice point in its interior.
 \giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
 
 \begin{proof}
-Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
+%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
+
+Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
+\[
+p_1=(0,-\alpha), \quad
+p_2=(0,1-\alpha), \quad
+q_1=(-\beta,0), \quad
+q_2=(1-\beta,0).
+\] 
+The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
+
+Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
+\[
+\vec l = (l_1,l_2), \quad
+\vec r= (r_1,r_2), \quad
+\vec b= (b_1,b_2), \quad
+\vec t= (t_1,t_2).
+\]
+Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
+
+
+
+
+
 
 Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i +l$ and vertex $q_i$ of $S$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
 
@@ -487,7 +510,7 @@ Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ a
 
 claim: the segments $e_1 + l$ and $e_2 + l$ respectively intersect both $f_1$ and $f_2$. 
 
-claim: if we tilt on of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
+claim: if we tilt one of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
 
 
 
@@ -600,7 +623,9 @@ $l_2, r_2, b_1, t_1 >1$.
 \end{claim}
 
 \begin{proof}
-$l_2, r_2, b_1, t_1 \ge 1$ follows from the fact that each edge crosses the corresponding strip. If one of the inequalities is not strict then one of the strips contains half of the square $p_1p_2+q_1q_2$, hence it contains a lattice point in its interior.  
+$l_2, r_2, b_1, t_1 \ge 1$ follows from the fact that each edge crosses the corresponding strip. 
+If one of the inequalities is not strict, then one edge must have vertices on the corresponding strip. Then one of $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle) \cap P$ or $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle) \cap Q$
+contains a triangle with one edge a translation of $p_1p_2$ and another edge a translation of $q_1q_2$. Such a triangle must contain a lattice point other than its vertices, and since $p_1p_2$ and $q_1q_2$ are primitive, the lattice point must be in the interior of the strip.
 \end{proof}
 
 \begin{claim}
@@ -608,7 +633,7 @@ $b_2$ and $t_2$ are non-zero and have the same sign. W.l.o.g.~we assume they are
 \end{claim}
 
 \begin{proof}
-If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the vertical distance between any two points in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
+If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the width w.r.t to $f_q$, the functional constant on $q_1q_2$, of any segment with vertices in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
 \end{proof}
 
 \begin{claim}
@@ -620,7 +645,9 @@ Assume w.l.o.g.~that $b$ has greater slope than $t$. Then,
 \end{claim}
 
 \begin{proof}
-The assumption implies that the intersections of $t$ and $b$ with the vertical line $\{x=1-\beta\}$ through $q_2$ are less than distance one apart (consider a vertical lattice line intersecting $q_1q_2$ and two consecutive lattice points in it, one above and one below the horizontal axis). This in turn implies part (a). For (b), if $r_1$ was $\le 0$ it would be impossible to fit a translated copy of $r$ in the right side of $Q$, because of (a).
+The assumption implies that the intersections of $t$ and $b$ with the vertical line $\{x=1-\beta\}$ through $q_2$ are less than distance one apart (consider a vertical lattice line intersecting $q_1q_2$ and two consecutive lattice points in it, one above and one below the horizontal axis). This in turn implies part (a). 
+
+For (b), if $r_1$ was $\le 0$ it would be impossible to fit a translated copy of $r$ in the right side of $Q$, because of (a).
 \end{proof}
 
 As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positive slope.
