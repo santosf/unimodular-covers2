@@ -109,15 +109,14 @@ Work of F. Santos is also supported by project MTM2017-83750-P of the Spanish Mi
 \begin{document}
 
 \begin{abstract}
-We show that the following classes of three-dimensional lattice polytopes have unimodular covers: the class of all parallelepipeds, the class of all centrally symmetric polytopes, and the class of all three-dimensional Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al. (2018) and Haase et al. (2008) where the last two classes were shown to be IDP.
+We show that the following classes of three-dimensional lattice polytopes have unimodular covers: the class of all parallelepipeds, the class of all centrally symmetric polytopes, and the class of all three-dimensional Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al.~(2018) and Haase et al.~(2008) where the last two classes were shown to be IDP.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
 
-A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties) and it falls into a hierarchy of several properties each stronger than the previous one. See, e.g., \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097]{mfo2004}, \cite[p. 2313]{mfo2007}.
-\paco{cite Bruns-Gubeladze book?}
+A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties). It falls into a hierarchy of several properties each stronger than the previous one; see, e.g., \cite[Section 2.D]{BGbook}, \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097]{mfo2004}, \cite[p. 2313]{mfo2007}.
 Let us here only mention that
 \[
 P \text{ has a unimodular triangulation}\Rightarrow
@@ -126,10 +125,10 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions}
+\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions?}
 A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
 %
-Oda~\cite{Oda1997} posed several questions regarding IDP polytopes which are now considered conjectures (REFERENCES). 
+Oda~\cite{Oda1997} posed several questions regarding IDP polytopes which are now considered conjectures~\cite{HNPS2008,mfo2007}. 
 Among them:
 \begin{conjecture}
 \label{conj:Oda}
@@ -147,13 +146,13 @@ Every smooth lattice polytope is IDP.
 \end{conjecture}
 
 Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
-
+%
 For example,  very recently
 Beck et al.~\cite{BHHHJKM2019} proved that all smooth centrally symmetric $3$-polytopes are IDP.
 More precisely, they show that any such polytope can be covered by lattice 
 parallelepipeds and unimodular simplices, both of which are trivially IDP.
 
-Partially motivated by this result in \Cref{sec:parallelepipeds} we show:
+In \Cref{sec:parallelepipeds} we show the following stronger statement:
 
 \begin{theorem}
 \label{thm:parallelepipeds}
@@ -168,6 +167,8 @@ Every smooth centrally symmetric lattice $3$-polytope has a unimodular cover.
 \qed
 \end{corollary}
 
+These results leave open the following important questions:
+
 \begin{question}
 Do $3$-dimensional parallelepipeds have unimodular triangulations?
 \end{question}
@@ -176,6 +177,8 @@ Do $3$-dimensional parallelepipeds have unimodular triangulations?
 Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have unimodular covers? 
 \end{question}
 
+
+
 %\begin{proof}
 %Let $P$ be a smooth centrally symmetric lattice $3$-polytope.
 %Beck et al.~\cite{BHHHJKM2019} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
@@ -183,29 +186,33 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 
 Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}(1), with three different proofs by
 Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
-In dimension three however the statement fails without the smoothness assumptin, as shown by letting $P=Q$ be the empty simplex of volume two.
+In dimension three however the statement fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular empty tetrahedron.
 
-An alternative approach to \Cref{conj:Oda}(1) is via Cayley sums. As we note in \Cref{sec:cayley} (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
+An alternative approach to \Cref{conj:Oda}(1) is via Cayley sums, that we discuss in  \Cref{sec:cayley}. 
+As we note there (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
 \[
 \cayley(P,Q) \text{ is IDP} 
 \Rightarrow
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \]
-In \Cref{sec:cayley} we show the following even stronger result, in the two-dimensional case:
+In particular, the following statement that we prove in \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
 
 \begin{theorem}
 \label{thm:cayley}
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-As an application of this, we prove \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
+This not only implies \Cref{conj:Oda}(1) in dimension three, but also \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
 
 \begin{corollary}
 \label{coro:prismatoid}
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
-\Paco{another corollary, suggested by Christian Haase: the $k$-th dilation of an emptyy simplex is very easy to decompose into slices of width one all of which fit into our description ($P$ and $Q$ are either pararllel parallelograms, one of which perhaps degenerates to a segment). In particular, we recover as a corollary that the $k$-th dilation of every empty tetrahedron (and, a fortiori, the $k$-th dilation of every lattice $3$-polytope) has a unimodular cover for every $k\ge 2$}
+\Paco{another corollary, suggested by Christian Haase: the $k$-th dilation of an emptyy simplex is very easy to decompose into slices of width one all of which fit into our description ($P$ and $Q$ are either pararllel parallelograms, one of which perhaps degenerates to a segment). In particular, we recover as a corollary that the $k$-th dilation of every empty tetrahedron (and, a fortiori, the $k$-th dilation of every lattice $3$-polytope) has a unimodular cover for every $k\ge 2$
+
+EXCEPT FOR THIS TO BE TRUE WE NEED TO ALLOW $Q$ TO DEGENERATE TO AN EDGE IN \Cref{hm:cayley}. CAN WE?
+}
 
 
 We believe that the $3$-polytopes in these four statements all have unimodular triangulations, but we do not have a proof.
@@ -528,17 +535,22 @@ Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mix
 Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
 
-\Cref{coro:prismatoid} is a particular case of the following situation. 
-Let $Q_1$ and $Q_2$ be two polygons and consider the prismatoid 
+We now turn our attention to \emph{prismatoids}, defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. Since we are only interested in lattice polytopes, we here use \emph{prismatoid} meaning any $d$-polytope of the form
 \[
-P= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
+\conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
+\]
+with $k\in \Z_{>0}$ and $Q_1,Q_2$ being lattice $(d-1)$-polytopes. This generalizes Cayley sums, which are the case $k=1$.
+
+\begin{proposition}
+\label{prop:prismatoid}
+Let $Q_1$ and $Q_2$ be two lattice polygons and consider the prismatoid 
+\[
+P:= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
 \]
 with $k\ge 2$. 
 %Assume that $P\cap(\R^2\times\{i\})$ is a lattice polytope for every $i=0,\dots, k$. This is equivalent to assuming that $P\cap(\R^2\times\{1\})$ is a lattice polytope:
-
-\begin{corollary}
 If $P\cap(\R^2\times\{1\})$ is a lattice polygon then $P$ has a unimodular cover.
-\end{corollary}
+\end{proposition}
 
 \begin{proof}
 \paco{perhaps add details}
@@ -550,6 +562,13 @@ P \cap (\R^2\times[i,i+1])
 is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 \end{proof}
 
+\Cref{coro:prismatoid} follows from \Cref{prop:prismatoid} since smoothness of a prismatoid implies $P\cap(\R^2\times\{i\})$ to be a lattice polytope for every $i$.
+
+both smooth prismatoids and dilations of lattice polytopse of width 1 
+
+is a particular case of the following situation. 
+
+
 
 \begin{thebibliography}{99}
 
@@ -559,13 +578,22 @@ Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
 \emph{Ann.~Combin.}, in press, 2019.
 \url{https://doi.org/10.1007/s00026-019-00418-x}
 
-\bibitem{DLRS2010}
+\bibitem{BGbook}
+Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Monographs in Mathematics,
+  Springer-Verlag, 2009, XIV, 461 p. 52 illus.
+  
+ \bibitem{DLRS2010}
 J. A. De Loera, J. Rambau, F. Santos
 Triangulations: Structures for Algorithms and Applications, 539 pp.
 Algorithms and Computation in Mathematics, Vol. 25, Springer-Verlag. 
 ISBN: 978-3-642-12970-4
 
-\bibitem{HPPS-survey}
+\bibitem{Fakhruddin}
+Najmuddin Fakhruddin.
+\newblock Multiplication maps of linear systems on smooth projective toric
+  surfaces, arXiv:0208.5178, August 2002.
+  
+  \bibitem{HPPS-survey}
 Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
 %Preprint May 2014, updated December 2017, 89 pages. 
  \emph{Mem. Amer. Math. Soc.}, to appear.
@@ -581,11 +609,16 @@ Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, O
 \bibitem{mfo2007}
 Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
 
-
 \bibitem{Oda1997}
 Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
 Abstract submitted at the Oberwolfach Conference ''Combinatorial Convexity and Algebraic Geometry'' 26.10--01.11, 1997.
 Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
+
+\bibitem{Ogata}
+Shoetsu Ogata.
+\newblock {Multiplication maps of complete linear systems on projective toric
+  surfaces.}
+\newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
 
 \bibitem{White1964}
 G.~K.~White.
