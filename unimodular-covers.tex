@@ -114,6 +114,8 @@ We show that the following classes of three-dimensional lattice polytopes have u
 
 \maketitle
 
+\tableofcontents
+
 \section{Introduction}
 
 A lattice polytope $P\subset \R^d$ has the \emph{integer decomposition property} if for every positive integer $n$, every lattice point $p \in nP\cap \Z^d$ can be written as a sum of $n$ lattice points in $P$. We abbreviate this by saying that ``$P$ is IDP''. Being IDP is interesting in the context of  both enumerative combinatorics (Ehrhart theory) and algebraic geometry (normality of toric varieties). It falls into a hierarchy of several properties each stronger than the previous one; see, e.g., \cite[Section 2.D]{BGbook}, \cite[Sect. 1.2.5]{HPPS-survey}, \cite[p. 2097]{mfo2004}, \cite[p. 2313]{mfo2007}.
@@ -408,69 +410,8 @@ we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\s
 %\text{$\cayley(P,Q)$ has a unimodular cover} &\leftrightarrow \text{$P+Q$ can be covered by unimodular prod-simplices}.
 %\end{align*}
 
-Our proof of \Cref{thm:cayley} is based on the following result:
+Our proof of \Cref{thm:cayley} is based on the following result, the proof of which we postpone to \Cref{sec:the_lemma}:
 
-\begin{figure}[htb]
-  \centering
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  .7]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-        \tkzGrid
-%       \tkzDrawX
-%       \tkzDrawY
-
-%hexagon
-  \node[mynode] (A) at (0,-1) {}; 
-%  \node[mynode] (B) at (1,1) {};  
-  \node[mynode] (C) at (2,3) {};  
-  \node[mynode] (D) at (0,1) {};  
-%  \node[mynode] (E) at (-1,-1) {};  
-  \node[mynode] (F) at (-2,-3) {};  
-
-%other points
-%  \node[mynode] () at (0,-1) {}; 
-
-
-  \draw[black] (A) -- (C) -- (D) -- (F) -- (A);
-  \draw[black, thick] (A) -- (D);
-\end{tikzpicture}
-%
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  .7]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-        \tkzGrid
-%        \tkzDrawX
-%        \tkzDrawY
-
-%hexagon
-  \node[mynode] (A) at (1,0) {}; 
-  \node[mynode] (B) at (2,1) {};  
-  \node[mynode] (C) at (3,3) {};  
-  \node[mynode] (D) at (-1,0) {};  
-  \node[mynode] (E) at (-2,-1) {};  
-  \node[mynode] (F) at (-3,-3) {};  
-
-  \node[mynode] (p1) at (-1,0) {}; 
-  \node[mynode] (p2) at (1,0) {};  
-
-  \draw[black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
-  \draw[black, thick] (p1) -- (p2);
-\end{tikzpicture}
-
-\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
-
-\caption{Partial counter-example to \Cref{lemma:cayley}. With respect to the standard lattice it is not a counter-example because (a) the edges $p_1p_2$ and $q_1q_2$ are not primitive and (b) the origin is a lattice point in the interior of both bands (but it is the only one). 
-%
-With respect to the lattice of index two it is not a counter-example either, because two vertices of $Q$ are not in that lattice.
-}
-\label{fig:width3}
-\end{figure}
 
 \begin{lemma}
 \label{lemma:cayley}
@@ -486,48 +427,6 @@ has a lattice point in its interior.
 \end{lemma}
 \giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
 
-\begin{proof}
-%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
-
-Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
-\[
-p_1=(0,-\alpha), \quad
-p_2=(0,1-\alpha), \quad
-q_1=(-\beta,0), \quad
-q_2=(1-\beta,0).
-\] 
-The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
-
-Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
-\[
-\vec l = (l_1,l_2), \quad
-\vec r= (r_1,r_2), \quad
-\vec b= (b_1,b_2), \quad
-\vec t= (t_1,t_2).
-\]
-Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
-
-
-
-
-
-
-Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i +l$ and vertex $q_i$ of $S$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
-
-- both $f_1$ or $f_2$ must meet the line through $q_1$ and $q_2$, else they would not cut out the lattice point they need to. same goes for $e_1$ and $e_2$ and the line through $p_1$ and $p_2$.
-
-claim: the segments $e_1 + l$ and $e_2 + l$ respectively intersect both $f_1$ and $f_2$. 
-
-claim: if we tilt one of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
-
-
-
-
-
-%Consider the segments on the lattice lines parallel to $p_1 p_2$ cut out by the edges $f_1$ and $f_2$ \giulia{this should be formulated more comprehensibly}. Since these segments do not contain lattice points, they must have lattice length stricly less than $1$ (or the width wrt $q$ is less than $k$, the index of $p,q$), which means that the smallest width in direction of $p_1 p_2$ between a "consecutive" vertices of $f_1$ and of $f_2$ must also be strictly less than $k$. 
-
-%Further, we observe that both vertices of $f_1$ (or $f_2$) cannot lie strictly above the line through $q_1$ and $q_2$, else the strip would contain a lattice point. 
-\end{proof}
 
 \begin{proof}[Proof of \Cref{thm:cayley}]
 Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $Px\{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). \giulia{is it usually denoted by dimension or cardinality? that is, (2,0) or (3,1)?} A triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained by simply unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can I be without being confusing?}.
@@ -537,7 +436,7 @@ Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayl
 
 We now turn our attention to \emph{prismatoids}, defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. Since we are only interested in lattice polytopes, we here use \emph{prismatoid} meaning any $d$-polytope of the form
 \[
-\conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
+\conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
 \]
 with $k\in \Z_{>0}$ and $Q_1,Q_2$ being lattice $(d-1)$-polytopes. This generalizes Cayley sums, which are the case $k=1$.
 
@@ -564,71 +463,12 @@ is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 
 \Cref{coro:prismatoid} follows from \Cref{prop:prismatoid} since smoothness of a prismatoid implies $P\cap(\R^2\times\{i\})$ to be a lattice polytope for every $i$.
 
-both smooth prismatoids and dilations of lattice polytopse of width 1 
-
-is a particular case of the following situation. 
 
 
 
-\begin{thebibliography}{99}
 
-\bibitem{BHHHJKM2019}
-Matthias Beck, Christian Haase, Akihiro Higashitani, Johannes Hofscheier, Katharina Jochemko, Lukas Katth\"an, Mateusz Micha{\l}ek,
-Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
-\emph{Ann.~Combin.}, in press, 2019.
-\url{https://doi.org/10.1007/s00026-019-00418-x}
-
-\bibitem{BGbook}
-Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Monographs in Mathematics,
-  Springer-Verlag, 2009, XIV, 461 p. 52 illus.
-  
- \bibitem{DLRS2010}
-J. A. De Loera, J. Rambau, F. Santos
-Triangulations: Structures for Algorithms and Applications, 539 pp.
-Algorithms and Computation in Mathematics, Vol. 25, Springer-Verlag. 
-ISBN: 978-3-642-12970-4
-
-\bibitem{Fakhruddin}
-Najmuddin Fakhruddin.
-\newblock Multiplication maps of linear systems on smooth projective toric
-  surfaces, arXiv:0208.5178, August 2002.
-  
-  \bibitem{HPPS-survey}
-Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
-%Preprint May 2014, updated December 2017, 89 pages. 
- \emph{Mem. Amer. Math. Soc.}, to appear.
- Available as arXiv preprint \href{https://arxiv.org/abs/1405.1687}{arXiv:1405.16878}
- 
-\bibitem{HNPS2008}
-Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattice points in Minkowski sums, 
-Electron J. Combin., 15 (2008), no. 1, Note 11, 5 pp.
-
-\bibitem{mfo2004}
-Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
-
-\bibitem{mfo2007}
-Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
-
-\bibitem{Oda1997}
-Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
-Abstract submitted at the Oberwolfach Conference ''Combinatorial Convexity and Algebraic Geometry'' 26.10--01.11, 1997.
-Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
-
-\bibitem{Ogata}
-Shoetsu Ogata.
-\newblock {Multiplication maps of complete linear systems on projective toric
-  surfaces.}
-\newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
-
-\bibitem{White1964}
-G.~K.~White.
-Lattice tetrahedra.
-\emph{Canadian J.~Math.} 16 (1964), 389--396.
-
-\end{thebibliography}
-
-\appendix
-\section{Attempt at the proof of \Cref{lemma:cayley}}
+\section{Proof of \Cref{lemma:cayley}}
+\label{sec:the_lemma}
 
 %At some point I'll assume volume two for the parallelogram $p_1p_2 + q_1q_2$, but for the time being we don't.
 
@@ -735,6 +575,184 @@ Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the re
 We are now ready to show a contradiction. Since $Q$ has normal fan refining that of $P$, it must have an edge which is a translated copy of $r$. Let $u$ and $v$ be its endpoints. Now consider the lattice line $d$ through $u$ parallel to  $\conv(p_1, q_2)$. Let $d'$ be the next parallel lattice line above $d$. The width w.r.t $f_q$ of the vertical segment starting at $u$ with other endpoint $v'$ on $d'$ is $i$, since this vertical segment is a translation of $p$. Thus $v'$ must lie outside $Q$, by claim \ref{positive slopes}. That is, $v'$ lies above the line spanned by $t$. Since the slope of $t$ is less than the slope of $d$, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than the slope of $d$. 
 
 
+
+
+\begin{thebibliography}{99}
+
+\bibitem{BHHHJKM2019}
+Matthias Beck, Christian Haase, Akihiro Higashitani, Johannes Hofscheier, Katharina Jochemko, Lukas Katth\"an, Mateusz Micha{\l}ek,
+Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
+\emph{Ann.~Combin.}, in press, 2019.
+\url{https://doi.org/10.1007/s00026-019-00418-x}
+
+\bibitem{BGbook}
+Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Monographs in Mathematics,
+  Springer-Verlag, 2009, XIV, 461 p. 52 illus.
+  
+ \bibitem{DLRS2010}
+J. A. De Loera, J. Rambau, F. Santos
+Triangulations: Structures for Algorithms and Applications, 539 pp.
+Algorithms and Computation in Mathematics, Vol. 25, Springer-Verlag. 
+ISBN: 978-3-642-12970-4
+
+\bibitem{Fakhruddin}
+Najmuddin Fakhruddin.
+\newblock Multiplication maps of linear systems on smooth projective toric
+  surfaces, arXiv:0208.5178, August 2002.
+  
+  \bibitem{HPPS-survey}
+Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
+%Preprint May 2014, updated December 2017, 89 pages. 
+ \emph{Mem. Amer. Math. Soc.}, to appear.
+ Available as arXiv preprint \href{https://arxiv.org/abs/1405.1687}{arXiv:1405.16878}
+ 
+\bibitem{HNPS2008}
+Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattice points in Minkowski sums, 
+Electron J. Combin., 15 (2008), no. 1, Note 11, 5 pp.
+
+\bibitem{mfo2004}
+Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
+
+\bibitem{mfo2007}
+Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
+
+\bibitem{Oda1997}
+Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
+Abstract submitted at the Oberwolfach Conference ''Combinatorial Convexity and Algebraic Geometry'' 26.10--01.11, 1997.
+Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.1418}, 2008.
+
+\bibitem{Ogata}
+Shoetsu Ogata.
+\newblock {Multiplication maps of complete linear systems on projective toric
+  surfaces.}
+\newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
+
+\bibitem{White1964}
+G.~K.~White.
+Lattice tetrahedra.
+\emph{Canadian J.~Math.} 16 (1964), 389--396.
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+\appendix
+
+\section{Old stuff}
+
+
+\begin{proof}
+%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
+
+Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
+\[
+p_1=(0,-\alpha), \quad
+p_2=(0,1-\alpha), \quad
+q_1=(-\beta,0), \quad
+q_2=(1-\beta,0).
+\] 
+The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
+
+Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
+\[
+\vec l = (l_1,l_2), \quad
+\vec r= (r_1,r_2), \quad
+\vec b= (b_1,b_2), \quad
+\vec t= (t_1,t_2).
+\]
+Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
+
+
+
+
+
+
+Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i +l$ and vertex $q_i$ of $S$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
+
+- both $f_1$ or $f_2$ must meet the line through $q_1$ and $q_2$, else they would not cut out the lattice point they need to. same goes for $e_1$ and $e_2$ and the line through $p_1$ and $p_2$.
+
+claim: the segments $e_1 + l$ and $e_2 + l$ respectively intersect both $f_1$ and $f_2$. 
+
+claim: if we tilt one of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
+
+
+
+
+
+%Consider the segments on the lattice lines parallel to $p_1 p_2$ cut out by the edges $f_1$ and $f_2$ \giulia{this should be formulated more comprehensibly}. Since these segments do not contain lattice points, they must have lattice length stricly less than $1$ (or the width wrt $q$ is less than $k$, the index of $p,q$), which means that the smallest width in direction of $p_1 p_2$ between a "consecutive" vertices of $f_1$ and of $f_2$ must also be strictly less than $k$. 
+
+%Further, we observe that both vertices of $f_1$ (or $f_2$) cannot lie strictly above the line through $q_1$ and $q_2$, else the strip would contain a lattice point. 
+\end{proof}
+
+
+
+\begin{figure}[htb]
+  \centering
+\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+  .7]
+%coordinate axes
+   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%        \tkzLabelY[orig=false,label options={font=\tiny}]
+        \tkzGrid
+%       \tkzDrawX
+%       \tkzDrawY
+
+%hexagon
+  \node[mynode] (A) at (0,-1) {}; 
+%  \node[mynode] (B) at (1,1) {};  
+  \node[mynode] (C) at (2,3) {};  
+  \node[mynode] (D) at (0,1) {};  
+%  \node[mynode] (E) at (-1,-1) {};  
+  \node[mynode] (F) at (-2,-3) {};  
+
+%other points
+%  \node[mynode] () at (0,-1) {}; 
+
+
+  \draw[black] (A) -- (C) -- (D) -- (F) -- (A);
+  \draw[black, thick] (A) -- (D);
+\end{tikzpicture}
+%
+\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+  .7]
+%coordinate axes
+   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%        \tkzLabelY[orig=false,label options={font=\tiny}]
+        \tkzGrid
+%        \tkzDrawX
+%        \tkzDrawY
+
+%hexagon
+  \node[mynode] (A) at (1,0) {}; 
+  \node[mynode] (B) at (2,1) {};  
+  \node[mynode] (C) at (3,3) {};  
+  \node[mynode] (D) at (-1,0) {};  
+  \node[mynode] (E) at (-2,-1) {};  
+  \node[mynode] (F) at (-3,-3) {};  
+
+  \node[mynode] (p1) at (-1,0) {}; 
+  \node[mynode] (p2) at (1,0) {};  
+
+  \draw[black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
+  \draw[black, thick] (p1) -- (p2);
+\end{tikzpicture}
+
+\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
+
+\caption{Partial counter-example to \Cref{lemma:cayley}. With respect to the standard lattice it is not a counter-example because (a) the edges $p_1p_2$ and $q_1q_2$ are not primitive and (b) the origin is a lattice point in the interior of both bands (but it is the only one). 
+%
+With respect to the lattice of index two it is not a counter-example either, because two vertices of $Q$ are not in that lattice.
+}
+\label{fig:width3}
+\end{figure}
 
 
 \end{document}
