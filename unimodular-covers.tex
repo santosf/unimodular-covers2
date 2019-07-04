@@ -59,6 +59,7 @@
 
 \renewcommand{\int}{\operatorname{int}}
 \newcommand{\width}{\operatorname{width}}
+\newcommand{\ind}{\operatorname{index}}
 \newcommand{\Vol}{\operatorname{Vol}}
 \newcommand{\length}{\operatorname{length}}
 
@@ -596,18 +597,23 @@ Lattice tetrahedra.
 \appendix
 \section{Attempt at the proof of \Cref{lemma:cayley}}
 
-At some point I'll assume volume two for the parallelogram $p_1p_2 + q_1q_2$, but for the time being we don't.
+%At some point I'll assume volume two for the parallelogram $p_1p_2 + q_1q_2$, but for the time being we don't.
 
-Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
+Let us fix coordinates in which $p=\conv(p_1,p_2)$ and $q= \conv(q_1,q_2)$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
 \[
 p_1=(0,-\alpha), \quad
 p_2=(0,1-\alpha), \quad
 q_1=(-\beta,0), \quad
 q_2=(1-\beta,0).
+\] \giulia{perhaps the explicit coordinates are superfluous now}
+The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points). We can further assume (since translating the polytopes by lattice vectors will not result in any loss of generality) that $p_1$ is on the consecutive lattice line parallel to the line $q$ lies on. That is, if $f_q$ is the primitive lattice functional which is zero on $q$, then $f_q(p_1)=-1$. Equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Let $f_p$ be the functional constant on $p$. We observe then that 
+\[
+\width_{f_q}(p + \overrightarrow{q})=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\overrightarrow{p}) = \ind(p, q) =:i.
 \] 
-The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
 
-Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
+Observe that $p_1$ is the unique lattice point in the strip $q +\overrightarrow{p}$ on the line $f_q(x)=-1$. Indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p$ and $q$ have index $1$, which is a contradiction. The unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
+
+Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges  $b, t$ (with $b$ below and $t$ above).  Observe that one of $l$ and $r$ can coincide with $p$, if this is an edge of $P$, and similarly one of $t,b$ might be $q$, if this is an edge of $Q$. To make things more explicit, we assume the following coordinates for the edge-vectors:
 \[
 \vec l = (l_1,l_2), \quad
 \vec r= (r_1,r_2), \quad
@@ -618,51 +624,85 @@ Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero an
 
 Then:
 
-\begin{claim}
-$l_2, r_2, b_1, t_1 >1$.
+%\begin{claim}
+%$l_2, r_2, b_1, t_1 >1$.
+%\end{claim}
+
+
+\begin{claim}\giulia{I think we need to treat separately the case where we deal with edges (these are easier, in any case, but I couldn't find a unification)}
+The following inequalities hold, provided the segment in question is not an edge of the corresponding polytope:
+\begin{align*}
+\width_{f_q}(l) > i, \\
+\width_{f_q}(r) > i, \\
+\width_{f_p}(t) > i, \\
+\width_{f_p}(b) > i.
+\end{align*}
 \end{claim}
 
 \begin{proof}
-$l_2, r_2, b_1, t_1 \ge 1$ follows from the fact that each edge crosses the corresponding strip. 
-If one of the inequalities is not strict, then one edge must have vertices on the corresponding strip. Then one of $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle) \cap P$ or $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle) \cap Q$
-contains a triangle with one edge a translation of $p_1p_2$ and another edge a translation of $q_1q_2$. Such a triangle must contain a lattice point other than its vertices, and since $p_1p_2$ and $q_1q_2$ are primitive, the lattice point must be in the interior of the strip.
+The inequality $\geq i$ follows in each case from the fact that each segment crosses the corresponding strip, the width of which (w.r.t the appropriate functional) is $i$, as observed above. 
+If one of the inequalities were not strict, then the corresponding segment, say $l$, must have vertices on the corresponding strip. Then the strip $(p + \langle \overrightarrow{q}\rangle) \cap P$ contains a triangle with one edge a translation of $p$ and another edge a translation of $q$. Such a triangle must contain a lattice point other than its vertices, and since $p_1p_2$ and $q_1q_2$ are primitive, the lattice point must be in the interior of the strip.
 \end{proof}
 
+%\begin{claim}
+%$b_2$ and $t_2$ are non-zero and have the same sign. W.l.o.g.~we assume they are positive.
+%\end{claim}
+%
+%\begin{proof}
+%If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the width w.r.t to $f_q$, the functional constant on $q_1q_2$, of any segment with vertices in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
+%\end{proof}
+
 \begin{claim}
-$b_2$ and $t_2$ are non-zero and have the same sign. W.l.o.g.~we assume they are positive.
+The slopes of $b$ and $t$ must either be both strictly larger than the slope of $q$ or both be strictly smaller. W.l.o.g.~we assume they are larger.
 \end{claim}
 
 \begin{proof}
-If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the width w.r.t to $f_q$, the functional constant on $q_1q_2$, of any segment with vertices in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
+If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  $Q \cap \{x\ge 0\}$ is contained in the strip $-1<f_q(x)<i-1$, of width $i$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) >i$ .
 \end{proof}
 
+
 \begin{claim}
+\label{positive slopes}
 Assume w.l.o.g.~that $b$ has greater slope than $t$. Then, 
 \begin{enumerate}
-\item The intersection of $Q$ with any vertical line to the right of $q_2$ has length strictly smaller than one.
-\item $r_1>0$.
+\item The intersection of $Q$ with any vertical line to the right of $p$ has width w.r.t. $f_q$ strictly smaller than $i$.
+\item $r$ also has positive slope.
 \end{enumerate}
 \end{claim}
 
 \begin{proof}
-The assumption implies that the intersections of $t$ and $b$ with the vertical line $\{x=1-\beta\}$ through $q_2$ are less than distance one apart (consider a vertical lattice line intersecting $q_1q_2$ and two consecutive lattice points in it, one above and one below the horizontal axis). This in turn implies part (a). 
+\giulia{translate this into the width language!}
+Since $t$ and $b$ both intersect $p$, these intersections form a vertical segment which has width w.r.t $f_q$ less than $i$, the width of $p$. The assumptions on the slopes implies that this is true for any vertical segment with endpoints in $b$ and $t$ to the right of this one, which is part (a). 
 
-For (b), if $r_1$ was $\le 0$ it would be impossible to fit a translated copy of $r$ in the right side of $Q$, because of (a).
+For (b), if $r$ had negative slope, it would be impossible to fit a translated copy of $r$ in the right side of $Q$, because of (a): it would lie \giulia{finish, with picture}
 \end{proof}
 
 As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positive slope.
 
-Starting here we assume index 2.
+%Starting here we assume index 2.
+%
+%\begin{claim}
+%The slopes of $t$ and $b$ are strictly smaller than one and that of $r$ strictly greater than one.
+%\end{claim}
+%
+%\begin{proof}
+%Otherwise the points $(0,1/2)$, $(0,-1/2)$, $(1/2,0)$, respectively, would be in the corresponding band.
+%\end{proof}
+%
+%We are now ready to show a contradiction. Let $u$ and $v$ be the end-points of the translated copy of $r$ in $Q$, with $\vec r=v-u$. Let $d$ be the line of slope $1$ through $u$, which is a lattice line. Let $d'$ be the next parallel lattice line above $d$. By Claim A.3.1, the intersection of $d'$ with the vertical line through $u$ is above $Q$. Since the slope of $t$ is less than one, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than one. QED
 
 \begin{claim}
-The slopes of $t$ and $b$ are strictly smaller than one and that of $r$ strictly greater than one.
+The slopes of $t$ and $b$ are strictly smaller than the slope of $\conv(p_1, q_2)$ and that of $r$ (and $l$) is strictly greater than it.
 \end{claim}
 
 \begin{proof}
-Otherwise the points $(0,1/2)$, $(0,-1/2)$, $(1/2,0)$, respectively, would be in the corresponding band.
+Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the remaining vertices of the parallelogram $\conv(q_1, p_1, q_2, q_1+q_2-p_1)$, they must respectively intersect its (parallel) edges $\conv(p_1, q_2)$ and $\conv(q_1, q_1+q_2-p_1)$. This means their slopes must be strictly less than that of these segments. The same argument can be applied to $l$ and $r$ if one considers the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yielding that the slopes of $l$ and $r$ are strictly larger than that of $\conv(p_1, q_2)$.
 \end{proof}
 
-We are now ready to show a contradiction. Let $u$ and $v$ be the end-points of the translated copy of $r$ in $Q$, with $\vec r=v-u$. Let $d$ be the line of slope $1$ through $u$, which is a lattice line. Let $d'$ be the next parallel lattice line above $d$. By Claim A.3.1, the intersection of $d'$ with the vertical line through $u$ is above $Q$. Since the slope of $t$ is less than one, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than one. QED
+We are now ready to show a contradiction. Since $Q$ has normal fan refining that of $P$, it must have an edge which is a translated copy of $r$. Let $u$ and $v$ be its endpoints. Now consider the lattice line $d$ through $u$ parallel to  $\conv(p_1, q_2)$. Let $d'$ be the next parallel lattice line above $d$. The width w.r.t $f_q$ of the vertical segment starting at $u$ with other endpoint $v'$ on $d'$ is $i$, since this vertical segment is a translation of $p$. Thus $v'$ must lie outside $Q$, by claim \ref{positive slopes}. That is, $v'$ lies above the line spanned by $t$. Since the slope of $t$ is less than the slope of $d$, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than the slope of $d$. 
+
+
+
 
 \end{document}
 
