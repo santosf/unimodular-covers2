@@ -536,7 +536,82 @@ The slopes of $b$ and $t$ must either be both strictly larger than the slope of 
 \begin{proof}
 If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  $Q \cap \{x\ge 0\}$ is contained in the strip $-1<f_q(x)<i-1$, of width $i$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) >i$ .
 \end{proof}
-\includegraphics[width=.7\textwidth]{Claim42.jpg}
+
+
+
+\begin{figure}[htb]
+  \centering
+\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+  1]
+%coordinate axes
+   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%        \tkzLabelY[orig=false,label options={font=\tiny}]
+%        \tkzGrid
+%        \tkzDrawX
+%        \tkzDrawY
+
+%edges b, t
+  \node[
+%label={[shift={(0,-0.67)}]$b_1$}, 
+mynode] (b1) at (-3,-2) {}; 
+  \node[
+%label={[shift={(0,-0.67)}]$b_2$}, 
+mynode] (b2) at (2, 0.2) {};  
+  \node[
+%label={[shift={(0,0)}]$t_1$}, 
+mynode] (t1) at (-2.7, 1) {};  
+  \node[
+%label={[shift={(0,0)}]$t_2$}, 
+mynode] (t2) at (1.6,0.7) {};  
+
+%shaded region where r can be  
+  \draw[fill=gray!80, nearly transparent] (2.93,0.61) -- (0,0.81)  -- (0,-0.68) -- cycle;
+
+
+%p
+  \node[
+%label={[shift={(0,-0.67)}]$p_1$}, 
+mynode] (p1) at (0,-1) {}; 
+  \node[
+%label={[shift={(0,0)}]$p_2$}, 
+mynode] (p2) at (0,1) {};  
+%  \node[{p}]  at (-0.3,0.95)
+
+
+%q
+  \node[
+%label={[shift={(0,-0.67)}]$q_1$}, 
+mynode] (q1) at (-1.7,-0.4) {}; 
+  \node[
+%label={[shift={(0,-0.67)}]$q_2$}, 
+mynode] (q2) at (0.3,-0.4) {};  
+
+%segments b, t, p, q
+  \draw[ name path = b, black, thick] (b1) node[below, xshift=1.7cm, yshift=0.7cm] {b} -- (b2); 
+  \draw[name path = t, black, thick] (t1) node[below, xshift=1.2cm, yshift=-0.1cm] {t} -- (t2);
+  \draw[name path = p, black, thick] (p1) node[left, xshift=0 cm, yshift=1.3cm] {p} -- (p2);
+  \draw[name path = q, black, thick] (q1) node[below, xshift=0.4cm, yshift=0cm] {q} -- (q2);
+
+
+%prolonged lines through b and t
+ \tkzDrawLine[add=0.2 and 0.3, color=black, dashed](b1, b2);
+ \tkzDrawLine[ add=0.3 and 0.4, color=black, dashed](t1, t2);
+ 
+%functional f_q
+  \tkzDefLine[orthogonal=through p1](p1,p2)
+  \tkzDrawLine[add = 2 and 1,color=black, dashed](p1,tkzPointResult)
+  \node[label={\small $\{f_q(x)=-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab1) at (3.3, -1) {};
+
+
+  \tkzDefLine[orthogonal=through p2](p1,p2) 
+  \tkzDrawLine[add = 2 and 1,color=black, dashed](p2,tkzPointResult) 
+    \node[label={\small $\{f_q(x)=w-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab2) at (3.3, 1) {};
+
+\end{tikzpicture}
+\end{figure}
+
+
 
 
 
@@ -762,78 +837,6 @@ With respect to the lattice of index two it is not a counter-example either, bec
 \end{figure}
 
 
-TRYING TO MODIFY this picture:
-
-\begin{figure}[htb]
-  \centering
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  1]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-%        \tkzGrid
-%        \tkzDrawX
-%        \tkzDrawY
-
-%edges b, t
-  \node[
-%label={[shift={(0,-0.67)}]$b_1$}, 
-mynode] (b1) at (-3,-2) {}; 
-  \node[
-%label={[shift={(0,-0.67)}]$b_2$}, 
-mynode] (b2) at (2, 0.2) {};  
-  \node[
-%label={[shift={(0,0)}]$t_1$}, 
-mynode] (t1) at (-2.7, 1) {};  
-  \node[
-%label={[shift={(0,0)}]$t_2$}, 
-mynode] (t2) at (1.6,0.7) {};  
-
-  \draw[fill=gray!80, nearly transparent] (2.93,0.61) -- (0,0.81)  -- (0,-0.68) -- cycle;
-  %\node[mynode] (E) at (-2,-1) {};  
-  %\node[mynode] (F) at (-3,-3) {};  
-
-%p
-  \node[
-%label={[shift={(0,-0.67)}]$p_1$}, 
-mynode] (p1) at (0,-1) {}; 
-  \node[
-%label={[shift={(0,0)}]$p_2$}, 
-mynode] (p2) at (0,1) {};  
-%  \node[{p}]  at (-0.3,0.95)
-
-
-%q
-  \node[
-%label={[shift={(0,-0.67)}]$q_1$}, 
-mynode] (q1) at (-1.7,-0.4) {}; 
-  \node[
-%label={[shift={(0,-0.67)}]$q_2$}, 
-mynode] (q2) at (0.3,-0.4) {};  
-
-
-  \draw[ name path = b, black, thick] (b1) node[below, xshift=1.7cm, yshift=0.7cm] {b} -- (b2); 
-  \draw[name path = t, black, thick] (t1) node[below, xshift=1.2cm, yshift=-0.1cm] {t} -- (t2);
-  \draw[name path = p, black, thick] (p1) node[left, xshift=0 cm, yshift=1.3cm] {p} -- (p2);
-  \draw[name path = q, black, thick] (q1) node[below, xshift=0.4cm, yshift=0cm] {q} -- (q2);
-
-
- \tkzDrawLine[add=0.2 and 0.3, color=black, dashed](b1, b2);
- \tkzDrawLine[ add=0.3 and 0.4, color=black, dashed](t1, t2);
- 
-  \tkzDefLine[orthogonal=through p1](p1,p2)
-  \tkzDrawLine[add = 2 and 1,color=black, dashed](p1,tkzPointResult)
-
-  \tkzDefLine[orthogonal=through p2](p1,p2)
-  \tkzDrawLine[add = 2 and 1,color=black, dashed](p2,tkzPointResult)
-
-\end{tikzpicture}
-
-%\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
-
-
-\end{figure}
 
 
 
