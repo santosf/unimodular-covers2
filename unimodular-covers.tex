@@ -65,7 +65,11 @@
 \newcommand{\width}{\operatorname{width}}
 \newcommand{\ind}{\operatorname{index}}
 \newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\area}{\operatorname{area}}
 \newcommand{\length}{\operatorname{length}}
+
+\renewcommand{\vec}[1]{\overrightarrow#1}
+\newcommand{\vecline}[1]{\langle \vec #1 \rangle}
 
 
 \newcommand{\cone}{\ensuremath{\mathrm{cone}}\hspace{1pt}}
@@ -414,26 +418,36 @@ we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\s
 %\text{$\cayley(P,Q)$ has a unimodular cover} &\leftrightarrow \text{$P+Q$ can be covered by unimodular prod-simplices}.
 %\end{align*}
 
-Our proof of \Cref{thm:cayley} is based on the following result, the proof of which we postpone to \Cref{sec:the_lemma}:
-
+Our proof of \Cref{thm:cayley} is based on the following result, the proof of which we postpone to \Cref{sec:the_lemma}. 
+The lemma uses the following conventions. If $a, b$ are points, we denote by $[a,b]$ and $(a,b)$ respectively the closed and open segments with endpoints $a,b$. For a segment $s=[a,b]$, we denote the vector $\vec s:= b-a$ and $\vecline s$ as the line spanned by $\vec s$.
 
 \begin{lemma}
 \label{lemma:cayley}
-Let $P$ and $Q$ be two lattice polygons with $Q$ nef with respect to $P$. Let $p_1p_2 \subset P$ and $q_1q_2\subset Q$ be two primitive and non-parallel segments, and assume that the prod-simplex (parallelogram)  $p_1p_2 + q_1q_2$ is not unimodular. Then,
-at least one of the strips
-\paco{add picture for these strips, and perhaps for the proof}
+Let $P$ and $Q$ be two lattice polygons with $Q$ nef with respect to $P$. Let $p=[p_1,p_2] \subset P$ and $q=[q_1,q_2]\subset Q$ be two primitive and non-parallel lattice segments, and let $\vecline p$ and $ \vecline q$ be the lines spanned by them.  If the parallelogram $p + q$ is not unimodular, then at least one of the regions
 \[
-(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle) \cap P
-\qquad \text{or} \qquad
-(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle) \cap Q
+((p_1, p_2) + \vecline q ) \cap P, 
+\qquad \text{and} \qquad
+((q_1, q_2) + \vecline p ) \cap Q
 \]
-has a lattice point in its interior.
+contains a lattice point.
+
+
+\paco{add picture for these strips}
+
+
+
+%\[
+%(\int(p) + \vecline q) \cap P
+%\qquad \text{or} \qquad
+%\int(q + \vecline p) \cap Q
+%\]
+%contains a lattice point.
 \end{lemma}
 \giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
 
 
 \begin{proof}[Proof of \Cref{thm:cayley}]
-Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $Px\{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). \giulia{is it usually denoted by dimension or cardinality? that is, (2,0) or (3,1)?} A triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained by simply unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can I be without being confusing?}.
+Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $Px\{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). \giulia{is it usually denoted by dimension or cardinality? that is, (2,0) or (3,1)?} A triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained by simply unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can be without being confusing?}.
 
 Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
@@ -474,30 +488,29 @@ is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 \section{Proof of \Cref{lemma:cayley}}
 \label{sec:the_lemma}
 
+
 %At some point I'll assume volume two for the parallelogram $p_1p_2 + q_1q_2$, but for the time being we don't.
 
-Let us fix coordinates in which $p=\conv(p_1,p_2)$ and $q= \conv(q_1,q_2)$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
+By a change of coordinates and lattice, we can assume $p=[p_1,p_2]$ and $q= [q_1,q_2]$ to be a vertical and horizontal segment . Since translating the polytopes by lattice vectors will not result in any loss of generality, we can further assume that $p_1$ is on the next lattice line parallel to the line spanned by $q$. That is, if $f_q$ is the primitive lattice functional which is zero on $q$, then $f_q(p_1)=-1$. Equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. 
+
+Let $f_p$ be the primitive lattice functional constant on $p$. Let $w=\area_\Lambda(p+q) \geq 2$, where $\area_\Lambda$ denotes the area normalized to a fundamental domain of $\Lambda$. Then 
 \[
-p_1=(0,-\alpha), \quad
-p_2=(0,1-\alpha), \quad
-q_1=(-\beta,0), \quad
-q_2=(1-\beta,0).
-\] \giulia{perhaps the explicit coordinates are superfluous now}
-The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points). We can further assume (since translating the polytopes by lattice vectors will not result in any loss of generality) that $p_1$ is on the consecutive lattice line parallel to the line $q$ lies on. That is, if $f_q$ is the primitive lattice functional which is zero on $q$, then $f_q(p_1)=-1$. Equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Let $f_p$ be the functional constant on $p$. We observe then that 
-\[
-\width_{f_q}(p + \overrightarrow{q})=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\overrightarrow{p}) = \ind(p, q) =:i.
+w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ).
 \] 
 
-Observe that $p_1$ is the unique lattice point in the strip $q +\overrightarrow{p}$ on the line $f_q(x)=-1$. Indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p$ and $q$ have index $1$, which is a contradiction. The unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
+Observe that $p_1$ is the unique lattice point in the strip $q +\vecline p$ on the line $f_q(x)=-1$. Indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, which is a contradiction. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
-Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges  $b, t$ (with $b$ below and $t$ above).  Observe that one of $l$ and $r$ can coincide with $p$, if this is an edge of $P$, and similarly one of $t,b$ might be $q$, if this is an edge of $Q$. To make things more explicit, we assume the following coordinates for the edge-vectors:
-\[
-\vec l = (l_1,l_2), \quad
-\vec r= (r_1,r_2), \quad
-\vec b= (b_1,b_2), \quad
-\vec t= (t_1,t_2).
-\]
-Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
+Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no vertex of $P$ can be in the strip $p + \vecline q$. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive segments in the boundary which each have one vertex on each side of the strip $p + \vecline q$; we will call these  $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q + \vecline p$, and we call the segments  $b, t$ (with $b$ below and $t$ above).  Observe that one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
+\giulia{p=P ???}
+
+%To make things more explicit, we assume the following coordinates for the edge-vectors:
+%\[
+%\vec l = (l_1,l_2), \quad
+%\vec r= (r_1,r_2), \quad
+%\vec b= (b_1,b_2), \quad
+%\vec t= (t_1,t_2).
+%\]
+%Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
 
 Then:
 
@@ -507,18 +520,19 @@ Then:
 
 
 \begin{claim}\giulia{I think we need to treat separately the case where we deal with edges (these are easier, in any case, but I couldn't find a unification)}
-The following inequalities hold, provided the segment in question is not an edge of the corresponding polytope:
+The following inequalities hold, 
 \begin{align*}
 \width_{f_q}(l) , 
 \width_{f_q}(r) ,
 \width_{f_p}(t) ,
-\width_{f_p}(b) > i.
+\width_{f_p}(b) \geq w.
 \end{align*}
+Each inequality is strict, unless the segment in question coincides with $p$ or $q$.
 \end{claim}
 
 \begin{proof}
-The inequality $\geq i$ follows in each case from the fact that each segment crosses the corresponding strip, the width of which (w.r.t the appropriate functional) is $i$, as observed above. 
-If one of the inequalities were not strict, then the corresponding segment, say $l$, must have vertices on the corresponding strip. Then the strip $(p + \langle \overrightarrow{q}\rangle) \cap P$ contains a triangle with one edge a translation of $p$ and another edge a translation of $q$. Such a triangle must contain a lattice point other than its vertices, and since $p_1p_2$ and $q_1q_2$ are primitive, the lattice point must be in the interior of the strip.
+The inequality $\geq w$ follows in each case from the fact that each segment crosses the corresponding strip, the width of which (w.r.t the appropriate functional) is $w$, as observed above. 
+If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ has one endpoint on each of the boundary lines of $(p + \vecline q)$. Unless $\ell = p$, one of the endpoints of $\ell = [l_1, l_2]$ is not an endpoint of $p$, say $l_1 \neq p_1$. Thus the triangle $T=\conv(p_2, p_1, l_1)$ is contained in $P$ and its edge $[p_1, l_1]$ is an integer dilation of $q$. Since $\width_{f_q}(T) =w \geq 2$, $T$ must contain a lattice point in the interior of the strip.
 \end{proof}
 
 %\begin{claim}
@@ -528,13 +542,24 @@ If one of the inequalities were not strict, then the corresponding segment, say 
 %\begin{proof}
 %If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the width w.r.t to $f_q$, the functional constant on $q_1q_2$, of any segment with vertices in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
 %\end{proof}
-
+Let $H^-$ and $H^+$ be the two halfplanes defined by the affine span of $p$, with $H^+$ to the right.
 \begin{claim}
-The slopes of $b$ and $t$ must either be both strictly larger than the slope of $q$ or both be strictly smaller. W.l.o.g.~we assume they are larger.
-\end{claim}
+$f_q$ achieves its maximum over $b$ and over $t$ on the same side ($H^+$ or $H^-$). 
+\end{claim}\giulia{do we need this claim?}
+
+
+
+%\begin{claim}
+%The slopes of $b$ and $t$ must either be both strictly larger than the slope of $q$ or both be strictly smaller. W.l.o.g.~we assume they are larger.
+%\end{claim}
+%
+%\begin{proof}
+%If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  
 
 \begin{proof}
-If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  $Q \cap \{x\ge 0\}$ is contained in the strip $-1<f_q(x)<i-1$, of width $i$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) >i$ .
+ Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $H^-$ and that on $b$ lies in $H^+$. 
+
+Then $Q \cap H^ +$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $w$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$ .
 \end{proof}
 
 
@@ -609,18 +634,21 @@ mynode] (q2) at (0.3,-0.4) {};
     \node[label={\small $\{f_q(x)=w-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab2) at (3.3, 1) {};
 
 \end{tikzpicture}
+\caption{Picture for Claim 4.2}
 \end{figure}
 
 
 
 
 
+We assume w.l.o.g. that the maximum on both $t$ and $b$ is achieved in $H^+$ (do we need it??).
+
 \begin{claim}
 \label{positive slopes}
-Assume w.l.o.g.~that $b$ has greater slope than $t$. Then, 
+Assume w.l.o.g.~that $b$ and $t$ either are parallel or their affine spans cross in $H^+$. Then, 
 \begin{enumerate}
-\item The intersection of $Q$ with any vertical line to the right of $p$ has width w.r.t. $f_q$ strictly smaller than $i$.
-\item $r$ also has positive slope.
+\item The intersection of $Q$ with any line parallel to $p$ in $H^+$ has width w.r.t. $f_q$ strictly smaller than $w$.
+\item $f_p$ and $f_q$ increase in the same direction along $r$.
 \end{enumerate}
 \end{claim}
 
@@ -646,9 +674,10 @@ As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positi
 %
 %We are now ready to show a contradiction. Let $u$ and $v$ be the end-points of the translated copy of $r$ in $Q$, with $\vec r=v-u$. Let $d$ be the line of slope $1$ through $u$, which is a lattice line. Let $d'$ be the next parallel lattice line above $d$. By Claim A.3.1, the intersection of $d'$ with the vertical line through $u$ is above $Q$. Since the slope of $t$ is less than one, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than one. QED
 
+Let $g$ be the functional constant on $[p_1, q_2]$. Then
 \begin{claim}
-The slopes of $t$ and $b$ are strictly smaller than the slope of $\conv(p_1, q_2)$ and that of $r$ (and $l$) is strictly greater than it.
-\end{claim}
+The slopes of $t=[t_1, t_2]$ and $b=[b_1, b_2]$ are strictly smaller than the slope of  and that of $r=[r_1, r_2]$ (and $l=[l_1, l_2]$) is strictly greater than it.
+\end{claim}\giulia{let's put some more notation in the beginning: add H+, H-, V+, V-, and say which endpoints of l, r, etc are in which halfspace.}
 
 \begin{proof}
 Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the remaining vertices of the parallelogram $\conv(q_1, p_1, q_2, q_1+q_2-p_1)$, they must respectively intersect its (parallel) edges $\conv(p_1, q_2)$ and $\conv(q_1, q_1+q_2-p_1)$. This means their slopes must be strictly less than that of these segments. The same argument can be applied to $l$ and $r$ if one considers the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yielding that the slopes of $l$ and $r$ are strictly larger than that of $\conv(p_1, q_2)$.
@@ -835,7 +864,6 @@ With respect to the lattice of index two it is not a counter-example either, bec
 }
 \label{fig:width3}
 \end{figure}
-
 
 
 
