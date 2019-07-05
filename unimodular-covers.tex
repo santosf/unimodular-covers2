@@ -9,6 +9,9 @@
 \usepackage{url}
 \usepackage[colorlinks=true]{hyperref}
 
+
+
+
 \usepackage{cleveref}
 \Crefname{counterexample}{counterexample}{counterexamples}
 \Crefname{counterexample}{Counterexample}{Counterexamples}
@@ -20,7 +23,8 @@
 \usepackage{tikz}
 \usetikzlibrary{matrix}
 \usepackage{tkz-euclide}
-
+\usetikzlibrary{intersections}
+\usetkzobj{all}
 
 
 \newcommand{\limites}{}
@@ -505,9 +509,9 @@ Then:
 \begin{claim}\giulia{I think we need to treat separately the case where we deal with edges (these are easier, in any case, but I couldn't find a unification)}
 The following inequalities hold, provided the segment in question is not an edge of the corresponding polytope:
 \begin{align*}
-\width_{f_q}(l) > i, \\
-\width_{f_q}(r) > i, \\
-\width_{f_p}(t) > i, \\
+\width_{f_q}(l) , 
+\width_{f_q}(r) ,
+\width_{f_p}(t) ,
 \width_{f_p}(b) > i.
 \end{align*}
 \end{claim}
@@ -532,6 +536,8 @@ The slopes of $b$ and $t$ must either be both strictly larger than the slope of 
 \begin{proof}
 If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  $Q \cap \{x\ge 0\}$ is contained in the strip $-1<f_q(x)<i-1$, of width $i$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) >i$ .
 \end{proof}
+\includegraphics[width=.7\textwidth]{Claim42.jpg}
+
 
 
 \begin{claim}
@@ -544,11 +550,12 @@ Assume w.l.o.g.~that $b$ has greater slope than $t$. Then,
 \end{claim}
 
 \begin{proof}
-\giulia{translate this into the width language!}
+
 Since $t$ and $b$ both intersect $p$, these intersections form a vertical segment which has width w.r.t $f_q$ less than $i$, the width of $p$. The assumptions on the slopes implies that this is true for any vertical segment with endpoints in $b$ and $t$ to the right of this one, which is part (a). 
 
-For (b), if $r$ had negative slope, it would be impossible to fit a translated copy of $r$ in the right side of $Q$, because of (a): it would lie \giulia{finish, with picture}
+For part (b), let $r = conv(u, v)$, with $\vec r=v-u$. If $r$ had negative slope, it would be impossible to fit a translated copy of $r$ in the right side of $Q$: $r$ would lie inside the region to the left of $u$ delimited by $t$, the horizontal line containing $u$ and the vertical line through $u$. We can observe that this triangular region has width w.r.t. $f_q$ less than $i$ by combining part (a), which implies that the vertical segment through $u$ between $t$ and $u$ has width w.r.t $f_q$ less than $i$, with the fact that $t$ has positive slope. 
 \end{proof}
+\includegraphics[ width=.7\textwidth]{Claim43.jpg}
 
 As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positive slope.
 
@@ -753,6 +760,58 @@ With respect to the lattice of index two it is not a counter-example either, bec
 }
 \label{fig:width3}
 \end{figure}
+
+
+TRYING TO MODIFY this picture:
+
+\begin{figure}[htb]
+  \centering
+\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+  .7]
+%coordinate axes
+   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%        \tkzLabelY[orig=false,label options={font=\tiny}]
+%        \tkzGrid
+%        \tkzDrawX
+%        \tkzDrawY
+
+%edges b, t
+  \node[mynode] (b1) at (-3,-2) {}; 
+  \node[mynode] (b2) at (2, 0.2) {};  
+  \node[mynode] (t1) at (-2.7, 1) {};  
+  \node[mynode] (t2) at (1.6,0.7) {};  
+  %\node[mynode] (E) at (-2,-1) {};  
+  %\node[mynode] (F) at (-3,-3) {};  
+
+%p
+  \node[mynode] (p1) at (0,-1) {}; 
+  \node[mynode] (p2) at (0,1) {};  
+
+
+%q
+  \node[mynode] (q1) at (-1,0) {}; 
+  \node[mynode] (q2) at (1,0) {};  
+
+ % \draw[black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
+  \draw[name path = b, black] (b1) -- (b2); 
+  \draw[name path = t, black] (t1) -- (t2);
+  \draw[name path = p, black, thick] (p1) -- (p2);
+  \draw[name path = q, black, thick] (q1) -- (q2);
+
+
+ \tkzDrawLine[add=0.2 and 0.3, color=black, dashed](b1, b2);
+  \tkzDrawLine[ add=0.3 and 0.4, color=black, dashed](t1, t2);
+  \path [name intersections={of = p and b}];
+  \coordinate (S)  at (intersection-1);
+
+\end{tikzpicture}
+
+%\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
+
+
+\end{figure}
+
 
 
 \end{document}
