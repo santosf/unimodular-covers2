@@ -138,8 +138,7 @@ Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into u
 \paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions?}
 A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
 %
-Oda~\cite{Oda1997} posed several questions regarding IDP polytopes which are now considered conjectures~\cite{HNPS2008,mfo2007}. 
-Among them:
+Oda~\cite{Oda1997} posed several questions regarding IDP polytopes. The following variations of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
 \begin{conjecture}
 \label{conj:Oda}
 \begin{enumerate}
@@ -212,12 +211,14 @@ In particular, the following statement that we prove in \Cref{sec:cayley} is str
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This not only implies \Cref{conj:Oda}(1) in dimension three, but also \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
+This not only implies \Cref{conj:Oda}(1) in dimension three, but also, as we show in \Cref{sec:cayley}, \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
 
 \begin{corollary}
 \label{coro:prismatoid}
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
+
+
 
 \Paco{another corollary, suggested by Christian Haase: the $k$-th dilation of an emptyy simplex is very easy to decompose into slices of width one all of which fit into our description ($P$ and $Q$ are either pararllel parallelograms, one of which perhaps degenerates to a segment). In particular, we recover as a corollary that the $k$-th dilation of every empty tetrahedron (and, a fortiori, the $k$-th dilation of every lattice $3$-polytope) has a unimodular cover for every $k\ge 2$
 
@@ -231,7 +232,7 @@ We believe that the $3$-polytopes in these four statements all have unimodular t
 \subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, Gaku Liu, Johannes Hofscheier, Christian Haase, .... et al.
 
 %\section{Preliminaries}
-%\label{sec:prelim}
+%\label{Fprelim}
 
 
 \section{Parallelepipeds}
@@ -497,9 +498,10 @@ In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, s
 
 Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then 
 \[
-w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ).
-\] 
+w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ). 
+\] \giulia{we want a picture for the setup}
 
+\begin{proof}[Proof of \Cref{lemma:cayley}]
 Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no vertex of $P$ can be in the strip $p + \vecline q$.  Thus $P$ has two primitive segments in the boundary which each have one vertex on each side of the strip $p + \vecline q$; we will call these $\ell=[l_1, l_2]$ and $r=[r_1, r_2]$, with $\ell$ and $r$ crossing the strip $p + \vecline q$  in $V_1$ and $ V_2$ respectively and the convention that $f_q(l_2) >f_q(l_1)$ and $f_q(r_2) >f_q(r_1)$. This readily implies 
 \begin{gather}
 \label{eq:widthp}
@@ -570,8 +572,8 @@ If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ h
 
 
 \begin{claim}
-$f_q(b_2-b_1)$ and $f_q(p_2 - p_1)$ are non-zero and have the same sign. That is, $f_q$ achieves its maximum over $b$ and over $t$ on the same halfplane $V_1$ or $V_2$.
-\end{claim}\giulia{do we need this claim?}
+$f_q(b_2-b_1)$ and $f_q(t_2 - t_1)$ are non-zero and have the same sign. That is, $f_q$ achieves its maximum over $b$ and over $t$ on the same halfplane $V_1$ or $V_2$.
+\end{claim}
 
 
 
@@ -692,7 +694,7 @@ For part (b), If $f_p(r_2) \leq f_p(r_1)$, it would be impossible to fit a trans
 \label{fig:claim3}
 \end{figure}
 
-The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope.
+The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope. Observe that this implies that $q$ is not in the boundary of $Q$ and $p \neq r$, so both $P$ and $Q$ are full dimensional.
 
 %Starting here we assume index 2.
 %
@@ -722,7 +724,7 @@ Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the ot
 The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yields the inequalities for $\ell$ and $r$.
 \end{proof}
 
-\begin{proof}[Proof of \Cref{lemma:cayley}]
+
 We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must have an edge $r'$ which is a translated copy of $r$. Let $r_1'$ and $r_2'$ be its endpoints. Now consider the lattice line $d$ through $r_1'$ parallel to  $[p_1, q_2]$, that is, $g$ is constant on $d$. Let $d'$ be the parallel line defined by $g(d')=g(d)+1$. 
 
 
