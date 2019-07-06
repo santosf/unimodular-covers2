@@ -487,20 +487,43 @@ is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 
 \section{Proof of \Cref{lemma:cayley}}
 \label{sec:the_lemma}
+Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
 
+Observe that in the strip strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=-1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
+Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
-%At some point I'll assume volume two for the parallelogram $p_1p_2 + q_1q_2$, but for the time being we don't.
+We let $H_1=\{f_q(x) < 0\}$ and $H_2=\{f_q(x) > 0\}$; similarly let $V_1=\{f_p(x) < 0\}$ and $V_2=\{f_p(x) > 0\}$. 
+In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, so that $H_i \cap V_j$ are the four quadrants. 
 
-By a change of coordinates and lattice, we can assume $p=[p_1,p_2]$ and $q= [q_1,q_2]$ to be a vertical and horizontal segment . Since translating the polytopes by lattice vectors will not result in any loss of generality, we can further assume that $p_1$ is on the next lattice line parallel to the line spanned by $q$. That is, if $f_q$ is the primitive lattice functional which is zero on $q$, then $f_q(p_1)=-1$. Equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. 
-
-Let $f_p$ be the primitive lattice functional constant on $p$. Let $w=\area_\Lambda(p+q) \geq 2$, where $\area_\Lambda$ denotes the area normalized to a fundamental domain of $\Lambda$. Then 
+Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then 
 \[
 w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ).
 \] 
 
-Observe that $p_1$ is the unique lattice point in the strip $q +\vecline p$ on the line $f_q(x)=-1$. Indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, which is a contradiction. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
+Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no vertex of $P$ can be in the strip $p + \vecline q$.  Thus $P$ has two primitive segments in the boundary which each have one vertex on each side of the strip $p + \vecline q$; we will call these $\ell=[l_1, l_2]$ and $r=[r_1, r_2]$, with $\ell$ and $r$ crossing the strip $p + \vecline q$  in $V_1$ and $ V_2$ respectively and the convention that $f_q(l_2) >f_q(l_1)$ and $f_q(r_2) >f_q(r_1)$. This readily implies 
+\begin{gather}
+\label{eq:widthp}
+\begin{array}{cc}
+f_q(l_2) \geq f_q(p_2), &
+f_q(l_1) \leq f_q(p_1), \\
+f_q(r_2) \geq f_q(p_2), &
+f_q(r_1) \leq f_q(p_1).
+\end{array}
+\end{gather}
 
-Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no vertex of $P$ can be in the strip $p + \vecline q$. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive segments in the boundary which each have one vertex on each side of the strip $p + \vecline q$; we will call these  $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q + \vecline p$, and we call the segments  $b, t$ (with $b$ below and $t$ above).  Observe that one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
+
+The same holds for $Q$ and the strip $q+\vecline p$, and we call the segments  $b=[b_1, b_2], t=[t_1, t_2]$ with $b$ and $t$ crossing the strip in $H_1$ and $H_2$ respectively. Again we have
+\begin{gather}
+\label{eq:widthq}
+\begin{array}{cc}
+f_p(t_2) \geq f_p(q_2), &
+f_p(t_1) \leq f_p(q_1) \\
+f_p(b_2) \geq f_p(q_2), &
+f_p(b_1) \leq f_p(q_1).
+\end{array}
+\end{gather}
+
+Observe that one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
 \giulia{p=P ???}
 
 %To make things more explicit, we assume the following coordinates for the edge-vectors:
@@ -522,7 +545,7 @@ Then:
 \begin{claim}\giulia{I think we need to treat separately the case where we deal with edges (these are easier, in any case, but I couldn't find a unification)}
 The following inequalities hold, 
 \begin{align*}
-\width_{f_q}(l) , 
+\width_{f_q}(\ell) , 
 \width_{f_q}(r) ,
 \width_{f_p}(t) ,
 \width_{f_p}(b) \geq w.
@@ -531,8 +554,9 @@ Each inequality is strict, unless the segment in question coincides with $p$ or 
 \end{claim}
 
 \begin{proof}
-The inequality $\geq w$ follows in each case from the fact that each segment crosses the corresponding strip, the width of which (w.r.t the appropriate functional) is $w$, as observed above. 
-If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ has one endpoint on each of the boundary lines of $(p + \vecline q)$. Unless $\ell = p$, one of the endpoints of $\ell = [l_1, l_2]$ is not an endpoint of $p$, say $l_1 \neq p_1$. Thus the triangle $T=\conv(p_2, p_1, l_1)$ is contained in $P$ and its edge $[p_1, l_1]$ is an integer dilation of $q$. Since $\width_{f_q}(T) =w \geq 2$, $T$ must contain a lattice point in the interior of the strip.
+The inequality $\geq w$ follows in each case from \eqref{eq:widthp} and \eqref{eq:widthq}.
+
+If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ has one endpoint on each of the boundary lines of $(p + \vecline q)$. Unless $\ell = p$, one of the endpoints of $\ell$ is not an endpoint of $p$, say $l_1 \neq p_1$. Thus the triangle $T=\conv(p_2, p_1, l_1)$ is contained in $P$ and its edge $[p_1, l_1]$ is an integer dilation of $q$. Since $\width_{f_q}(T) =w \geq 2$, $T$ must contain a lattice point in the interior of the strip.
 \end{proof}
 
 %\begin{claim}
@@ -542,9 +566,11 @@ If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ h
 %\begin{proof}
 %If, say, $b_2 \le 0 \le t_2$. Then the intersections of $t$ and $b$ with the vertical line $\{x=-\beta\}$ through $q_1$ are less than distance one apart (because $t$ must go below every lattice point in the interior of $p_1p_2 + q_1q_2 - p_1$ and $b$ above every latttice point in the interior of $p_1p_2 + q_1q_2 - p_2$). This implies the width w.r.t to $f_q$, the functional constant on $q_1q_2$, of any segment with vertices in $Q \cap \{x\le  -\beta\}$ is less than one, so it is impossible to fit a translated copy of $l$ in it.
 %\end{proof}
-Let $H^-$ and $H^+$ be the two halfplanes defined by the affine span of $p$, with $H^+$ to the right.
+
+
+
 \begin{claim}
-$f_q$ achieves its maximum over $b$ and over $t$ on the same side ($H^+$ or $H^-$). 
+$f_q(b_2-b_1)$ and $f_q(p_2 - p_1)$ are non-zero and have the same sign. That is, $f_q$ achieves its maximum over $b$ and over $t$ on the same halfplane $V_1$ or $V_2$.
 \end{claim}\giulia{do we need this claim?}
 
 
@@ -557,9 +583,9 @@ $f_q$ achieves its maximum over $b$ and over $t$ on the same side ($H^+$ or $H^-
 %If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  
 
 \begin{proof}
- Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $H^-$ and that on $b$ lies in $H^+$. 
+Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $V_1$ and that on $b$ lies in $V_2$. 
 
-Then $Q \cap H^ +$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $w$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$ .
+Then $Q \cap V_2$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $w$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$, see \Cref{fig:claim2} .
 \end{proof}
 
 
@@ -635,6 +661,7 @@ mynode] (q2) at (0.3,-0.4) {};
 
 \end{tikzpicture}
 \caption{Picture for Claim 4.2}
+\label{fig:claim2}
 \end{figure}
 
 
