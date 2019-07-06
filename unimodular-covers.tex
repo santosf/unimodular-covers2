@@ -589,7 +589,7 @@ Then $Q \cap V_2$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $
 \end{proof}
 
 
-
+\Giulia{fix it to look more unimodular at the bottom}
 \begin{figure}[htb]
   \centering
 \begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
@@ -668,26 +668,31 @@ mynode] (q2) at (0.3,-0.4) {};
 
 
 
-We assume w.l.o.g. that the maximum on both $t$ and $b$ is achieved in $H^+$ (do we need it??).
+We assume w.l.o.g. that the maximum on $t$ (and hence on $b$) is achieved in $V_2$ \giulia{do we need it??}, that is to say, $f_p$ and $f_q$ increase in the same direction along $t$ (and hence along $b$). 
 
 \begin{claim}
 \label{positive slopes}
-Assume w.l.o.g.~that $b$ and $t$ either are parallel or their affine spans cross in $H^+$. Then, 
+Assume w.l.o.g.~that $b$ and $t$ either are parallel or their affine spans cross in $V_2$. Then, 
 \begin{enumerate}
-\item The intersection of $Q$ with any line parallel to $p$ in $H^+$ has width w.r.t. $f_q$ strictly smaller than $w$.
-\item $f_p$ and $f_q$ increase in the same direction along $r$.
+\item The intersection of $Q$ with any line parallel to $p$ in $V_2$ has width w.r.t. $f_q$ strictly smaller than $w$.
+\item $f_p(r_2) > f_p(r_1)$, that is, $f_p$ achieves its maximum over $r$ in $H_2$.
 \end{enumerate}
 \end{claim}
 
 \begin{proof}
 
-Since $t$ and $b$ both intersect $p$, these intersections form a vertical segment which has width w.r.t $f_q$ less than $i$, the width of $p$. The assumptions on the slopes implies that this is true for any vertical segment with endpoints in $b$ and $t$ to the right of this one, which is part (a). 
+Both $t$ and $b$ must intersect $p$, otherwise $p_1$ or $p_2$ are the lattice points we are looking for in $Q$.  Their intersections with $p$ are thus endpoints of a segment of width w.r.t $f_q$ less than $w$, the width of $p$. Since $t$ and $b$ cross in $V_2$, the same is true for any segment parallel to $p$ contained in $Q \cap V_2$.  
 
-For part (b), let $r = conv(u, v)$, with $\vec r=v-u$. If $r$ had negative slope, it would be impossible to fit a translated copy of $r$ in the right side of $Q$: $r$ would lie inside the region to the left of $u$ delimited by $t$, the horizontal line containing $u$ and the vertical line through $u$. We can observe that this triangular region has width w.r.t. $f_q$ less than $i$ by combining part (a), which implies that the vertical segment through $u$ between $t$ and $u$ has width w.r.t $f_q$ less than $i$, with the fact that $t$ has positive slope. 
+For part (b), If $f_p(r_2) \leq f_p(r_1)$, it would be impossible to fit a translated copy of $r$ in the correct side of $Q$: $r$ would need to lie inside the triangle delimited by the affine line $\langle t \rangle$ and the inequalities $f_q(x) \geq f_q(r_1)$, $f_p(x) \leq f_p(r_1)$. However, this triangular region has width less than $w$  w.r.t. $f_q$, by combining part (a) with the fact that $f_p$ and $f_q$ increase in the same direction along $t$, see \Cref{fig:claim3}. 
 \end{proof}
-\includegraphics[ width=.7\textwidth]{Claim43.jpg}
 
-As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positive slope.
+\begin{figure}
+\includegraphics[ width=.7\textwidth]{Claim43.jpg}
+\caption{Figure for Claim 4.3}
+\label{fig:claim3}
+\end{figure}
+
+The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope.
 
 %Starting here we assume index 2.
 %
@@ -701,16 +706,34 @@ As a conclusion of the last two claims we have that $b$, $t$ and $r$ have positi
 %
 %We are now ready to show a contradiction. Let $u$ and $v$ be the end-points of the translated copy of $r$ in $Q$, with $\vec r=v-u$. Let $d$ be the line of slope $1$ through $u$, which is a lattice line. Let $d'$ be the next parallel lattice line above $d$. By Claim A.3.1, the intersection of $d'$ with the vertical line through $u$ is above $Q$. Since the slope of $t$ is less than one, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than one. QED
 
-Let $g$ be the functional constant on $[p_1, q_2]$. Then
+Let $g$ be the primitive lattice functional constant on $[p_1, q_2]$ (and therefore constant also on $[q_1, q_1+q_2-p_1]$). By the assumption on $p_1$, the values of $g$ on these segments differer by $1$. We choose the sign of $g$ so that 
+\[
+g([p_1, q_2])= g( [q_1, q_1+q_2-p_1]) +1r. 
+\]
+
 \begin{claim}
-The slopes of $t=[t_1, t_2]$ and $b=[b_1, b_2]$ are strictly smaller than the slope of  and that of $r=[r_1, r_2]$ (and $l=[l_1, l_2]$) is strictly greater than it.
-\end{claim}\giulia{let's put some more notation in the beginning: add H+, H-, V+, V-, and say which endpoints of l, r, etc are in which halfspace.}
+\label{claim:g}
+$g(t_1) > g(t_2)$ and $g(b_1) > g(b_2)$ while $g(r_1) < g(r_2)$ (and $g(l_1) < g(l_2)$).
+%The slopes of $t$ and $b$ are strictly smaller than the slope of  $[p_1, q_2]$ and that of $r=[r_1, r_2]$ (and $l=[l_1, l_2]$) is strictly greater than it.
+\end{claim}
 
 \begin{proof}
-Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the remaining vertices of the parallelogram $\conv(q_1, p_1, q_2, q_1+q_2-p_1)$, they must respectively intersect its (parallel) edges $\conv(p_1, q_2)$ and $\conv(q_1, q_1+q_2-p_1)$. This means their slopes must be strictly less than that of these segments. The same argument can be applied to $l$ and $r$ if one considers the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yielding that the slopes of $l$ and $r$ are strictly larger than that of $\conv(p_1, q_2)$.
+Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the other two vertices of the parallelogram $\conv(q_1, p_1, q_2, q_1+q_2-p_1)$, they must respectively intersect its (parallel) edges $[p_1, q_2]$ and $[q_1, q_1+q_2-p_1]$, which implies the stated inequalities for $b$ and $t$.
+The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yields the inequalities for $\ell$ and $r$.
 \end{proof}
 
-We are now ready to show a contradiction. Since $Q$ has normal fan refining that of $P$, it must have an edge which is a translated copy of $r$. Let $u$ and $v$ be its endpoints. Now consider the lattice line $d$ through $u$ parallel to  $\conv(p_1, q_2)$. Let $d'$ be the next parallel lattice line above $d$. The width w.r.t $f_q$ of the vertical segment starting at $u$ with other endpoint $v'$ on $d'$ is $i$, since this vertical segment is a translation of $p$. Thus $v'$ must lie outside $Q$, by claim \ref{positive slopes}. That is, $v'$ lies above the line spanned by $t$. Since the slope of $t$ is less than the slope of $d$, the same happens for every point of $d'$ to the right of $u$. In particular, $v$ must be below $d'$ and hence it must be on or below $d$. This contradicts the fact that the slope of $r$ is strictly greater than the slope of $d$. 
+\begin{proof}[Proof of \Cref{lemma:cayley}]
+We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must have an edge $r'$ which is a translated copy of $r$. Let $r_1'$ and $r_2'$ be its endpoints. Now consider the lattice line $d$ through $r_1'$ parallel to  $[p_1, q_2]$, that is, $g$ is constant on $d$. Let $d'$ be the parallel line defined by $g(d')=g(d)+1$. 
+
+
+Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ on $d$ and $s_2$ on $d'$.  
+
+%By claim \ref{positive slopes}, $s_2$ lies above the affine line $\langle t \rangle$. 
+
+Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$,
+and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
+\end{proof}
+\giulia{add a picture!}
 
 
 
@@ -779,118 +802,118 @@ Lattice tetrahedra.
 
 
 
-
-\appendix
-
-\section{Old stuff}
-
-
-\begin{proof}
-%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
-
-Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
-\[
-p_1=(0,-\alpha), \quad
-p_2=(0,1-\alpha), \quad
-q_1=(-\beta,0), \quad
-q_2=(1-\beta,0).
-\] 
-The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
-
-Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
-\[
-\vec l = (l_1,l_2), \quad
-\vec r= (r_1,r_2), \quad
-\vec b= (b_1,b_2), \quad
-\vec t= (t_1,t_2).
-\]
-Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
-
-
-
-
-
-
-Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i +l$ and vertex $q_i$ of $S$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
-
-- both $f_1$ or $f_2$ must meet the line through $q_1$ and $q_2$, else they would not cut out the lattice point they need to. same goes for $e_1$ and $e_2$ and the line through $p_1$ and $p_2$.
-
-claim: the segments $e_1 + l$ and $e_2 + l$ respectively intersect both $f_1$ and $f_2$. 
-
-claim: if we tilt one of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
-
-
-
-
-
-%Consider the segments on the lattice lines parallel to $p_1 p_2$ cut out by the edges $f_1$ and $f_2$ \giulia{this should be formulated more comprehensibly}. Since these segments do not contain lattice points, they must have lattice length stricly less than $1$ (or the width wrt $q$ is less than $k$, the index of $p,q$), which means that the smallest width in direction of $p_1 p_2$ between a "consecutive" vertices of $f_1$ and of $f_2$ must also be strictly less than $k$. 
-
-%Further, we observe that both vertices of $f_1$ (or $f_2$) cannot lie strictly above the line through $q_1$ and $q_2$, else the strip would contain a lattice point. 
-\end{proof}
-
-
-
-\begin{figure}[htb]
-  \centering
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  .7]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-        \tkzGrid
-%       \tkzDrawX
-%       \tkzDrawY
-
-%hexagon
-  \node[mynode] (A) at (0,-1) {}; 
-%  \node[mynode] (B) at (1,1) {};  
-  \node[mynode] (C) at (2,3) {};  
-  \node[mynode] (D) at (0,1) {};  
-%  \node[mynode] (E) at (-1,-1) {};  
-  \node[mynode] (F) at (-2,-3) {};  
-
-%other points
-%  \node[mynode] () at (0,-1) {}; 
-
-
-  \draw[black] (A) -- (C) -- (D) -- (F) -- (A);
-  \draw[black, thick] (A) -- (D);
-\end{tikzpicture}
 %
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  .7]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-        \tkzGrid
-%        \tkzDrawX
-%        \tkzDrawY
-
-%hexagon
-  \node[mynode] (A) at (1,0) {}; 
-  \node[mynode] (B) at (2,1) {};  
-  \node[mynode] (C) at (3,3) {};  
-  \node[mynode] (D) at (-1,0) {};  
-  \node[mynode] (E) at (-2,-1) {};  
-  \node[mynode] (F) at (-3,-3) {};  
-
-  \node[mynode] (p1) at (-1,0) {}; 
-  \node[mynode] (p2) at (1,0) {};  
-
-  \draw[black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
-  \draw[black, thick] (p1) -- (p2);
-\end{tikzpicture}
-
-\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
-
-\caption{Partial counter-example to \Cref{lemma:cayley}. With respect to the standard lattice it is not a counter-example because (a) the edges $p_1p_2$ and $q_1q_2$ are not primitive and (b) the origin is a lattice point in the interior of both bands (but it is the only one). 
+%\appendix
 %
-With respect to the lattice of index two it is not a counter-example either, because two vertices of $Q$ are not in that lattice.
-}
-\label{fig:width3}
-\end{figure}
+%\section{Old stuff}
+%
+%
+%\begin{proof}
+%%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two edges which each have one vertex on each side of the strip $(p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle)$; we will call these edges $e_1$ and $e_2$. The same holds for $Q$ and the strip $(q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle)$, and we call the edges be $f_1, f_2$. 
+%
+%Let us fix coordinates in which $p_1p_2$ and $q_1q_2$ are a vertical and horizontal segment of length one intersecting at the origin. That is, there are numbers $\alpha, \beta \in (0,1)$ such that
+%\[
+%p_1=(0,-\alpha), \quad
+%p_2=(0,1-\alpha), \quad
+%q_1=(-\beta,0), \quad
+%q_2=(1-\beta,0).
+%\] 
+%The ambient lattice is a certain lattice containing $p_1,p_2,q_1,q_2$ (the case of index two is when $\alpha=\beta=1/2$ and the lattice is spanned by these four points).
+%
+%Suppose by contradiction that there is no lattice point as described in the lemma. Then there cannot be a vertex of $P$ in the corresponding strip, since $P$ is a lattice polygon. The same holds for $Q$ and its corresponding strip. Thus $P$ has two primitive edges which each have one vertex on each side of the strip $p_1p_2 + \langle \overrightarrow{q_1q_2}\rangle$; we will call these edges $\ell$ and $r$ (with $\ell$ to the left and $r$ to the right). The same holds for $Q$ and the strip $q_1q_2 + \langle \overrightarrow{p_1p_2}\rangle$, and we call the edges  $b, t$ (with $b$ below and $t$ above). To make things more explicit, we assume the following coordinates for the edge-vectors:
+%\[
+%\vec l = (l_1,l_2), \quad
+%\vec r= (r_1,r_2), \quad
+%\vec b= (b_1,b_2), \quad
+%\vec t= (t_1,t_2).
+%\]
+%Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
+%
+%
+%
+%
+%
+%
+%Since the normal fan of $Q$ refines that of $P$, $Q$ will contain edges $e_1'$ and $e_2'$ parallel to $e_1$ and $e_2$ respectively. These edges of $Q$ are all distinct and appear alternating in $Q$, that is, they appear in the order $f_1, e_1', f_2, e_2'$. Indeed, consider the quadrilateral $S$ with vertices $q_1, p_1+l, q_2, p_2+l$, where $l$ is a lattice point chosen so that the segments $q_1q_2$ and $p_1+l,p_2+l$ intersect in their interior; we can further require that $\conv( q_1, p_1+l, q_2)$ is unimodular \giulia{not sure if we use it}. $S$ lies inside the $Q$-strip, while its translate $S-l$ lies inside the $P$-strip. Thus in order to have no lattice points in the strips, we must have that the edge $f_i$ separates the vertex $p_i +l$ of $S$ from the remaining three, and  the same for the edge $e_i +l$ and vertex $q_i$ of $S$. This is equivalent to saying that the normals to the edges $f_1, e_1, f_2, e_2$ lie in different open cones of the normal fan of $S$, in this cyclic order. 
+%
+%- both $f_1$ or $f_2$ must meet the line through $q_1$ and $q_2$, else they would not cut out the lattice point they need to. same goes for $e_1$ and $e_2$ and the line through $p_1$ and $p_2$.
+%
+%claim: the segments $e_1 + l$ and $e_2 + l$ respectively intersect both $f_1$ and $f_2$. 
+%
+%claim: if we tilt one of the $f_i$s so that they are parallel, there is no room to fit $e_i$, since it intersects both. 
+%
+%
+%
+%
+%
+%%Consider the segments on the lattice lines parallel to $p_1 p_2$ cut out by the edges $f_1$ and $f_2$ \giulia{this should be formulated more comprehensibly}. Since these segments do not contain lattice points, they must have lattice length stricly less than $1$ (or the width wrt $q$ is less than $k$, the index of $p,q$), which means that the smallest width in direction of $p_1 p_2$ between a "consecutive" vertices of $f_1$ and of $f_2$ must also be strictly less than $k$. 
+%
+%%Further, we observe that both vertices of $f_1$ (or $f_2$) cannot lie strictly above the line through $q_1$ and $q_2$, else the strip would contain a lattice point. 
+%\end{proof}
+%
+%
+%
+%\begin{figure}[htb]
+%  \centering
+%\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+%  .7]
+%%coordinate axes
+%   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%%        \tkzLabelY[orig=false,label options={font=\tiny}]
+%        \tkzGrid
+%%       \tkzDrawX
+%%       \tkzDrawY
+%
+%%hexagon
+%  \node[mynode] (A) at (0,-1) {}; 
+%%  \node[mynode] (B) at (1,1) {};  
+%  \node[mynode] (C) at (2,3) {};  
+%  \node[mynode] (D) at (0,1) {};  
+%%  \node[mynode] (E) at (-1,-1) {};  
+%  \node[mynode] (F) at (-2,-3) {};  
+%
+%%other points
+%%  \node[mynode] () at (0,-1) {}; 
+%
+%
+%  \draw[black] (A) -- (C) -- (D) -- (F) -- (A);
+%  \draw[black, thick] (A) -- (D);
+%\end{tikzpicture}
+%%
+%\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+%  .7]
+%%coordinate axes
+%   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%%        \tkzLabelY[orig=false,label options={font=\tiny}]
+%        \tkzGrid
+%%        \tkzDrawX
+%%        \tkzDrawY
+%
+%%hexagon
+%  \node[mynode] (A) at (1,0) {}; 
+%  \node[mynode] (B) at (2,1) {};  
+%  \node[mynode] (C) at (3,3) {};  
+%  \node[mynode] (D) at (-1,0) {};  
+%  \node[mynode] (E) at (-2,-1) {};  
+%  \node[mynode] (F) at (-3,-3) {};  
+%
+%  \node[mynode] (p1) at (-1,0) {}; 
+%  \node[mynode] (p2) at (1,0) {};  
+%
+%  \draw[black] (A) -- (B) -- (C) -- (D) -- (E) -- (F) -- (A);
+%  \draw[black, thick] (p1) -- (p2);
+%\end{tikzpicture}
+%
+%\centerline{\hfill $P$ \hfill\hfill $Q$ \hfill}
+%
+%\caption{Partial counter-example to \Cref{lemma:cayley}. With respect to the standard lattice it is not a counter-example because (a) the edges $p_1p_2$ and $q_1q_2$ are not primitive and (b) the origin is a lattice point in the interior of both bands (but it is the only one). 
+%%
+%With respect to the lattice of index two it is not a counter-example either, because two vertices of $Q$ are not in that lattice.
+%}
+%\label{fig:width3}
+%\end{figure}
 
 
 
