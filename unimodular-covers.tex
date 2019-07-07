@@ -8,7 +8,7 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage[colorlinks=true]{hyperref}
-
+%\usepackage{pictex}
 
 
 
@@ -135,21 +135,25 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions?}
+\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions? Probably not}
 A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
 %
-Oda~\cite{Oda1997} posed several questions regarding IDP polytopes. The following variations of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
+Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for lattice polytopes. The following versions of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
 \begin{conjecture}
 \label{conj:Oda}
 \begin{enumerate}
-\item (Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
+\item 
+\label{itm:mixedIDP}
+(Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
 \begin{align*}
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
 \paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
 
-\item (Related to problems 2 and 5 in \cite{Oda1997})
+\item 
+\label{itm:smoothIDP}
+(Related to problems 2 and 5 in \cite{Oda1997})
 Every smooth lattice polytope is IDP.
 \end{enumerate}
 \end{conjecture}
@@ -193,11 +197,11 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 %Beck et al.~\cite{BHHHJKM2019} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
 %\end{proof}
 
-Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}(1), with three different proofs by
+Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP}, with three different proofs by
 Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
 In dimension three however the statement fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular empty tetrahedron.
 
-An alternative approach to \Cref{conj:Oda}(1) is via Cayley sums, that we discuss in  \Cref{sec:cayley}. 
+An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, that we discuss in  \Cref{sec:cayley}. 
 As we note there (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
 \[
 \cayley(P,Q) \text{ is IDP} 
@@ -211,7 +215,7 @@ In particular, the following statement that we prove in \Cref{sec:cayley} is str
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This not only implies \Cref{conj:Oda}(1) in dimension three, but also, as we show in \Cref{sec:cayley}, \Cref{conj:Oda}(2) for $3$-dimensional \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
+This not only implies \Cref{conj:Oda}\eqref{itm:mixedIDP} in dimension two but also, as we show in \Cref{sec:cayley}, \Cref{conj:Oda}\eqref{itm:smoothIDP} for $3$-dimensional smooth \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
 
 \begin{corollary}
 \label{coro:prismatoid}
@@ -238,31 +242,30 @@ We believe that the $3$-polytopes in these four statements all have unimodular t
 \section{Parallelepipeds}
 \label{sec:parallelepipeds}
 
-The main tool is what we call the parallelepiped circumscribed to a given tetrahedron, defined as follows:
+The main tool for the proof of \Cref{thm:parallelepipeds} is what we call the parallelepiped circumscribed to a given tetrahedron, defined as follows:
 
 \begin{definition}
-Let $T$ be a tetrahedron with vertex set $p_1,p_2,p_3,p_4$. Consider points $q_1,q_2,q_3,q_4$ defined as $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$ and define 
-
+\label{def:circunpara}
+Let $T$ be a tetrahedron with vertices $p_1$, $p_2$, $p_3$, and $p_4$. Consider the points $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$, $i\ n [4]$, and let
 \[
 C(T)=\conv(p_i,q_i: i\in[4]).
 \] 
+$C(T)$ is a parallelepiped with facets $\conv(p_i, p_j, q_k, q_l)$ for all choices of $\{i,j,k,l\}=[4]$. We call it the \emph{parallelepiped circumscribed} to $T$.
 
-$C(T)$ is a parallelepiped whose faces are of the form $\conv(p_i, p_j, q_k, q_l)$ for all $\{i,j,k,l\}=[4]$, which we call the \emph{parallelepiped circumscribed} to $T$.
-
-For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. These along with $T$ form a triangulation of $C(T)$.
+For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. Together with $T$ they triangulate of $C(T)$.
 \end{definition}
-\paco{define the ``corner tetrahedra''}
 
-The idea to have in mind is that of the regular tetrahedron inscribed in a cube. Modulo an affine transformation this is exactly the situation of $T$ and $S$.
+The idea to have in mind is that of the regular tetrahedron inscribed in a cube. Modulo an affine transformation this is exactly the situation of $T$ and $C(T)$.
 \giulia{we should add a picture of the standard cube}
+\paco{perhaps, but not necessarily}
 
-\Giulia{not sure if we need this remark:
-$S$ is ``half a fundamental domain'' for the affine lattice $\Lambda_P$ generated by $p_1,\dots,p_4$, in the following precise sense: if $x$ is an arbitrary point, then $S$ intersects either $\Lambda_P + x$ or $\Lambda_P -x$ (and, if $x$ is generic then the intersection is unique). Proof: think of this property for the standard cube and the lattice $\{sum of coordinates is even\}$ generated by the vertices of the regular tetrahedron inscribed in it. (Remark: let us assume without loss of generality that $\Lambda_P$ contains the origin, so that $\Lambda + x$ is the class of $x$ modulo $\Lambda$).
-}
+%\Giulia{not sure if we need this remark:
+%$S$ is ``half a fundamental domain'' for the affine lattice $\Lambda_P$ generated by $p_1,\dots,p_4$, in the following precise sense: if $x$ is an arbitrary point, then $S$ intersects either $\Lambda_P + x$ or $\Lambda_P -x$ (and, if $x$ is generic then the intersection is unique). Proof: think of this property for the standard cube and the lattice $\{sum of coordinates is even\}$ generated by the vertices of the regular tetrahedron inscribed in it. (Remark: let us assume without loss of generality that $\Lambda_P$ contains the origin, so that $\Lambda + x$ is the class of $x$ modulo $\Lambda$).
+%}
 
 \begin{lemma}
 \label{lemma:corner}
-Let $T=\conv\{p_1,p_2,p_3,p_4\}$ be an empty lattice tetrahedron that is not unimodular and $C(T)$ be the parallelepiped circumscribed to $T$. Let $T_1, T_2,T_3$ and $T_4$ be the corresponding corner tetrahedra in $C(T)$. Then, every $T_i$ contains at least one lattice point different from $\{p_1,\dots,p_4\}$.
+Let $T=\conv\{p_1,p_2,p_3,p_4\}$ be an empty lattice tetrahedron that is not unimodular. Let $C(T)$ be the parallelepiped circumscribed to $T$ and let $T_1, T_2,T_3$ and $T_4$ be the corresponding corner tetrahedra in $C(T)$. Then, every $T_i$ contains at least one lattice point different from $\{p_1,\dots,p_4\}$.
 \end{lemma}
 
 \begin{proof}
@@ -275,6 +278,7 @@ p_4=(a,b,1).
 \]
 where $b\ge 2$ is the (normalized) volume of $T$, and $a\in \{1,\dots,b-1\}$ satisfies $\gcd(a,b)=1$. This gives 
 \paco{picture of the quadrilaterals $p_1q_4p_2q_3$ and $q_2p_3q_1p_4$ would be good.}
+\paco{perhaps, but not necessarily}
 \begin{align*}
 q_1=\left(\frac{1+a}2,\frac{b}2,1\right), &&
 q_2=\left(\frac{a-1}2,\frac{b}2,1\right), \quad\\
@@ -282,13 +286,16 @@ q_3=\left(\frac{1+a}2,\frac{b}2,0\right), &&
 q_4=\left(\frac{1-a}2,-\frac{b}2,0\right).
 \end{align*}
 
-Then, the inequalities $b\ge 1+a$ and $b\ge 2$ imply:
+Then, the inequalities $b\ge 1+a \ge 2$ imply:
 \[
-(1,1,0)\in \conv(p_1p_2q_3) \subset T_4, \quad
-(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
+u:=(1,1,0)\in \conv(p_1p_2q_3) \subset T_4, \quad
+v:=(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
 \]
-\paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
-Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
+
+Observe that $u+v=p_1+p_2=q_3+q_4$.
+Now, the translation of vector $\left(\frac{a-1}2,\frac{b}2,1\right)$ sends $\conv(p_1p_2q_3q_4)$ to $\conv(q_2q_1p_4p_3)$, so that the translated points $u + \left(\frac{a-1}2,\frac{b}2,1\right)$ and $u + \left(\frac{a-1}2,\frac{b}2,1\right)$ lie in $\conv(q_2q_1p_4p_3)$ and are centrally symmetrically placed in it. thus, one of them belongs to $\conv(q_1p_4p_3)$ and the other to $\conv(q_2p_4p_3)$.
+%\paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
+%Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
 \end{proof}
 
 
@@ -298,32 +305,67 @@ Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron
 \end{lemma}
 
 \begin{proof}
-We denote the vertices of $T$ by $p_1, p_2, p_3, p_4$ and by $q_1, q_2, q_3, q_4$ the vertices of $C(T)$ not in $T$, as before. Let $f\in (\R^3)^*$ be any functional. Fix $i \in [4]$; observe that if $f(q_i) > f( p_j)$ for all $j\neq i$, then 
-\begin{gather*}
-f(q_i) \overset{(i)}{>} f(q_j) \overset{(ii)}{>} f(p_i) \\
-f(q_i) \overset{(iii)}{>} f(p_j) \overset{(iv)}{>} f(p_i) \\
-f(p_j)\overset{(v)}{>}f(q_k)
-\end{gather*}
-for all $j \neq i$, $k \notin \{j, i\}$. 
+Let us denote the vertices of $T$ by $p_1, p_2, p_3, p_4$ and the vertices of $C(T)$ not in $T$ by $q_1, q_2, q_3, q_4$, with the conventions of \Cref{def:circunpara}. 
 
-Indeed, for any $\{i,j,k,l\}=[4]$ we have 
+\paco{changed this}
+The parallelepiped $P$ is the intersection of three bands\paco{bands?}, where each band is a region defined as $f^{-1}([\alpha,\beta])$ for some functional $f\in (\R^3)^*$ and closed interval $[\alpha,\beta]\subset \R$. We claim that a band containing $T$ must contain at least three of the $q_i$s, which implies that the intersection $P$ of three of them contains at least one of the $q_i$s and hence $P$ contains the corresponding $T_i$.
 
-\begin{align*}
-f(q_i) > f( p_j) \Leftrightarrow \frac12 f(p_l+&p_k -p_j-p_i) > 0  \Leftrightarrow f(q_j) > f(p_i)\\
-& \Updownarrow \\
- f(q_l) < f(p_k) \Leftrightarrow \frac12 f(-p_l-&p_k +p_j+p_i) < 0 \Leftrightarrow f(q_k) < f(p_l),
-\end{align*}
-which shows the equivalence of $(i)$, $(iii)$ and $(v)$; note that $(iii)$ is our assumption. Inequalities $(ii)$ and $(iv)$ follow by taking the sum of two inequalities of the form $\frac12 f(p_l+p_k -p_j-p_i) > 0$. 
+To prove the claim suppose that $q_1\not\in B:= f^{-1}([\alpha,\beta])$ for a certain band $B$. 
+Without loss of generality, say $f(q_1)<\alpha$. Then the equalities $q_1+q_2=p_3+p_4$ and $q_1+p_1=q_2+p_2$ respectively give:
+\begin{gather}
+f(q_2) = f(p_3+p_4-q_1) = f(p_3)+f(p_4)-f(q_1) > 2\alpha-\alpha=\alpha,\\
+f(q_2) = f(q_2+p_2-p_1) = f(q_2)+(f(p_2)-f(p_1)) < \alpha + (\beta-\alpha) = \beta,
+\end{gather}
+so that $q_2 \in B$.
 
-Using this observation, we can show that each of pairs of parallel facets of $P$ cuts out at most one of the $q_i$s:
-if $q_i$ lies outside of $P$, it must violate a facet-defining inequality $f(x) \leq a$.Thus $f(q_i) > a \geq f(p_j)$, and by our observation, it follows that all remaining $q_j$ satisfy the inequality $f(x) \leq a$. Since $P$ is a parallelogram, there is a facet with inequality $f(x) \geq b$; by what is said above, the minimum value of $f(x)$ is attained at $p_i$, which is in $P$. Thus $f(q_j) > f(p_i) \geq b$, that is, the inequality is satisfied by all the $q_j$.
-
-Since at most one of the $q_i$ does not satisfy the inequalities corresponding to a pairs of parallel facets of $P$, and there are only three pairs of facets, one of $q_i$s must satisfy all the inequalities and therefore be inside of $P$.
+The first equation also implies
+\[
+f(q_1) <  f(p_i) < f(q_2), \quad\text{ for $i=3,4$}.
+\]
+By the translation sending $q_1,q_2,p_3,p_4$ to $p_2,p_1,q_4,q_3$ (in this order) we then have
+\[
+\alpha \le f(p_2) < f(q_i) < f(p_1) \le \beta, \quad\text{ for $i=3,4$},
+\]
+so that $q_3,q_4 \in B$.
+%
+This finishes the proof of the claim, and of the lemma.
+%
+%Let $f\in (\R^3)^*$ be any functional. Fix $i \in [4]$; observe that if $f(q_i) > f( p_j)$ for all $j\neq i$, then 
+%\begin{gather*}
+%f(q_i) \overset{(i)}{>} f(q_j) \overset{(ii)}{>} f(p_i) \\
+%f(q_i) \overset{(iii)}{>} f(p_j) \overset{(iv)}{>} f(p_i) \\
+%f(p_j)\overset{(v)}{>}f(q_k)
+%\end{gather*}
+%for all $j \neq i$, $k \notin \{j, i\}$. 
+%
+%Indeed, for any $\{i,j,k,l\}=[4]$ we have 
+%
+%\begin{align*}
+%f(q_i) > f( p_j) \Leftrightarrow \frac12 f(p_l+&p_k -p_j-p_i) > 0  \Leftrightarrow f(q_j) > f(p_i)\\
+%& \Updownarrow \\
+% f(q_l) < f(p_k) \Leftrightarrow \frac12 f(-p_l-&p_k +p_j+p_i) < 0 \Leftrightarrow f(q_k) < f(p_l),
+%\end{align*}
+%which shows the equivalence of $(i)$, $(iii)$ and $(v)$; note that $(iii)$ is our assumption. Inequalities $(ii)$ and $(iv)$ follow by taking the sum of two inequalities of the form $\frac12 f(p_l+p_k -p_j-p_i) > 0$. 
+%
+%Using this observation, we can show that each of pairs of parallel facets of $P$ cuts out at most one of the $q_i$s:
+%if $q_i$ lies outside of $P$, it must violate a facet-defining inequality $f(x) \leq a$.Thus $f(q_i) > a \geq f(p_j)$, and by our observation, it follows that all remaining $q_j$ satisfy the inequality $f(x) \leq a$. Since $P$ is a parallelogram, there is a facet with inequality $f(x) \geq b$; by what is said above, the minimum value of $f(x)$ is attained at $p_i$, which is in $P$. Thus $f(q_j) > f(p_i) \geq b$, that is, the inequality is satisfied by all the $q_j$.
+%
+%Since at most one of the $q_i$ does not satisfy the inequalities corresponding to a pairs of parallel facets of $P$, and there are only three pairs of facets, one of $q_i$s must satisfy all the inequalities and therefore be inside of $P$.
 \end{proof}
-\giulia{here it may also be nice to add a picture}
+%\giulia{here it may also be nice to add a picture}
 
-\begin{proof}[Proof of \Cref{thm:parallelepipeds}]
-Let $P \subseteq \R^3$ be a parallelopiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is be empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $l$. Observe that from the proof of \Cref{lemma:corner} we know more: $l$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
+\begin{corollary}
+\label{coro:coverpara}
+\paco{added this intermediate result}
+Let $T$ be a lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
+\end{corollary}
+
+\begin{proof}
+We proceed by induction on the (normalized) volume of $T$, which is a positive integer. If this volume equals $1$ then $T$ is unimodular and there is nothing to prove, so we assume $T$ is not unimodular.
+
+\Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point other than the $p_i$s, which we denote by $u$. 
+%Observe that from the proof of \Cref{lemma:corner} we know more: $u$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
+\paco{removed assumption the $u$ lies in a face. I think we do not need it}
 
 Then $S=\conv(T\cup \{l\})$ can be triangulated in two different ways: $S=T \cup T'_4 = S_1 \cup S_2 \cup S_3$, where $T'_4 = \conv(p_1, p_2, p_3, l) \subseteq T_4$ and
 \[
@@ -331,40 +373,49 @@ S_1= \conv(p_2,p_3,p_4, l),
 S_2=\conv(p_1,p_3,p_4, l),
 S_3=\conv(p_1,p_2,p_4, l).
 \]
+Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. By inductive hypothesis they can be covered unimodularly, and we are done,
 
-Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$: indeed, $\Vol(S_3)=\Vol(T'_4)$, since these tetrahedra have a common face $\conv(p_1, p_2, l)$ and the remaining vertex is at distance one from this face in both. Now $T'_4$ is contained in $T_4$, and we know that each corner tetrahedron $T_i$ has volume half that of $T$. The remaining two tetrahedra $S_1$ and $S_2$ must therefore have volume summing to that of $T$, and therefore each has volume strictly less than $T$.
-
-This allows us to cover $T$ with lattice simplices of smaller volume recursively, until it is covered by unimodular ones.
+Observe that  $T'_4$ and/or one of the $S_i$ can degenerate to a triangle, if $u$ lies in $\conv(p_1,p_2,p_3)$, 
+but this does not affect the argument.
+%
+%: indeed, $\Vol(S_3)=\Vol(T'_4)$, since these tetrahedra have a common face $\conv(p_1, p_2, l)$ and the remaining vertex is at distance one from this face in both. Now $T'_4$ is contained in $T_4$, and we know that each corner tetrahedron $T_i$ has volume half that of $T$. The remaining two tetrahedra $S_1$ and $S_2$ must therefore have volume summing to that of $T$, and therefore each has volume strictly less than $T$.
 \end{proof}
 
-\begin{remark}
-\label{rem:octahedra_and_tri-prisms}
+\begin{proof}[Proof of \Cref{thm:parallelepipeds}]
+Arbitrarily triangulate the parallelepiped into lattice tetrahedra and apply \Cref{coro:coverpara} to these tetrahedra.
+%Let $P \subseteq \R^3$ be a lattice parallelepiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is an empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $u$. Observe that from the proof of \Cref{lemma:corner} we know more: $u$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
+%
+%
+%This allows us to cover $T$ with lattice simplices of smaller volume recursively, until it is covered by unimodular ones.
+\end{proof}
+
+
+
+%\begin{remark}
+%\label{rem:octahedra_and_tri-prisms}
+
+We finish with a question which, if answered in the positive, would imply \Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three.
 Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if it satisfies the conclusion of \Cref{lemma:3<4}:  ``for every empty tetrahedron $T$ contained in $P$ at least one of the four corner tetrahedra in $C(T)$ is 
-contained in $P$''. Then $P$ has a unimodular cover, since the proof of \Cref{thm:parallelepipeds} works for $P$.
-
-In turn, our proof of \Cref{lemma:3<4} relies on the fact that parallelepipeds have only three (pairs of) normal vectors. The proof fails if $P$ has four of them, as the following non-IDP octahedron and triangular prism show:
-
-\begin{example}
-\label{ex:non-IDP}
-The following lattice octahedron is not IDP:
-\[
-Q= \conv((0,1,1),(1,0,1),(1,1,0),(0,-1,-1),(-1,0,-1),(-1,-1,0))
-\]
-
-The following lattice triangular prism is not IDP:
-\[
-P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
-\]
-Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope.
-\giulia{is it necessary to be more explicit, for example show that these are the only lattice points?}
-\end{example}
-
-\end{remark}
+contained in $P$''. If this holds then $P$ has a unimodular cover, since then the proofs of \Cref{coro:coverpara} and \Cref{thm:parallelepipeds} work for $P$.
 
 \begin{question}
 Does every smooth 3-polytope have the circumscribed parallelepiped property? By the above remark, if the answer is yes then every smooth $3$-polytope has a unimodular cover.
 \end{question}
 
+Our proof that parallelepipeds have the property (\Cref{lemma:3<4}) is based on the fact that they have only three (pairs of) normal vectors. The proof, and the property of being IDP, fail if there are four of them:
+
+\begin{example}[Non-IDP octahedron and triangular prism]
+\label{ex:non-IDP}
+The following lattice octahedron $Q$ and triangular prism $P$ are not IDP:
+\begin{gather}
+Q= \conv((0,1,1),(1,0,1),(1,1,0),(0,-1,-1),(-1,0,-1),(-1,-1,0)),\\
+P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
+\end{gather}
+
+Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, whcih implies they do not admit unimodular covers.
+\giulia{is it necessary to be more explicit, for example show that these are the only lattice points?}
+\paco{I think it is ok as is. It is only an example}
+\end{example}
 
 \section{nef Cayley sums}
 \label{sec:cayley}
@@ -391,7 +442,7 @@ We say that the pair $(P,Q)$ is \emph{mixed IDP} if
 \]
 \end{definition}
 
-In this language, \Cref{conj:Oda}(1) translates to:
+In this language, \Cref{conj:Oda}\eqref{itm:mixedIDP} translates to:
 \emph{If $Q$ is nef for $P$ and $P$ is smooth then the pair $(P,Q)$ mixed IDP.}
 
 
@@ -430,13 +481,7 @@ Let $P$ and $Q$ be two lattice polygons with $Q$ nef with respect to $P$. Let $p
 \qquad \text{and} \qquad
 ((q_1, q_2) + \vecline p ) \cap Q
 \]
-contains a lattice point.
-
-
-\paco{add picture for these strips}
-
-
-
+contains a lattice point. See \Cref{fig:strips}.
 %\[
 %(\int(p) + \vecline q) \cap P
 %\qquad \text{or} \qquad
@@ -445,6 +490,12 @@ contains a lattice point.
 %contains a lattice point.
 \end{lemma}
 \giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
+
+\begin{figure}[htb]
+\scalebox{.75}{\input{strips.pdf_t}}
+\caption{???}
+\label{fig:strips}
+\end{figure}
 
 
 \begin{proof}[Proof of \Cref{thm:cayley}]
@@ -490,7 +541,8 @@ is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 \label{sec:the_lemma}
 Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
 
-Observe that in the strip strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=-1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
+Observe that in the strip strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
+%We call that point $q^+$. Similarly, $q +\vecline p$ has a unique lattice point at $f_q(x)=-1$, which we call $q_-$. Observe that $q_++q_-=q_1+q_2$ and that the triangles $\conv(q_1, q_2, q_+)$ and $\conv(q_1, q_2, q_1)$ are unimodular.
 Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
 We let $H_1=\{f_q(x) < 0\}$ and $H_2=\{f_q(x) > 0\}$; similarly let $V_1=\{f_p(x) < 0\}$ and $V_2=\{f_p(x) > 0\}$. 
@@ -506,10 +558,10 @@ Suppose by contradiction that there is no lattice point as described in the lemm
 \begin{gather}
 \label{eq:widthp}
 \begin{array}{cc}
-f_q(l_2) \geq f_q(p_2), &
-f_q(l_1) \leq f_q(p_1), \\
-f_q(r_2) \geq f_q(p_2), &
-f_q(r_1) \leq f_q(p_1).
+f_q(l_1) \leq f_q(p_1), &
+f_q(l_2) \geq f_q(p_2), \\
+f_q(r_1) \leq f_q(p_1),&
+f_q(r_2) \geq f_q(p_2).
 \end{array}
 \end{gather}
 
@@ -518,14 +570,14 @@ The same holds for $Q$ and the strip $q+\vecline p$, and we call the segments  $
 \begin{gather}
 \label{eq:widthq}
 \begin{array}{cc}
-f_p(t_2) \geq f_p(q_2), &
-f_p(t_1) \leq f_p(q_1) \\
-f_p(b_2) \geq f_p(q_2), &
-f_p(b_1) \leq f_p(q_1).
+f_p(t_1) \leq f_p(q_1), &
+f_p(t_2) \geq f_p(q_2), \\
+f_p(b_1) \leq f_p(q_1), &
+f_p(b_2) \geq f_p(q_2).
 \end{array}
 \end{gather}
 
-Observe that one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
+Observe that a priori one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
 \giulia{p=P ???}
 
 %To make things more explicit, we assume the following coordinates for the edge-vectors:
@@ -536,8 +588,6 @@ Observe that one of $l$ and $r$ can coincide with $p$, if this is on the boundar
 %\vec t= (t_1,t_2).
 %\]
 %Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
-
-Then:
 
 %\begin{claim}
 %$l_2, r_2, b_1, t_1 >1$.
@@ -572,6 +622,7 @@ If one of the inequalities, say the one for $\ell$, is not strict, then $\ell$ h
 
 
 \begin{claim}
+\label{claim:b_and_t}
 $f_q(b_2-b_1)$ and $f_q(t_2 - t_1)$ are non-zero and have the same sign. That is, $f_q$ achieves its maximum over $b$ and over $t$ on the same halfplane $V_1$ or $V_2$.
 \end{claim}
 
@@ -585,12 +636,16 @@ $f_q(b_2-b_1)$ and $f_q(t_2 - t_1)$ are non-zero and have the same sign. That is
 %If, say, $b$ has positive slope and $t$ negative. Then since $t$ intersects the vertical line $x=0$ spanned by $p$ below $p_2$, and $b$ intersects it above $p_1$, the slopes of $b$ and $t$ imply that  
 
 \begin{proof}
-Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $V_1$ and that on $b$ lies in $V_2$. 
+Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $V_1$ and that the maximum on $b$ lies in $V_2$. 
 
 Then $Q \cap V_2$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $w$. This cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$, see \Cref{fig:claim2} .
 \end{proof}
 
-
+\begin{figure}[htb]
+\scalebox{.75}{\input{claim2.pdf_t}}
+\caption{Illustration of the proof of \Cref{claim:b_and_t}}
+\label{fig:claim2}
+\end{figure}
 \Giulia{fix it to look more unimodular at the bottom}
 \begin{figure}[htb]
   \centering
@@ -673,7 +728,7 @@ mynode] (q2) at (0.3,-0.4) {};
 We assume w.l.o.g. that the maximum on $t$ (and hence on $b$) is achieved in $V_2$ \giulia{do we need it??}, that is to say, $f_p$ and $f_q$ increase in the same direction along $t$ (and hence along $b$). 
 
 \begin{claim}
-\label{positive slopes}
+\label{claim:r}
 Assume w.l.o.g.~that $b$ and $t$ either are parallel or their affine spans cross in $V_2$. Then, 
 \begin{enumerate}
 \item The intersection of $Q$ with any line parallel to $p$ in $V_2$ has width w.r.t. $f_q$ strictly smaller than $w$.
@@ -682,17 +737,21 @@ Assume w.l.o.g.~that $b$ and $t$ either are parallel or their affine spans cross
 \end{claim}
 
 \begin{proof}
-
 Both $t$ and $b$ must intersect $p$, otherwise $p_1$ or $p_2$ are the lattice points we are looking for in $Q$.  Their intersections with $p$ are thus endpoints of a segment of width w.r.t $f_q$ less than $w$, the width of $p$. Since $t$ and $b$ cross in $V_2$, the same is true for any segment parallel to $p$ contained in $Q \cap V_2$.  
 
-For part (b), If $f_p(r_2) \leq f_p(r_1)$, it would be impossible to fit a translated copy of $r$ in the correct side of $Q$: $r$ would need to lie inside the triangle delimited by the affine line $\langle t \rangle$ and the inequalities $f_q(x) \geq f_q(r_1)$, $f_p(x) \leq f_p(r_1)$. However, this triangular region has width less than $w$  w.r.t. $f_q$, by combining part (a) with the fact that $f_p$ and $f_q$ increase in the same direction along $t$, see \Cref{fig:claim3}. 
-\end{proof}
-
-\begin{figure}
-\includegraphics[ width=.7\textwidth]{Claim43.jpg}
-\caption{Figure for Claim 4.3}
+%\begin{figure}
+%\includegraphics[ width=.7\textwidth]{Claim43.jpg}
+%\caption{Figure for Claim 4.3}
+%\label{fig:claim3}
+%\end{figure}
+\begin{figure}[htb]
+\scalebox{.75}{\input{claim3.pdf_t}}
+\caption{Illustration of the proof of \Cref{claim:r}}
 \label{fig:claim3}
 \end{figure}
+
+For part (b), If $f_p(r_2) \leq f_p(r_1)$, it would be impossible to fit a translated copy $r'$ of $r$ in the correct side of $Q$: $r$ would need to lie inside the triangle delimited by the affine line $\langle t \rangle$ and the inequalities $f_q(x) \geq f_q(r_1)$, $f_p(x) \leq f_p(r_1)$. However, this triangular region has width less than $w$  w.r.t. $f_q$, by combining part (a) with the fact that $f_p$ and $f_q$ increase in the same direction along $t$, see \Cref{fig:claim3}. 
+\end{proof}
 
 The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope. Observe that this implies that $q$ is not in the boundary of $Q$ and $p \neq r$, so both $P$ and $Q$ are full dimensional.
 
@@ -710,12 +769,12 @@ The last two claims can be summarized as saying that in the pictures $b$, $t$ an
 
 Let $g$ be the primitive lattice functional constant on $[p_1, q_2]$ (and therefore constant also on $[q_1, q_1+q_2-p_1]$). By the assumption on $p_1$, the values of $g$ on these segments differer by $1$. We choose the sign of $g$ so that 
 \[
-g([p_1, q_2])= g( [q_1, q_1+q_2-p_1]) +1r. 
+g([p_1, q_2])= g( [q_1, q_1+q_2-p_1]) +1. 
 \]
 
 \begin{claim}
 \label{claim:g}
-$g(t_1) > g(t_2)$ and $g(b_1) > g(b_2)$ while $g(r_1) < g(r_2)$ (and $g(l_1) < g(l_2)$).
+$g(t_1) > g(t_2)$, $g(b_1) > g(b_2)$, and $g(r_1) < g(r_2)$.
 %The slopes of $t$ and $b$ are strictly smaller than the slope of  $[p_1, q_2]$ and that of $r=[r_1, r_2]$ (and $l=[l_1, l_2]$) is strictly greater than it.
 \end{claim}
 
@@ -724,13 +783,19 @@ Since $b$ and $t$ must respectively separate $p_1$ and $q_1+q_2-p_1$ from the ot
 The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-p_2)$, yields the inequalities for $\ell$ and $r$.
 \end{proof}
 
+\begin{figure}[htb]
+\scalebox{.75}{\input{claim4.pdf_t}}
+\caption{Illustration of the proof of \Cref{claim:g}}
+\label{fig:claim4}
+\end{figure}
+
 
 We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must have an edge $r'$ which is a translated copy of $r$. Let $r_1'$ and $r_2'$ be its endpoints. Now consider the lattice line $d$ through $r_1'$ parallel to  $[p_1, q_2]$, that is, $g$ is constant on $d$. Let $d'$ be the parallel line defined by $g(d')=g(d)+1$. 
 
 
 Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ on $d$ and $s_2$ on $d'$.  
 
-%By claim \ref{positive slopes}, $s_2$ lies above the affine line $\langle t \rangle$. 
+%By claim \ref{claim:r}, $s_2$ lies above the affine line $\langle t \rangle$. 
 
 Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$,
 and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
@@ -789,6 +854,9 @@ Shoetsu Ogata.
 \newblock {Multiplication maps of complete linear systems on projective toric
   surfaces.}
 \newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
+
+\bibitem{Santos-hirsch}
+\paco{add reference}
 
 \bibitem{White1964}
 G.~K.~White.
