@@ -215,28 +215,25 @@ In particular, the following statement that we prove in \Cref{sec:cayley} is str
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This not only implies \Cref{conj:Oda}\eqref{itm:mixedIDP} in dimension two but also, as we show in \Cref{sec:cayley}, \Cref{conj:Oda}\eqref{itm:smoothIDP} for $3$-dimensional smooth \emph{prismatoids}, polytopes whose vertices all lie in two parallel facets:
+
+This not only implies \Cref{conj:Oda}(1) in dimension three, but also the following two statements, that we prove in \Cref{sec:cayley}.
+A $3$-dimensional \emph{prismatoids} is a polytopes whose vertices all lie in two parallel facets. A special case is a polytope of width $1$, whose vertices lie in two consecutive parallel lattice hyperplanes.
 
 \begin{corollary}
 \label{coro:prismatoid}
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
+\begin{corollary}
+Every integer dilation of a lattice $3$-polytope of width $1$ has a unimodular cover.
+\end{corollary}
 
 
-\Paco{another corollary, suggested by Christian Haase: the $k$-th dilation of an emptyy simplex is very easy to decompose into slices of width one all of which fit into our description ($P$ and $Q$ are either pararllel parallelograms, one of which perhaps degenerates to a segment). In particular, we recover as a corollary that the $k$-th dilation of every empty tetrahedron (and, a fortiori, the $k$-th dilation of every lattice $3$-polytope) has a unimodular cover for every $k\ge 2$
-
-EXCEPT FOR THIS TO BE TRUE WE NEED TO ALLOW $Q$ TO DEGENERATE TO AN EDGE IN \Cref{hm:cayley}. CAN WE?
-}
+We believe that the $3$-polytopes in all these statements all have unimodular triangulations, but this remains an open question.
 
 
-We believe that the $3$-polytopes in these four statements all have unimodular triangulations, but we do not have a proof.
-
-
-\subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, Gaku Liu, Johannes Hofscheier, Christian Haase, .... et al.
-
-%\section{Preliminaries}
-%\label{Fprelim}
+\subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, and Johannes Hofscheier for posing these questions to us and 
+Christian Haase for helpful discussions.
 
 
 \section{Parallelepipeds}
@@ -794,9 +791,6 @@ We are now ready to show a contradiction. Since the normal fan of $Q$ refines th
 
 
 Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ on $d$ and $s_2$ on $d'$.  
-
-%By claim \ref{claim:r}, $s_2$ lies above the affine line $\langle t \rangle$. 
-
 Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$,
 and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
 \end{proof}
