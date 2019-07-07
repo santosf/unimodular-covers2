@@ -135,7 +135,7 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions? Probably not}
+\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions in the intro? Probably not}
 A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
 %
 Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for lattice polytopes. The following versions of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
@@ -143,18 +143,17 @@ Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for latt
 \label{conj:Oda}
 \begin{enumerate}
 \item 
+\label{itm:smoothIDP}
+(Related to problems 2 and 5 in \cite{Oda1997})
+Every smooth lattice polytope is IDP.
+\item 
 \label{itm:mixedIDP}
-(Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $Q$ refining that of $P$, and $P$ smooth. Then
+(Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $P$ refining that of $Q$, and $Q$ smooth. Then
 \begin{align*}
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
 \paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
-
-\item 
-\label{itm:smoothIDP}
-(Related to problems 2 and 5 in \cite{Oda1997})
-Every smooth lattice polytope is IDP.
 \end{enumerate}
 \end{conjecture}
 
@@ -164,15 +163,15 @@ For example,  very recently
 Beck et al.~\cite{BHHHJKM2019} proved that all smooth centrally symmetric $3$-polytopes are IDP.
 More precisely, they show that any such polytope can be covered by lattice 
 parallelepipeds and unimodular simplices, both of which are trivially IDP.
-
-In \Cref{sec:parallelepipeds} we show the following stronger statement:
+%
+In \Cref{sec:parallelepipeds} we show:
 
 \begin{theorem}
 \label{thm:parallelepipeds}
 Every $3$-dimensional lattice parallelepiped has a unimodular cover.
 \end{theorem}
 
-As a consequence:
+This, together with the mentioned result from~\cite{BHHHJKM2019}, gives:
 
 \begin{corollary}
 \label{coro:3cs}
@@ -202,6 +201,14 @@ Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008
 In dimension three however the statement fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular empty tetrahedron.
 
 An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, that we discuss in  \Cref{sec:cayley}. 
+\paco{added def}
+Recall that the \emph{Cayley sum} of two lattice polytopes $Q_1,Q_2\subset \R^d$ is the lattice polytope
+\[
+\cayley(Q_1,Q_2) := \conv(Q_1\times\{0\} \cup Q_2 \times \{1\}) \subset \R^3.
+\]
+\paco{new sentence. In fact, this implies that Cayley sums are the same as polytopes of width 1}
+We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can remove coordinates) but this does not need $Q_1$ and $Q_2$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
+
 As we note there (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
 \[
 \cayley(P,Q) \text{ is IDP} 
@@ -215,9 +222,10 @@ In particular, the following statement that we prove in \Cref{sec:cayley} is str
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-
-This not only implies \Cref{conj:Oda}(1) in dimension three, but also the following two statements, that we prove in \Cref{sec:cayley}.
-A $3$-dimensional \emph{prismatoids} is a polytopes whose vertices all lie in two parallel facets. A special case is a polytope of width $1$, whose vertices lie in two consecutive parallel lattice hyperplanes.
+This also implies the following two statements, that we prove in \Cref{sec:cayley}.
+A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
+\paco{Wait; ``width one'' is only a special case of ``prismatoid'' if we allow prismatoids to have vertices in two parallel \emph{faces}, not \emph{facets}. But \Cref{coro:prismatoid} is not so obvious in that more general case. Either prove it or remove the phrase ``special case''}
+A special case is a polytope of width $1$, whose vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is equivalent to being $SL(\Z,d)$-equivalent to a Cayley sum.
 
 \begin{corollary}
 \label{coro:prismatoid}
@@ -225,11 +233,14 @@ Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
 \begin{corollary}
-Every integer dilation of a lattice $3$-polytope of width $1$ has a unimodular cover.
+\label{coro:width1}
+Every integer dilation $kP$, $k\ge 2$, of a lattice $3$-polytope $P$ of width $1$ has a unimodular cover.
 \end{corollary}
 
+A special case of the latter are integer dilations of empty tetrahedra. That their dilations have
+unimodular covers is \cite[Cor.~4.2]{SantosZiegler} (and is also implicit in \cite{KantorSarkaria}).
 
-We believe that the $3$-polytopes in all these statements all have unimodular triangulations, but this remains an open question.
+We believe that the $3$-polytopes in all these statements have unimodular triangulations, but this remains an open question.
 
 
 \subsection*{Acknowledgements:} We thank Akiyoshi Tsuchiya, Spencer Backman, and Johannes Hofscheier for posing these questions to us and 
@@ -501,15 +512,15 @@ Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mix
 Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
 
-We now turn our attention to \emph{prismatoids}, defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. Since we are only interested in lattice polytopes, we here use \emph{prismatoid} meaning any $d$-polytope of the form
+We now turn our attention to \emph{prismatoids}, defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. In particular, a \emph{lattice prismatoid} is any $d$-polytope $SL(\Z,d)$-equivalent to one of the form
 \[
 \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
 \]
-with $k\in \Z_{>0}$ and $Q_1,Q_2$ being lattice $(d-1)$-polytopes. This generalizes Cayley sums, which are the case $k=1$.
+where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This generalizes Cayley sums, which are the case $k=1$.
 
 \begin{proposition}
 \label{prop:prismatoid}
-Let $Q_1$ and $Q_2$ be two lattice polygons and consider the prismatoid 
+Let $Q_1$, $Q_2$ be two lattice polygons and consider the prismatoid 
 \[
 P:= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
 \]
@@ -528,7 +539,12 @@ P \cap (\R^2\times[i,i+1])
 is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
 \end{proof}
 
-\Cref{coro:prismatoid} follows from \Cref{prop:prismatoid} since smoothness of a prismatoid implies $P\cap(\R^2\times\{i\})$ to be a lattice polytope for every $i$.
+This statement implies \Cref{coro:prismatoid} and \Cref{coro:width1}. 
+For the former, smoothness of a prismatoid implies $P\cap(\R^2\times\{1\})$ to be a lattice polytope. \paco{details?}
+For the latter, if $P$ has width one then $P\cong \cayley(Q_1, Q_2)$ and, for every $k\in \Z_{>0}$, we have
+\[
+kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
+\] 
 
 
 
@@ -643,80 +659,81 @@ Then $Q \cap V_2$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $
 \caption{Illustration of the proof of \Cref{claim:b_and_t}}
 \label{fig:claim2}
 \end{figure}
-\Giulia{fix it to look more unimodular at the bottom}
-\begin{figure}[htb]
-  \centering
-\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
-  1]
-%coordinate axes
-   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
-%        \tkzLabelX[orig=false,label options={font=\tiny}]
-%        \tkzLabelY[orig=false,label options={font=\tiny}]
-%        \tkzGrid
-%        \tkzDrawX
-%        \tkzDrawY
 
-%edges b, t
-  \node[
-%label={[shift={(0,-0.67)}]$b_1$}, 
-mynode] (b1) at (-3,-2) {}; 
-  \node[
-%label={[shift={(0,-0.67)}]$b_2$}, 
-mynode] (b2) at (2, 0.2) {};  
-  \node[
-%label={[shift={(0,0)}]$t_1$}, 
-mynode] (t1) at (-2.7, 1) {};  
-  \node[
-%label={[shift={(0,0)}]$t_2$}, 
-mynode] (t2) at (1.6,0.7) {};  
-
-%shaded region where r can be  
-  \draw[fill=gray!80, nearly transparent] (2.93,0.61) -- (0,0.81)  -- (0,-0.68) -- cycle;
-
-
-%p
-  \node[
-%label={[shift={(0,-0.67)}]$p_1$}, 
-mynode] (p1) at (0,-1) {}; 
-  \node[
-%label={[shift={(0,0)}]$p_2$}, 
-mynode] (p2) at (0,1) {};  
-%  \node[{p}]  at (-0.3,0.95)
-
-
-%q
-  \node[
-%label={[shift={(0,-0.67)}]$q_1$}, 
-mynode] (q1) at (-1.7,-0.4) {}; 
-  \node[
-%label={[shift={(0,-0.67)}]$q_2$}, 
-mynode] (q2) at (0.3,-0.4) {};  
-
-%segments b, t, p, q
-  \draw[ name path = b, black, thick] (b1) node[below, xshift=1.7cm, yshift=0.7cm] {b} -- (b2); 
-  \draw[name path = t, black, thick] (t1) node[below, xshift=1.2cm, yshift=-0.1cm] {t} -- (t2);
-  \draw[name path = p, black, thick] (p1) node[left, xshift=0 cm, yshift=1.3cm] {p} -- (p2);
-  \draw[name path = q, black, thick] (q1) node[below, xshift=0.4cm, yshift=0cm] {q} -- (q2);
-
-
-%prolonged lines through b and t
- \tkzDrawLine[add=0.2 and 0.3, color=black, dashed](b1, b2);
- \tkzDrawLine[ add=0.3 and 0.4, color=black, dashed](t1, t2);
- 
-%functional f_q
-  \tkzDefLine[orthogonal=through p1](p1,p2)
-  \tkzDrawLine[add = 2 and 1,color=black, dashed](p1,tkzPointResult)
-  \node[label={\small $\{f_q(x)=-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab1) at (3.3, -1) {};
-
-
-  \tkzDefLine[orthogonal=through p2](p1,p2) 
-  \tkzDrawLine[add = 2 and 1,color=black, dashed](p2,tkzPointResult) 
-    \node[label={\small $\{f_q(x)=w-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab2) at (3.3, 1) {};
-
-\end{tikzpicture}
-\caption{Picture for Claim 4.2}
-\label{fig:claim2}
-\end{figure}
+%\Giulia{fix it to look more unimodular at the bottom}
+%\begin{figure}[htb]
+%  \centering
+%\begin{tikzpicture}[mynode/.style={circle, inner sep=1.5pt, fill=red}, scale =
+%  1]
+%%coordinate axes
+%   \tkzInit[xmax=3.5,ymax=3.5,xmin=-3.5,ymin=-3.5]
+%%        \tkzLabelX[orig=false,label options={font=\tiny}]
+%%        \tkzLabelY[orig=false,label options={font=\tiny}]
+%%        \tkzGrid
+%%        \tkzDrawX
+%%        \tkzDrawY
+%
+%%edges b, t
+%  \node[
+%%label={[shift={(0,-0.67)}]$b_1$}, 
+%mynode] (b1) at (-3,-2) {}; 
+%  \node[
+%%label={[shift={(0,-0.67)}]$b_2$}, 
+%mynode] (b2) at (2, 0.2) {};  
+%  \node[
+%%label={[shift={(0,0)}]$t_1$}, 
+%mynode] (t1) at (-2.7, 1) {};  
+%  \node[
+%%label={[shift={(0,0)}]$t_2$}, 
+%mynode] (t2) at (1.6,0.7) {};  
+%
+%%shaded region where r can be  
+%  \draw[fill=gray!80, nearly transparent] (2.93,0.61) -- (0,0.81)  -- (0,-0.68) -- cycle;
+%
+%
+%%p
+%  \node[
+%%label={[shift={(0,-0.67)}]$p_1$}, 
+%mynode] (p1) at (0,-1) {}; 
+%  \node[
+%%label={[shift={(0,0)}]$p_2$}, 
+%mynode] (p2) at (0,1) {};  
+%%  \node[{p}]  at (-0.3,0.95)
+%
+%
+%%q
+%  \node[
+%%label={[shift={(0,-0.67)}]$q_1$}, 
+%mynode] (q1) at (-1.7,-0.4) {}; 
+%  \node[
+%%label={[shift={(0,-0.67)}]$q_2$}, 
+%mynode] (q2) at (0.3,-0.4) {};  
+%
+%%segments b, t, p, q
+%  \draw[ name path = b, black, thick] (b1) node[below, xshift=1.7cm, yshift=0.7cm] {b} -- (b2); 
+%  \draw[name path = t, black, thick] (t1) node[below, xshift=1.2cm, yshift=-0.1cm] {t} -- (t2);
+%  \draw[name path = p, black, thick] (p1) node[left, xshift=0 cm, yshift=1.3cm] {p} -- (p2);
+%  \draw[name path = q, black, thick] (q1) node[below, xshift=0.4cm, yshift=0cm] {q} -- (q2);
+%
+%
+%%prolonged lines through b and t
+% \tkzDrawLine[add=0.2 and 0.3, color=black, dashed](b1, b2);
+% \tkzDrawLine[ add=0.3 and 0.4, color=black, dashed](t1, t2);
+% 
+%%functional f_q
+%  \tkzDefLine[orthogonal=through p1](p1,p2)
+%  \tkzDrawLine[add = 2 and 1,color=black, dashed](p1,tkzPointResult)
+%  \node[label={\small $\{f_q(x)=-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab1) at (3.3, -1) {};
+%
+%
+%  \tkzDefLine[orthogonal=through p2](p1,p2) 
+%  \tkzDrawLine[add = 2 and 1,color=black, dashed](p2,tkzPointResult) 
+%    \node[label={\small $\{f_q(x)=w-1\}$}, xshift=0.4cm, yshift=-0.2cm] (lab2) at (3.3, 1) {};
+%
+%\end{tikzpicture}
+%\caption{Picture for Claim 4.2}
+%\label{fig:claim2}
+%\end{figure}
 
 
 
@@ -813,14 +830,14 @@ Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Mono
   
  \bibitem{DLRS2010}
 J. A. De Loera, J. Rambau, F. Santos
-Triangulations: Structures for Algorithms and Applications, 539 pp.
+\emph{Triangulations: Structures for Algorithms and Applications}, 539 pp.
 Algorithms and Computation in Mathematics, Vol. 25, Springer-Verlag. 
 ISBN: 978-3-642-12970-4
 
 \bibitem{Fakhruddin}
 Najmuddin Fakhruddin.
-\newblock Multiplication maps of linear systems on smooth projective toric
-  surfaces, arXiv:0208.5178, August 2002.
+\newblock Multiplication maps of linear systems on smooth projective toric surfaces.
+  Preprint, arXiv:0208.5178, August 2002.
   
   \bibitem{HPPS-survey}
 Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
@@ -830,7 +847,12 @@ Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Exis
  
 \bibitem{HNPS2008}
 Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattice points in Minkowski sums, 
-Electron J. Combin., 15 (2008), no. 1, Note 11, 5 pp.
+\emph{Electron.~J.~Combin.}, 15 (2008), no. 1, Note 11, 5 pp.
+
+\bibitem{KantorSarkaria}
+Jean-Michel Kantor and Karanbir~S.\ Sarkaria.
+On primitive subdivisions of an elementary tetrahedron, 
+\emph{Pacific J.~Math.} \textbf{211} (2003), no.~1,  123--155.
 
 \bibitem{mfo2004}
 Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
@@ -845,12 +867,19 @@ Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.14
 
 \bibitem{Ogata}
 Shoetsu Ogata.
-\newblock {Multiplication maps of complete linear systems on projective toric
-  surfaces.}
+\newblock {Multiplication maps of complete linear systems on projective toric surfaces.}
 \newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
 
 \bibitem{Santos-hirsch}
-\paco{add reference}
+Francisco Santos.
+A counter-example to the Hirsch Conjecture.
+\emph{Ann.~Math.~(2)}, 176 (July 2012), 383--412. 
+DOI: 10.4007/annals.2012.176.1.7
+
+\bibitem{SantosZiegler}
+Francisco Santos and G{\"u}nter~M. Ziegler.
+\newblock {Unimodular triangulations of dilated 3-polytopes}, 
+\newblock {\em Trans. Moscow Math. Soc.} (2013), 293--311. % \MR{3235802}
 
 \bibitem{White1964}
 G.~K.~White.
