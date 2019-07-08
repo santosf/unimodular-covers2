@@ -199,7 +199,7 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP}, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
 In dimension three however the statement fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular empty tetrahedron.
 
-An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, that we discuss in  \Cref{sec:cayley}. 
+An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, which we discuss in  \Cref{sec:cayley}. 
 \paco{added def}
 Recall that the \emph{Cayley sum} of two lattice polytopes $Q_1,Q_2\subset \R^d$ is the lattice polytope
 \[
@@ -214,17 +214,17 @@ As we note there (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice po
 \Rightarrow
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \]
-In particular, the following statement that we prove in \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
+In particular, the following statement, proved in \Cref{sec:cayley}, is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
 
 \begin{theorem}
 \label{thm:cayley}
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This also implies the following two statements, that we prove in \Cref{sec:cayley}.
+This also implies the following two statements, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
-\paco{Wait; ``width one'' is only a special case of ``prismatoid'' if we allow prismatoids to have vertices in two parallel \emph{faces}, not \emph{facets}. But \Cref{coro:prismatoid} is not so obvious in that more general case. Either prove it or remove the phrase ``special case''}
-A special case is a polytope of width $1$, whose vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is equivalent to being $SL(\Z,d)$-equivalent to a Cayley sum.
+\paco{Wait; ``width one'' is only a special case of ``prismatoid'' if we allow prismatoids to have vertices in two parallel \emph{faces}, not \emph{facets}. But \Cref{coro:prismatoid} is not so obvious in that more general case. Either prove it or remove the phrase ``special case''} \giulia{true...}
+A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being $SL(\Z,d)$-equivalent to a Cayley sum.
 
 \begin{corollary}
 \label{coro:prismatoid}
@@ -300,7 +300,7 @@ v:=(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
 \]
 
 Observe that $u+v=p_1+p_2=q_3+q_4$.
-Now, the translation of vector $\left(\frac{a-1}2,\frac{b}2,1\right)$ sends $\conv(p_1p_2q_3q_4)$ to $\conv(q_2q_1p_4p_3)$, so that the translated points $u + \left(\frac{a-1}2,\frac{b}2,1\right)$ and $u + \left(\frac{a-1}2,\frac{b}2,1\right)$ lie in $\conv(q_2q_1p_4p_3)$ and are centrally symmetrically placed in it. thus, one of them belongs to $\conv(q_1p_4p_3)$ and the other to $\conv(q_2p_4p_3)$.
+Now, the translation of vector $\left(\frac{a-1}2,\frac{b}2,1\right)$ sends the facet $\conv(p_1p_2q_3q_4)$ of $C(T)$ to the opposite facet $\conv(q_2q_1p_4p_3)$, so that the translated points $u + \left(\frac{a-1}2,\frac{b}2,1\right)$ and $v + \left(\frac{a-1}2,\frac{b}2,1\right)$ lie in $\conv(q_2q_1p_4p_3)$ and are centrally symmetrically placed in it. Thus, one of them belongs to $\conv(q_1p_4p_3) \subset T_2$ and the other to $\conv(q_2p_4p_3) \subset T_1$.
 %\paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
 %Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
 \end{proof}
@@ -315,21 +315,25 @@ Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron
 Let us denote the vertices of $T$ by $p_1, p_2, p_3, p_4$ and the vertices of $C(T)$ not in $T$ by $q_1, q_2, q_3, q_4$, with the conventions of \Cref{def:circunpara}. 
 
 \paco{changed this}
-The parallelepiped $P$ is the intersection of three bands\paco{bands?}, where each band is a region defined as $f^{-1}([\alpha,\beta])$ for some functional $f\in (\R^3)^*$ and closed interval $[\alpha,\beta]\subset \R$. We claim that a band containing $T$ must contain at least three of the $q_i$s, which implies that the intersection $P$ of three of them contains at least one of the $q_i$s and hence $P$ contains the corresponding $T_i$.
+The parallelepiped $P$ is the intersection of three regions of the form $f^{-1}([\alpha,\beta])$ for some functional $f\in (\R^3)^*$ and closed interval $[\alpha,\beta]\subset \R$. We will call such regions \emph{bands}. We claim that any band containing $T$ must contain at least three of the $q_i$s. This claim implies that the intersection $P$ of three bands contains at least one of the $q_i$s and hence $P$ contains the corresponding $T_i$.
 
-To prove the claim suppose that $q_1\not\in B:= f^{-1}([\alpha,\beta])$ for a certain band $B$. 
+To prove the claim, suppose that $q_1\not\in B:= f^{-1}([\alpha,\beta])$ for a certain band $B \supset T$. 
 Without loss of generality, say $f(q_1)<\alpha$. Then the equalities $q_1+q_2=p_3+p_4$ and $q_1+p_1=q_2+p_2$ respectively give:
 \begin{gather}
+\label{eq:first}
 f(q_2) = f(p_3+p_4-q_1) = f(p_3)+f(p_4)-f(q_1) > 2\alpha-\alpha=\alpha,\\
+\label{eq:second}
 f(q_2) = f(q_2+p_2-p_1) = f(q_2)+(f(p_2)-f(p_1)) < \alpha + (\beta-\alpha) = \beta,
 \end{gather}
 so that $q_2 \in B$.
 
-The first equation also implies
-\[
+The inequality \eqref{eq:first} also implies
+\begin{equation}
+\label{eq:third}
 f(q_1) <  f(p_i) < f(q_2), \quad\text{ for $i=3,4$}.
-\]
-By the translation sending $q_1,q_2,p_3,p_4$ to $p_2,p_1,q_4,q_3$ (in this order) we then have
+\end{equation}
+
+The translation of vector $\frac12 (p_1+p_2-p_3-p_4)$ sends $q_1,q_2,p_3,p_4$ to $p_2,p_1,q_4,q_3$ (in this order). By applying this to inequality \eqref{eq:third}, we obtain
 \[
 \alpha \le f(p_2) < f(q_i) < f(p_1) \le \beta, \quad\text{ for $i=3,4$},
 \]
