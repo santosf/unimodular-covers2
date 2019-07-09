@@ -327,7 +327,7 @@ f(q_2) = f(q_2+p_2-p_1) = f(q_2)+(f(p_2)-f(p_1)) < \alpha + (\beta-\alpha) = \be
 \end{gather}
 so that $q_2 \in B$.
 
-The inequality \eqref{eq:first} also implies
+Inequality \eqref{eq:first} also implies
 \begin{equation}
 \label{eq:third}
 f(q_1) <  f(p_i) < f(q_2), \quad\text{ for $i=3,4$}.
@@ -368,33 +368,32 @@ This finishes the proof of the claim, and of the lemma.
 \begin{corollary}
 \label{coro:coverpara}
 \paco{added this intermediate result}
-Let $T$ be a lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
+\giulia{We are using lemmas 2 and 3 which are for empty tetrahedra; either we add a step in this corollary saying that we can reduce to empty tetrahedra, or we keep this for empty and triangulate into empty tetrah in the proof of the theorem (which makes more sense to me)}
+Let $T$ be a empty lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
 \end{corollary}
 
 \begin{proof}
-We proceed by induction on the (normalized) volume of $T$, which is a positive integer. If this volume equals $1$ then $T$ is unimodular and there is nothing to prove, so we assume $T$ is not unimodular.
+We proceed by induction on the (normalized) volume of $T$, which is a positive integer. If this volume equals $1$ then $T$ is unimodular and there is nothing to prove, so we assume $T$ is not unimodular. As before, assume $T$ has vertices $p_1, p_2, p_3, p_4$.
 
 \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point other than the $p_i$s, which we denote by $u$. 
 %Observe that from the proof of \Cref{lemma:corner} we know more: $u$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
-\paco{removed assumption the $u$ lies in a face. I think we do not need it}
 
-Then $S=\conv(T\cup \{l\})$ can be triangulated in two different ways: $S=T \cup T'_4 = S_1 \cup S_2 \cup S_3$, where $T'_4 = \conv(p_1, p_2, p_3, l) \subseteq T_4$ and
+Then $S=\conv(T\cup \{u\})$ can be triangulated in two different ways: $S=T \cup T'_4$, where $T'_4 = \conv(p_1, p_2, p_3, u) \subseteq T_4$ and $S= S_1 \cup S_2 \cup S_3$, with
 \[
-S_1= \conv(p_2,p_3,p_4, l),
-S_2=\conv(p_1,p_3,p_4, l),
-S_3=\conv(p_1,p_2,p_4, l).
+S_1= \conv(p_2,p_3,p_4, u),
+S_2=\conv(p_1,p_3,p_4, u),
+S_3=\conv(p_1,p_2,p_4, u).
 \]
 Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. By inductive hypothesis they can be covered unimodularly, and we are done,
 
-Observe that  $T'_4$ and/or one of the $S_i$ can degenerate to a triangle, if $u$ lies in $\conv(p_1,p_2,p_3)$, 
-but this does not affect the argument.
+%Observe that  $T'_4$ and/or one of the $S_i$ can degenerate to a triangle, if $u$ lies in $\conv(p_1,p_2,p_3)$, but this does not affect the argument.
 %
 %: indeed, $\Vol(S_3)=\Vol(T'_4)$, since these tetrahedra have a common face $\conv(p_1, p_2, l)$ and the remaining vertex is at distance one from this face in both. Now $T'_4$ is contained in $T_4$, and we know that each corner tetrahedron $T_i$ has volume half that of $T$. The remaining two tetrahedra $S_1$ and $S_2$ must therefore have volume summing to that of $T$, and therefore each has volume strictly less than $T$.
 \end{proof}
 
-\begin{proof}[Proof of \Cref{thm:parallelepipeds}]
+\begin{proof}[Proof of \Cref{thm:parallelepipeds}]\giulia{see comment above}
 Arbitrarily triangulate the parallelepiped into lattice tetrahedra and apply \Cref{coro:coverpara} to these tetrahedra.
-%Let $P \subseteq \R^3$ be a lattice parallelepiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is an empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $u$. Observe that from the proof of \Cref{lemma:corner} we know more: $u$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
+%Let $P \subseteq \R^3$ be a lattice parallelepiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is an empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $u$. 
 %
 %
 %This allows us to cover $T$ with lattice simplices of smaller volume recursively, until it is covered by unimodular ones.
@@ -424,15 +423,13 @@ Q= \conv((0,1,1),(1,0,1),(1,1,0),(0,-1,-1),(-1,0,-1),(-1,-1,0)),\\
 P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
 \end{gather}
 
-Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, whcih implies they do not admit unimodular covers.
-\giulia{is it necessary to be more explicit, for example show that these are the only lattice points?}
-\paco{I think it is ok as is. It is only an example}
+Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, which implies they do not admit unimodular covers.
 \end{example}
 
 \section{nef Cayley sums}
 \label{sec:cayley}
 
-Throughout this section let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
+Throughout this section \giulia{I think this may be misleading, in the sense that later we specify to $d=2$ and we should maybe highlight this} let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
 \[
 P + Q := \{ p+q \in \R^d: p\in P, q \in Q\}.
 \]
@@ -442,13 +439,12 @@ The \emph{Cayley sum} of $P$ and $Q$ is defined as
 \]
 The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ is a $(d+1)$-dimensional.
 
-We introduce the following two concepts.
 
 \begin{definition}
 In the above conditions, we say that $Q$ \emph{is nef for $P$} if the normal fan of $Q$ refines that of $P$. If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.
 
 We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
-\paco{``mixed IDP'' is not the right property, since this is weaker than IDP}
+\paco{``mixed IDP'' is not the right property, since this is weaker than IDP} \giulia{do we give it a name at all then?}
 \[
 (P\cap \Z^d) + (Q\cap \Z^d) = (P+Q)\cap \Z^d.
 \]
