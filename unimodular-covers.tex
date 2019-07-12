@@ -441,7 +441,8 @@ The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ is
 
 
 \begin{definition}
-In the above conditions, we say that $Q$ \emph{is nef for $P$} if the normal fan of $Q$ refines that of $P$. If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.
+In the above conditions, we say that $Q$ \emph{is a weak Minkowski summand of $P$} if the normal fan of $Q$ refines that of $P$. 
+If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.\giulia{I guess there's no nice term for this now...}
 
 We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
 \paco{``mixed IDP'' is not the right property, since this is weaker than IDP} \giulia{do we give it a name at all then?}
@@ -464,6 +465,18 @@ The so-called \emph{Cayley Trick} is the isomorphism
 2\cayley(P, Q) \cap (\R^d\times \{1\}) \cong P+Q,
 \]
 which induces the following canonical bijections:
+
+\begin{center}
+  \begin{tabular}{ c | c }
+    $\cayley(P,Q)$ & $P+Q$\\
+    \hline
+   polyhedral subdivisions & mixed subdivisions \\
+    triangulations & fine mixed subdivisions \\
+   unimodular simplices & unimodular prod-simplices \\
+  \end{tabular}
+\end{center}\giulia{not sure if the table makes it clear that these are bijections}
+
+
 \begin{align*}
 \text{polyhedral subdivisions of $\cayley(P,Q)$} &\leftrightarrow \text{mixed subdivisions of $P + Q$}\\
 \text{triangulations of $\cayley(P,Q)$} &\leftrightarrow \text{fine mixed subdivisions of $P + Q$}\\
@@ -567,7 +580,7 @@ w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +
 \] \giulia{we want a picture for the setup}
 
 \begin{figure}
-\includegraphics[scale=.3]{setup.png}
+\includegraphics[scale=.3]{setup'.png}
 \caption{Setup for \Cref{lemma:cayley}}
 \end{figure}
 
