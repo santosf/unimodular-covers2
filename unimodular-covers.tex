@@ -382,8 +382,6 @@ This finishes the proof of the claim, and of the lemma.
 
 \begin{corollary}
 \label{coro:coverpara}
-\paco{added this intermediate result}
-\giulia{We are using lemmas 2 and 3 which are for empty tetrahedra; either we add a step in this corollary saying that we can reduce to empty tetrahedra, or we keep this for empty and triangulate into empty tetrah in the proof of the theorem (which makes more sense to me)}
 Let $T$ be a empty lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
 \end{corollary}
 
@@ -441,10 +439,9 @@ P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
 Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, which implies they do not admit unimodular covers.
 \end{example}
 
-\section{ Cayley sums}
+\section{ Cayley sums} \giulia{Change notations: remove nef and make sure everything works}
 \label{sec:cayley}
-
-Throughout this section \giulia{I think this may be misleading, in the sense that later we specify to $d=2$ and we should maybe highlight this} let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
+Let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
 \[
 P + Q := \{ p+q \in \R^d: p\in P, q \in Q\}.
 \]
@@ -503,6 +500,16 @@ See \cite{DLRS2010} for more details on the Cayley Trick and on triangulations a
 In fact these bijections can be taken as definitions of the objects in the right-hand sides. In particular, 
 we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\subset P$ and $T_2\subset Q$ are simplices with complementary affine spans. A prod-simplex is \emph{unimodular} if the edge vectors from a vertex of $T_1$ and from a vertex of $T_2$ form a unimodular basis.
 
+\medskip
+\giulia{move first paragraph of proof of theorem here, and explain simplices, prodsimplices...}
+
+
+We now turn our attention to dimension $d=2$.  The unimodular prod-simplices are unimodular parallelograms $p+q$ with $p$ a segment of $P$ and $q$ a segment of $Q$, and unimodular triangles $T+u$, where $T \subset P$ and $u \in Q$ or viceversa. 
+
+Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $P \times \{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). 
+
+\giulia{fix this}
+
 %As a consequence, we also have that:
 %\begin{align*}
 %\text{$\cayley(P,Q)$ has a unimodular cover} &\leftrightarrow \text{$P+Q$ can be covered by unimodular prod-simplices}.
@@ -537,7 +544,8 @@ contains a lattice point. See \Cref{fig:strips}.
 
 
 \begin{proof}[Proof of \Cref{thm:cayley}]
-Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $Px\{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). \giulia{is it usually denoted by dimension or cardinality? that is, (2,0) or (3,1)?} A triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained by simply unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can be without being confusing?}.
+
+A unimodular triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained simply by unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can be without being confusing?}.
 
 Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
@@ -641,8 +649,7 @@ Observe that a priori one of $l$ and $r$ can coincide with $p$, if this is on th
 %$l_2, r_2, b_1, t_1 >1$.
 %\end{claim}
 
-
-\begin{claim}\giulia{I think we need to treat separately the case where we deal with edges (these are easier, in any case, but I couldn't find a unification)}
+\begin{claim}
 The following inequalities hold, 
 \begin{align*}
 \width_{f_q}(\ell) , 
@@ -846,12 +853,13 @@ Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_
 Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$,
 and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
 \end{proof}
-\giulia{add a picture!}
+\giulia{add a picture?}
 
 
 
+\Giulia{add references to Haase&Hofmann and Tsuchiya}
 
-\begin{thebibliography}{99}
+\begin{thebibliography}{99} 
 
 \bibitem{BHHHJKM2019}
 Matthias Beck, Christian Haase, Akihiro Higashitani, Johannes Hofscheier, Katharina Jochemko, Lukas Katth\"an, Mateusz Micha{\l}ek,
