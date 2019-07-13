@@ -153,7 +153,10 @@ Every smooth lattice polytope is IDP.
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
-\paco{perhaps we can call this formula ``being mixed IDP''. The property of ``$N(Q)$ refines $N(P)$'' is sometimes called ``$P$ is a Minkowski summand of $Q$''.}
+
+The condition that the normal fan of $Q$ is finer than that of $P$ is sometimes dubbed \emph{$P$ is a weak Minkowski summand of $Q$}, since it is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$~\cite[??]{Grunbaum}. 
+It has the following algebraic implication for the projective toric variety $X_Q$ corresponding to (the normal fan of) $Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the corresponding Cartier divisor $D_P$ on  $X_Q$ is \emph{numerically effective}, or ``nef''~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}; (observe that~\cite{CLS} use ``Minkowski summand'' meaning what we call ``weak Minkowski summand''). 
+\paco{added this explanation}
 \end{enumerate}
 \end{conjecture}
 
@@ -426,7 +429,7 @@ P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
 Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, which implies they do not admit unimodular covers.
 \end{example}
 
-\section{nef Cayley sums}
+\section{ Cayley sums}
 \label{sec:cayley}
 
 Throughout this section \giulia{I think this may be misleading, in the sense that later we specify to $d=2$ and we should maybe highlight this} let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
@@ -437,15 +440,17 @@ The \emph{Cayley sum} of $P$ and $Q$ is defined as
 \[
 \cayley (P,Q) = \conv( P\times\{0\} \cup Q\times \{1\}) \in \R^{d+1}.
 \]
-The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ is a $(d+1)$-dimensional.
+The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ being $(d+1)$-dimensional.
 
 
 \begin{definition}
 In the above conditions, we say that $Q$ \emph{is a weak Minkowski summand of $P$} if the normal fan of $Q$ refines that of $P$. 
 If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.\giulia{I guess there's no nice term for this now...}
+\paco{not sure; maybe we can keep nef after all; another (unclear) option could be ``weak prism over $Q$'' or ``degenerate prism over $Q$''.}
 
 We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
 \paco{``mixed IDP'' is not the right property, since this is weaker than IDP} \giulia{do we give it a name at all then?}
+\paco{perhaps mixed-IDP}
 \[
 (P\cap \Z^d) + (Q\cap \Z^d) = (P+Q)\cap \Z^d.
 \]
@@ -580,7 +585,7 @@ w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +
 \] \giulia{we want a picture for the setup}
 
 \begin{figure}
-\includegraphics[scale=.3]{setup'.png}
+\includegraphics[scale=.3]{setup.png}
 \caption{Setup for \Cref{lemma:cayley}}
 \end{figure}
 
@@ -846,6 +851,11 @@ Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
 Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Monographs in Mathematics,
   Springer-Verlag, 2009, XIV, 461 p. 52 illus.
   
+\bibitem{CLS}
+David A.~Cox, John B.~Little, and Hal K.~Schenck.
+{\em {T}oric {V}arieties}.
+AMS, Providence, 2011.
+
  \bibitem{DLRS2010}
 J. A. De Loera, J. Rambau, F. Santos
 \emph{Triangulations: Structures for Algorithms and Applications}, 539 pp.
@@ -856,6 +866,11 @@ ISBN: 978-3-642-12970-4
 Najmuddin Fakhruddin.
 \newblock Multiplication maps of linear systems on smooth projective toric surfaces.
   Preprint, arXiv:0208.5178, August 2002.
+
+\bibitem{Grunbaum}
+{Branko Gr\"unbaum}.
+{\em {C}onvex {P}olytopes}.
+Wiley, London, 1967.
   
   \bibitem{HPPS-survey}
 Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
