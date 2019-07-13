@@ -135,7 +135,6 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-\paco{define mixed IDP, Cayley sums, Minkowski sums, mixed subdivisions in the intro? Probably not}
 A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
 %
 Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for lattice polytopes. The following versions of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
@@ -153,12 +152,27 @@ Every smooth lattice polytope is IDP.
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
-
-The condition that the normal fan of $Q$ is finer than that of $P$ is sometimes dubbed \emph{$P$ is a weak Minkowski summand of $Q$}, since it is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$~\cite[??]{Grunbaum}. 
-It has the following algebraic implication for the projective toric variety $X_Q$ corresponding to (the normal fan of) $Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the corresponding Cartier divisor $D_P$ on  $X_Q$ is \emph{numerically effective}, or ``nef''~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}; (observe that~\cite{CLS} use ``Minkowski summand'' meaning what we call ``weak Minkowski summand''). 
-\paco{added this explanation}
 \end{enumerate}
 \end{conjecture}
+
+Motivated by  \Cref{conj:Oda}\eqref{itm:mixedIDP}, we recall the following definitions:
+
+\begin{definition}
+We say that $P$ is a weak Minkowski summand of $Q$ if the normal fan of $Q$ refines that of $P$.
+\end{definition}
+The name is due to the fact that the condition on the refinement of the normal fans is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$~\cite[??]{Grunbaum}. 
+It has the following algebraic implication for the projective toric variety $X_Q$ corresponding to (the normal fan of) $Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the corresponding Cartier divisor $D_P$ on  $X_Q$ is \emph{numerically effective}, or ``nef''~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}; (observe that~\cite{CLS} use ``Minkowski summand'' meaning what we call ``weak Minkowski summand''). 
+\paco{added this explanation}
+
+\begin{definition}
+The pair $(P, Q)$ has the integer decomposition property, or is IDP, if 
+\begin{align*}
+(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+\end{align*}
+\end{definition}
+ 
+In this language,  \Cref{conj:Oda}\eqref{itm:mixedIDP} can be rephrased as if $P$ is a weak Minkowski summand of $Q$ and $Q$ is smooth, then the pair $(P,Q)$ is IDP.
+
 
 Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
 %
