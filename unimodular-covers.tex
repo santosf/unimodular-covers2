@@ -135,9 +135,17 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-A lattice polytope is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice. 
+Oda~\cite{Oda1997} posed several questions regarding smoothness and the IDP property for lattice polytopes.
 %
-Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for lattice polytopes. The following versions of them are now considered conjectures~\cite{HNPS2008,mfo2007}:
+\paco{I think this definition goes better here, and decided to "undeclare" it and the definition of weak Mink sum}
+Following \cite{HaaseHof, Tsuchiya} we say that a pair $(P, Q)$ of lattice polytopes has the integer decomposition property, or that \emph{the pair $(P,Q)$ is IDP}, if 
+\begin{align*}
+\label{eq:mixedIDP}
+(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+\end{align*}
+%
+A lattice polytope $Q$ is called \emph{smooth} if it is simple and the edge generators at every vertex form a linear basis for the lattice; equivalently, if the projective toric variety defined by the normal fan of $Q$ is smooth. 
+The following versions of Oda's questions are now considered conjectures~\cite{HNPS2008,mfo2007}, and they are open even in dimension three:
 \begin{conjecture}
 \label{conj:Oda}
 \begin{enumerate}
@@ -147,32 +155,28 @@ Oda~\cite{Oda1997} posed several questions regarding smoothness and IDP for latt
 Every smooth lattice polytope is IDP.
 \item 
 \label{itm:mixedIDP}
-(Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Let $P, Q\subset \R^d$ be lattice polytopes with the normal fan of $P$ refining that of $Q$, and $Q$ smooth. Then
-\begin{align*}
-\label{eq:mixedIDP}
-(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
-\end{align*}
+(Related to problems 1, 3, 4, 6 in \cite{Oda1997}) Every pair $(P,Q)$ of lattice polytopes with $Q$ smooth and the normal fan of $Q$ refining that of $P$ is IDP.
+%\begin{align}
+%\label{eq:mixedIDP}
+%(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+%\end{align}
 \end{enumerate}
 \end{conjecture}
 
-Motivated by  \Cref{conj:Oda}\eqref{itm:mixedIDP}, we recall the following definitions:
+When the normal fan of a $Q$ refines that of $P$, as in the second conjecture, we say that $P$ \emph{is a weak Minkowski summand of $Q$}, since this is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$\paco{did not find this in the google books version of \cite{Grunbaum}; found it in Postnikov-Reiner-Williams, Tsuchiya, a survey by Rekha Thomas, and other places. Perhaps we can leave it wothout reference}. 
+This property has the following algebraic implication for the projective toric variety $X_Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the Cartier divisor on  $X_Q$ defined by $P$ is \emph{numerically effective}, or ``nef'' (see~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}, but observe that there ``Minkowski summand'' is used meaning what we call ``weak Minkowski summand''). 
+%\paco{added this explanation}
+%
+%\begin{definition}
+%Following \cite{HaaseHof, Tsuchiya} we say that the pair $(P, Q)$ has the integer decomposition property, or \emph{the pair $(P,Q)$ is IDP}, if 
+%\begin{align*}
+%(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
+%\end{align*}
+%\end{definition}
+% 
+%In this language,  \Cref{conj:Oda}\eqref{itm:mixedIDP} can be rephrased as: if $P$ is a weak Minkowski summand of a smooth polytope $Q$ then the pair $(P,Q)$ is IDP.
 
-\begin{definition}
-We say that $P$ is a \emph{weak Minkowski summand} of $Q$ if the normal fan of $Q$ refines that of $P$.
-\end{definition}
-The name is due to the fact that the condition on the refinement of the normal fans is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$~\cite[??]{Grunbaum}. 
-It has the following algebraic implication for the projective toric variety $X_Q$ corresponding to (the normal fan of) $Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the corresponding Cartier divisor $D_P$ on  $X_Q$ is \emph{numerically effective}, or ``nef''~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}; (observe that~\cite{CLS} use ``Minkowski summand'' meaning what we call ``weak Minkowski summand''). 
-\paco{added this explanation}
-
-\begin{definition}
-The pair $(P, Q)$ has the integer decomposition property, or \emph{the pair $(P,Q)$ is IDP}, if 
-\begin{align*}
-(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
-\end{align*}
-\end{definition}
- 
-In this language,  \Cref{conj:Oda}\eqref{itm:mixedIDP} can be rephrased as: if $P$ is a weak Minkowski summand of $Q$ and $Q$ is smooth, then the pair $(P,Q)$ is IDP.
-
+\medskip 
 Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
 %
 For example,  very recently
@@ -212,34 +216,27 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 %Beck et al.~\cite{BHHHJKM2019} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
 %\end{proof}
 
-Another case of Oda's questions that has been solved is the two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP}, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}, the latter without assuming $P$ smooth. 
-In dimension three however the statement fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular empty tetrahedron.
+The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption, as shown by letting $P=Q$ be any non-unimodular \emph{empty tetrahedron}, by which we mean a lattice tetrahedron with no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for details on them).
+\paco{added def of empty tetrahedron}
 
 An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, which we discuss in  \Cref{sec:cayley}. 
-\paco{added def}
 Recall that the \emph{Cayley sum} of two lattice polytopes $Q_1,Q_2\subset \R^d$ is the lattice polytope
 \[
 \cayley(Q_1,Q_2) := \conv(Q_1\times\{0\} \cup Q_2 \times \{1\}) \subset \R^3.
 \]
-\paco{new sentence. In fact, this implies that Cayley sums are the same as polytopes of width 1}
-We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can remove coordinates) but this does not need $Q_1$ and $Q_2$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
+We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but for this does not need $Q_1$ and $Q_2$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
 
-As we note there (\Cref{prop:mixedIDP}), if $P,Q\subset \R^d$ are two lattice polytopes one has
-\[
-\cayley(P,Q) \text{ is IDP} 
-\Rightarrow
-(P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
-\]
-In particular, the following statement, proved in \Cref{sec:cayley}, is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
+As we note in \Cref{prop:mixedIDP}, if the Cayley sum of $P$ and $Q$ is IDP then the pair $(P,Q)$ is IDP.
+In particular, the following statement from \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
 
 \begin{theorem}
 \label{thm:cayley}
 Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of $P$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This also implies the following two statements, also proved in \Cref{sec:cayley}.
+This has the following two consequences, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
-A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being $SL(\Z,d)$-equivalent to a Cayley sum.
+A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being ($SL(\Z,d)$-equivalent to) a Cayley sum.
 
 \begin{corollary}
 \label{coro:prismatoid}
@@ -254,6 +251,7 @@ Every integer dilation $kP$, $k\ge 2$, of a lattice $3$-polytope $P$ of width $1
 A special case of the latter are integer dilations of empty tetrahedra. That their dilations have
 unimodular covers is \cite[Cor.~4.2]{SantosZiegler} (and is also implicit in \cite{KantorSarkaria}).
 
+\medskip
 We believe that the $3$-polytopes in all these statements have unimodular triangulations, but this remains an open question.
 
 
@@ -268,7 +266,7 @@ The main tool for the proof of \Cref{thm:parallelepipeds} is what we call the pa
 
 \begin{definition}
 \label{def:circunpara}
-Let $T$ be a tetrahedron with vertices $p_1$, $p_2$, $p_3$, and $p_4$. Consider the points $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$, $i\ n [4]$, and let
+Let $T$ be a tetrahedron with vertices $p_1$, $p_2$, $p_3$, and $p_4$. Consider the points $q_i= \frac12 (p_1+p_2+p_3+p_4) - p_i$, $i\in [4]$, and let
 \[
 C(T)=\conv(p_i,q_i: i\in[4]).
 \] 
@@ -277,7 +275,8 @@ $C(T)$ is a parallelepiped with facets $\conv(p_i, p_j, q_k, q_l)$ for all choic
 For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. Together with $T$ they triangulate of $C(T)$.
 \end{definition}
 
-The idea to have in mind is that of the regular tetrahedron inscribed in a cube. Modulo an affine transformation this is exactly the situation of $T$ and $C(T)$.
+The idea to have in mind is that of the regular tetrahedron inscribed in a cube. 
+Modulo an affine transformation this is exactly the situation of $T$ and $C(T)$.
 \giulia{we should add a picture of the standard cube}
 \paco{perhaps, but not necessarily}
 
@@ -330,7 +329,9 @@ Let $P$ be a lattice parallelepiped and let $T\subset P$ be a tetrahedron. Then,
 Let us denote the vertices of $T$ by $p_1, p_2, p_3, p_4$ and the vertices of $C(T)$ not in $T$ by $q_1, q_2, q_3, q_4$, with the conventions of \Cref{def:circunpara}. 
 
 \paco{changed this}
-The parallelepiped $P$ is the intersection of three regions of the form $f^{-1}([\alpha,\beta])$ for some functional $f\in (\R^3)^*$ and closed interval $[\alpha,\beta]\subset \R$. We will call such regions \emph{bands}. We claim that any band containing $T$ must contain at least three of the $q_i$s. This claim implies that the intersection $P$ of three bands contains at least one of the $q_i$s and hence $P$ contains the corresponding $T_i$.
+We call \emph{band} any region of the form $f^{-1}([\alpha,\beta])$ for some functional $f\in (\R^3)^*$ and closed interval $[\alpha,\beta]\subset \R$.
+We claim that any band containing $T$ must contain at least three of the $q_i$s. 
+This claim implies that the parallelepiped $P$, which is the intersection of three bands, contains at least one of the $q_i$s and hence it fully contains the corresponding $T_i$.
 
 To prove the claim, suppose that $q_1\not\in B:= f^{-1}([\alpha,\beta])$ for a certain band $B \supset T$. 
 Without loss of generality, say $f(q_1)<\alpha$. Then the equalities $q_1+q_2=p_3+p_4$ and $q_1+p_1=q_2+p_2$ respectively give:
@@ -382,23 +383,24 @@ This finishes the proof of the claim, and of the lemma.
 
 \begin{corollary}
 \label{coro:coverpara}
-Let $T$ be a empty lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
+Let $T$ be an empty lattice tetrahedron contained in a lattice parallelepiped $P$. Then, $T$ can be covered by unimodular tetrahedra contained in $P$.
 \end{corollary}
 
 \begin{proof}
-We proceed by induction on the (normalized) volume of $T$, which is a positive integer. If this volume equals $1$ then $T$ is unimodular and there is nothing to prove, so we assume $T$ is not unimodular. As before, assume $T$ has vertices $p_1, p_2, p_3, p_4$.
+We proceed by induction on the (normalized) volume of $T$, which is a positive integer. If this volume equals $1$ then $T$ is unimodular and there is nothing to prove, so we assume $T$ is not unimodular. Let $p_1, p_2, p_3, p_4$ denote the vertices of $T$.
 
 \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point other than the $p_i$s, which we denote by $u$. 
 %Observe that from the proof of \Cref{lemma:corner} we know more: $u$ lies in the face $\conv(p_1, p_2, q_4)$.\giulia{we need this for the volume computation below. perhaps it should be made explicit in the statemente of the lemma...}
-
+%
 Then $S=\conv(T\cup \{u\})$ can be triangulated in two different ways: $S=T \cup T'_4$, where $T'_4 = \conv(p_1, p_2, p_3, u) \subseteq T_4$ and $S= S_1 \cup S_2 \cup S_3$, with
 \[
 S_1= \conv(p_2,p_3,p_4, u),
 S_2=\conv(p_1,p_3,p_4, u),
 S_3=\conv(p_1,p_2,p_4, u).
 \]
-Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. The $S_i$ may not be empty, but we can triangulate them into empty tetrahedra, which by inductive hypothesis they can be covered unimodularly, and we are done.
 
+Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$ because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. The $S_i$ may not be empty, but we can triangulate them into empty tetrahedra, which by inductive hypothesis they can be covered unimodularly.
+%
 %Observe that  $T'_4$ and/or one of the $S_i$ can degenerate to a triangle, if $u$ lies in $\conv(p_1,p_2,p_3)$, but this does not affect the argument.
 %
 %: indeed, $\Vol(S_3)=\Vol(T'_4)$, since these tetrahedra have a common face $\conv(p_1, p_2, l)$ and the remaining vertex is at distance one from this face in both. Now $T'_4$ is contained in $T_4$, and we know that each corner tetrahedron $T_i$ has volume half that of $T$. The remaining two tetrahedra $S_1$ and $S_2$ must therefore have volume summing to that of $T$, and therefore each has volume strictly less than $T$.
@@ -417,14 +419,18 @@ Arbitrarily triangulate the parallelepiped into empty lattice tetrahedra and app
 %\begin{remark}
 %\label{rem:octahedra_and_tri-prisms}
 
-We finish with a question which, if answered in the positive, would imply \Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three.
+%We finish with a question which, if answered in the positive, would imply \Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three.
 Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if it satisfies the conclusion of \Cref{lemma:3<4}:  ``for every empty tetrahedron $T$ contained in $P$ at least one of the four corner tetrahedra in $C(T)$ is 
 contained in $P$''. 
 If this holds then $P$ has a unimodular cover, since then the proofs of \Cref{coro:coverpara} and \Cref{thm:parallelepipeds} work for $P$.
+Hence, a positive answer to the following question would imply that every smooth $3$-polytope has a unimodular cover, which in turn implies \Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three. 
+
 
 \begin{question}
-Does every smooth 3-polytope have the circumscribed parallelepiped property? By the above remark, if the answer is yes then every smooth $3$-polytope has a unimodular cover.
+Does every smooth 3-polytope have the circumscribed parallelepiped property? 
 \end{question}
+
+
 
 Our proof that parallelepipeds have the property (\Cref{lemma:3<4}) is based on the fact that they have only three (pairs of) normal vectors. The proof, and the property of being IDP, fail if there are four of them:
 
@@ -441,61 +447,61 @@ Indeed, in both polytopes the only lattice points are the six vertices and the o
 
 \section{ Cayley sums} \giulia{Change notations: remove nef and make sure everything works}
 \label{sec:cayley}
-Let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the Minkowski sum $P+Q$ of $P$ and $Q$ is defined as:
-\[
-P + Q := \{ p+q \in \R^d: p\in P, q \in Q\}.
-\]
-The \emph{Cayley sum} of $P$ and $Q$ is defined as
-\[
+Let $P$ and $Q$ be two lattice polytopes in $\R^d$. We do not require them to be full-dimensional, but we assume their Minkowski sum is. Remember that the \emph{Minkowski sum} $P+Q$ and the \emph{Cayley sum} of $P$ and $Q$ are defined as:
+\begin{gather*}
+P + Q := \{ p+q \in \R^d: p\in P, q \in Q\}.\\
 \cayley (P,Q) = \conv( P\times\{0\} \cup Q\times \{1\}) \in \R^{d+1}.
-\]
-The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ being $(d+1)$-dimensional.
+\end{gather*}
 
-
-\begin{definition}
-In the above conditions, we say that $Q$ \emph{is a weak Minkowski summand of $P$} if the normal fan of $Q$ refines that of $P$. 
-If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.\giulia{I guess there's no nice term for this now...}
-\paco{not sure; maybe we can keep nef after all; another (unclear) option could be ``weak prism over $Q$'' or ``degenerate prism over $Q$''.}
-
-We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
-\paco{``mixed IDP'' is not the right property, since this is weaker than IDP} \giulia{do we give it a name at all then?}
-\paco{perhaps mixed-IDP}
-\[
-(P\cap \Z^d) + (Q\cap \Z^d) = (P+Q)\cap \Z^d.
-\]
-\end{definition}
-
-In this language, \Cref{conj:Oda}\eqref{itm:mixedIDP} translates to:
-\emph{If $Q$ is nef for $P$ and $P$ is smooth then the pair $(P,Q)$ mixed IDP.}
-
-
-\begin{proposition}
-\label{prop:mixedIDP}
-If $\cayley(P,Q)$ is IDP then the pair $(P,Q)$ is mixed IDP.
-\end{proposition}
-
+\paco{removed definitions of "nef cayley", "mixed IDP" and "weak Minkowski sum" from here}
+%\begin{definition}
+%In the above conditions, we say that $Q$ \emph{is a weak Minkowski summand of $P$} if the normal fan of $Q$ refines that of $P$. 
+%If this happens, we say that $\cayley(P,Q)$ is a \emph{nef Cayley sum}.\giulia{I guess there's no nice term for this now...}
+%\paco{not sure; maybe we can keep nef after all; another (unclear) option could be ``weak prism over $Q$'' or ``degenerate prism over $Q$''.}
+%
+%We say that the pair $(P,Q)$ is \emph{mixed IDP} if 
+%\paco{``mixed IDP'' is not the right property, since this is weaker than IDP} \giulia{do we give it a name at all then?}
+%\paco{perhaps mixed-IDP}
+%\[
+%(P\cap \Z^d) + (Q\cap \Z^d) = (P+Q)\cap \Z^d.
+%\]
+%\end{definition}
+%
+%In this language, \Cref{conj:Oda}\eqref{itm:mixedIDP} translates to:
+%\emph{If $Q$ is nef for $P$ and $P$ is smooth then the pair $(P,Q)$ mixed IDP.}
+%
 The so-called \emph{Cayley Trick} is the isomorphism
 \[
 2\cayley(P, Q) \cap (\R^d\times \{1\}) \cong P+Q,
 \]
-which induces the following canonical bijections:
+which easily implies:
+
+\begin{proposition}[see, e.g.~\protect{\cite[Thm.~0.4]{Tsuchiya}}]
+\label{prop:mixedIDP}
+If $\cayley(P,Q)$ is IDP then the pair $(P,Q)$ is mixed IDP.
+\end{proposition}
+
+%The assumption that $P+Q$ is $d$-dimensional is equivalent to $\cayley (P,Q)$ being $(d+1)$-dimensional.
+
+The Cayley Trick also provides the following canonical bijections:
 
 \begin{center}
-  \begin{tabular}{ c | c }
-    $\cayley(P,Q)$ & $P+Q$\\
+  \begin{tabular}{ c c c }
+    $\cayley(P,Q)$ && $P+Q$\\
     \hline
-   polyhedral subdivisions & mixed subdivisions \\
-    triangulations & fine mixed subdivisions \\
-   unimodular simplices & unimodular prod-simplices \\
+   polyhedral subdivisions &$\leftrightarrow$& mixed subdivisions \\
+    triangulations &$\leftrightarrow$& fine mixed subdivisions \\
+   unimodular simplices &$\leftrightarrow$& unimodular prod-simplices \\
   \end{tabular}
 \end{center}\giulia{not sure if the table makes it clear that these are bijections}
 
-
-\begin{align*}
-\text{polyhedral subdivisions of $\cayley(P,Q)$} &\leftrightarrow \text{mixed subdivisions of $P + Q$}\\
-\text{triangulations of $\cayley(P,Q)$} &\leftrightarrow \text{fine mixed subdivisions of $P + Q$}\\
-\text{unimodular simplices in $\cayley(P,Q)$} &\leftrightarrow \text{unimodular prod-simplices in $P + Q$}.
-\end{align*}
+\[
+\begin{array}{ccc}
+\text{polyhedral subdivisions of $\cayley(P,Q)$} &\leftrightarrow& \text{mixed subdivisions of $P + Q$}\\
+\text{triangulations of $\cayley(P,Q)$} &\leftrightarrow& \text{fine mixed subdivisions of $P + Q$}\\
+\text{unimodular simplices in $\cayley(P,Q)$} &\leftrightarrow& \text{unimodular prod-simplices in $P + Q$}.
+\end{array}
+\]
 See \cite{DLRS2010} for more details on the Cayley Trick and on triangulations and polyhedral subdivisions of polytopes.
 In fact these bijections can be taken as definitions of the objects in the right-hand sides. In particular, 
 we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\subset P$ and $T_2\subset Q$ are simplices with complementary affine spans. A prod-simplex is \emph{unimodular} if the edge vectors from a vertex of $T_1$ and from a vertex of $T_2$ form a unimodular basis.
@@ -503,24 +509,28 @@ we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\s
 \medskip
 \giulia{move first paragraph of proof of theorem here, and explain simplices, prodsimplices...}
 
-
-We now turn our attention to dimension $d=2$.  The unimodular prod-simplices are unimodular parallelograms $p+q$ with $p$ a segment of $P$ and $q$ a segment of $Q$, and unimodular triangles $T+u$, where $T \subset P$ and $u \in Q$ or viceversa. 
-
-Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $P \times \{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). 
-
+We now turn our attention to $d=2$, in order to prove \Cref{thm:cayley}. In a triangulation of $\cayley(P,Q)\subset \R^3$ there are tetrahedra of types $(1,3)$, $(2,2)$ and $(3,1)$, where the type denotes how many vertices they have in $P$ and in $Q$. Empty tetrahedra of types $(1,3)$ or $(3,1)$ are automatically unimodular, so we only need to care with those of type $(2,2)$. These are the Cayley sums of a segment $p\subset P$ and a segment $q\subset Q$.
+%
+%
+%The unimodular prod-simplices are unimodular parallelograms $p+q$ with $p$ a segment of $P$ and $q$ a segment of $Q$, and unimodular triangles $T+u$, where $T \subset P$ and $u \in Q$ or viceversa. 
+%
+%Consider any lattice triangulation $\T$ of $\cayley(P,Q)$, or equivalently a mixed subdivision of $P+Q$. Observe that any simplex in $T$ has vertices in $P \times \{0\}$ or in $Q \times \{1\}$, since $\cayley(P,Q)$ lies between two consecutive lattice hyperplanes $\{x_3=0\}$ and $\{x_3=1\}$. Thus simplices in $\T$ are of three types; they can , or have three vertices in $P$ and one in $Q$ (type $(3,1)$), have one vertex in $P$ and three in $Q$ (type $(1,3)$) or have two vertices in $P$ and two in $Q$ (type $(2,2)$). 
+%
 \giulia{fix this}
-
+\paco{done, but check it}
+%
 %As a consequence, we also have that:
 %\begin{align*}
 %\text{$\cayley(P,Q)$ has a unimodular cover} &\leftrightarrow \text{$P+Q$ can be covered by unimodular prod-simplices}.
 %\end{align*}
-
-Our proof of \Cref{thm:cayley} is based on the following result, the proof of which we postpone to \Cref{sec:the_lemma}. 
+For this the following result, the proof of which we postpone to \Cref{sec:the_lemma}, is crucial. 
 The lemma uses the following conventions. If $a, b$ are points, we denote by $[a,b]$ and $(a,b)$ respectively the closed and open segments with endpoints $a,b$. For a segment $s=[a,b]$, we denote the vector $\vec s:= b-a$ and $\vecline s$ as the line spanned by $\vec s$.
 
 \begin{lemma}
 \label{lemma:cayley}
-Let $P$ and $Q$ be two lattice polygons with $Q$ nef with respect to $P$. Let $p=[p_1,p_2] \subset P$ and $q=[q_1,q_2]\subset Q$ be two primitive and non-parallel lattice segments, and let $\vecline p$ and $ \vecline q$ be the lines spanned by them.  If the parallelogram $p + q$ is not unimodular, then at least one of the regions
+\paco{$Q$ is 2-dim, but $P$ may not}
+Let $Q$ be a two-dimensional lattice polytope and $P$ a weak Minkowski summand of it. 
+Let $p=[p_1,p_2] \subset P$ and $q=[q_1,q_2]\subset Q$ be two primitive and non-parallel lattice segments, and let $\vecline p$ and $ \vecline q$ be the lines spanned by them.  If the parallelogram $p + q$ is not unimodular, then at least one of the regions
 \[
 ((p_1, p_2) + \vecline q ) \cap P, 
 \qquad \text{and} \qquad
@@ -534,7 +544,7 @@ contains a lattice point. See \Cref{fig:strips}.
 %\]
 %contains a lattice point.
 \end{lemma}
-\giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
+%\giulia{what I want is: a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in the interior of $\{p_1, p_2\} + \{q_1, q_2\}$ (or symmetric for $Q$)}
 
 \begin{figure}[htb]
 \scalebox{.75}{\input{strips.pdf_t}}
@@ -542,19 +552,47 @@ contains a lattice point. See \Cref{fig:strips}.
 \label{fig:strips}
 \end{figure}
 
+\begin{corollary}
+\label{coro:covercayley}
+\paco{inserted this corollary to make proof clearer, and to parallel section 2}
+Let $T$ be an empty lattice tetrahedron contained in the Cayley sum $\cayley(P,Q)$, where $P$ is a weak Minkowski summand of $Q$. Then, $T$ can be covered by unimodular tetrahedra contained in $\cayley(P,Q)$.
+\end{corollary}
 
-\begin{proof}[Proof of \Cref{thm:cayley}]
+\begin{proof}
+The proof is by induction on the normalized volume of $T$, which we assume to be at least $2$. This implies that $T$ is of type $(2,2)$,
+since empty tetrahedra of types $(1,3)$ and $(3,1)$ are unimodular. Thus, $T$ is the Cayley sum of primitive segments $p=[p_1,p_2]\subset P$ and $q=[q_1,q_2]\subset Q$.  
+Let $u$ be the lattice point whose existence is guaranteed by \Cref{lemma:cayley}. Assume  (the other case is similar) that 
+\[
+u \in ((p_1, p_2) + \vecline q ) \cap P,
+\]
+and call $t$ the triangle $t=\conv( u,  p_1,  p_2)\subset P$.
 
-A unimodular triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained simply by unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can be without being confusing?}.
-
-Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
+Let us denote $\tilde u$, $\tilde p_1$, $\tilde p_2$, $\tilde q_1$, $\tilde q_2$ the points corresponding to $u, p_1, p_2, q_1, q_2$ in $\cayley(P,Q)$.
+That is, $\tilde p_i = p\times\{0\}$, $\tilde q_i = p\times\{1\}$, and $\tilde u = u\times\{0\}$.
+Observe that the assumption $u\in((p_1, p_2) + \vecline q$ implies that of the segments $[u,q_i]$ crosses the triangle $\conv(p_1,p_2,q_j)$, where $\{i,j\}=\{1,2\}$. In turn, this means that the polytope $\conv(\tilde u, \tilde p_1, \tilde p_2, \tilde q_1, \tilde q_2) = \cayley(t,q)$
+ has the following two triangulations:
+\begin{gather*}
+\mathcal T^+:= \left\{ \cayley(p,q), \cayley(t, \{q_i\}) \right\},
+\\
+\mathcal T^-:= \{ \cayley([p_1,u],q), \cayley([p_2,u],q), \cayley(t, \{q_j\}) \}.
+\end{gather*}
+The tetrahedra $\cayley(t, \{q_j\})$ and $\cayley(t, \{q_i\})$ are unimodular, which implies that $T=\cayley(p,q)$ has volume equal to the sum of the volumes of $\cayley([p_1,u],q)$ and $\cayley([p_2,u],q)$. In particular, we have covered $T$ by the three tetrahedra in $\mathcal T^-$, which are of smaller volume and hence have unimodular covers by inductive assumption.
+%
+%A unimodular triangulation of a simplex of type $(3,1)$ (resp $(1,3)$) is obtained simply by unimodularly triangulating the triangular face lying in $P$ (resp $Q$) and coning over the vertex in $Q$ (resp $P$). This leaves simplices of type $(2,2)$. In the mixed subdivision of $P+Q$ corresponding to $T$, these are mixed cells, that is parallelograms with one edge in $P$ and one in $Q$ \giulia{how imprecise can be without being confusing?}.
+%
+%Let $S=\{p_1, p_2\} + \{q_1, q_2\}$ be such a parallelogram. By \Cref{lemma:cayley} we know that there is a lattice point $p \in P$ such that either $p+q_1$ or $p+q_2$ lies in $S$, w.l.o.g. suppose it is $p+q_1$. Then we can cover $S$ by the triangle $\{p_1, p_2, p\} + q_1$ and parallelograms $\{p_1, p\}  + \{q_1, q_2\}$ and $\{p_2, p\} + \{q_1, q_2\}$. As above, the triangle can be unimodularly triangulated, while the volume of the two parallelograms sums up to the volume of $S$, and therefore each has volume strictly smaller than $S$. By iterating this procedure, we can cover $S$ by unimodular cells.
 \end{proof}
 
-We now turn our attention to \emph{prismatoids}, defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. In particular, a \emph{lattice prismatoid} is any $d$-polytope $SL(\Z,d)$-equivalent to one of the form
+\begin{proof}[Proof of \Cref{thm:cayley}]
+Arbitrarily triangulate $\cayley(P,Q)$ into empty lattice tetrahedra and apply \Cref{coro:covercayley} to these tetrahedra.
+\end{proof}
+
+Let us show how to derive \Cref{coro:prismatoid,coro:width1} from this.
+Recall that \emph{prismatoids} were defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. In particular, a \emph{lattice prismatoid} is any $d$-polytope $SL(\Z,d)$-equivalent to one of the form
 \[
 \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
 \]
-where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This generalizes Cayley sums, which are the case $k=1$.
+where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This generalizes Cayley sums, which are the case $k=1$, except the definition of prismatoid requires $Q_1$ and $Q_2$ to be full-dimensional, while the Cayley sum only requires this for $Q_1+Q_2$.
 
 \begin{proposition}
 \label{prop:prismatoid}
@@ -568,22 +606,25 @@ If $P\cap(\R^2\times\{1\})$ is a lattice polygon then $P$ has a unimodular cover
 \end{proposition}
 
 \begin{proof}
-\paco{perhaps add details}
-The condition that $P\cap(\R^2\times\{1\})$ is a lattice polygon implies the same for $P\cap(\R^2\times\{i\})$, for every $i$.
-Then, each slice
+\paco{ added details}
+The condition that $P\cap(\R^2\times\{1\})$ is a lattice polygon implies the same for $P\cap(\R^2\times\{i\})$, for every $i$. 
+Indeed, the condition implies that every edge of $\cayley(P,Q)$ of the form $[u\times \{0\}, v\times \{k\}]$ has a lattice point in $\R^2\times\{i\}$, and hence it has a lattice point in $P\cap(\R^2\times\{i\})$, for every $i$.
+
+Observe that for every $i\in \{1,\dots,k-1\}$ the intersection $P\cap(\R^2\times\{i\})$ has the same normal fan as $Q_1+Q_2$. Thus, each slice
 \[
-P \cap (\R^2\times[i,i+1])
+P \cap (\R^2\times[i-1,i])
 \]
-is a nef Cayley polytope, hence it has a unimodular cover by \Cref{thm:cayley}.
+is a Cayley polytope in which both bases have the same normal fan (if $i\in\{2,\dots,k-1\}$ or one is a weak Minkowski summand of the other (if $i\in \{1,k\}$).
 \end{proof}
 
-This statement implies \Cref{coro:prismatoid} and \Cref{coro:width1}. 
-For the former, smoothness of a prismatoid implies $P\cap(\R^2\times\{1\})$ to be a lattice polytope. \paco{details?}
-For the latter, if $P$ has width one then $P\cong \cayley(Q_1, Q_2)$ and, for every $k\in \Z_{>0}$, we have
+
+\begin{proof}[Proof of \Cref{coro:prismatoid,coro:width1}]
+In both cases the polytope under study satisfies the hypotheses of \Cref{prop:prismatoid}. For the first, smoothness of a prismatoid implies that every edge of the form $[u\times \{0\}, v\times \{k\}]$ has lattice points in all slices. For the second, if $P$ has width one then $P\cong \cayley(Q_1, Q_2)$ for some $Q_1$ and $Q_2$. Hence,
 \[
 kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
+\qedhere
 \] 
-
+\end{proof}
 
 
 
@@ -592,7 +633,7 @@ kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 \label{sec:the_lemma}
 Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
 
-Observe that in the strip strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
+Observe that in the strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
 %We call that point $q^+$. Similarly, $q +\vecline p$ has a unique lattice point at $f_q(x)=-1$, which we call $q_-$. Observe that $q_++q_-=q_1+q_2$ and that the triangles $\conv(q_1, q_2, q_+)$ and $\conv(q_1, q_2, q_1)$ are unimodular.
 Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
@@ -602,7 +643,8 @@ In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, s
 Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then 
 \[
 w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ). 
-\] \giulia{we want a picture for the setup}
+\] 
+\paco{picture for setup needs change}
 
 \begin{figure}
 \includegraphics[scale=.3]{setup.png}
@@ -856,9 +898,6 @@ and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)
 \giulia{add a picture?}
 
 
-
-\Giulia{add references to Haase and Hofmann and Tsuchiya}
-
 \begin{thebibliography}{99} 
 
 \bibitem{BHHHJKM2019}
@@ -891,7 +930,12 @@ Najmuddin Fakhruddin.
 {Branko Gr\"unbaum}.
 {\em {C}onvex {P}olytopes}.
 Wiley, London, 1967.
-  
+
+\bibitem{HaaseHof}
+Christian Haase and Jan Hofmann, 
+Convex-normal (Pairs of) Polytopes, 
+\emph{Canad. Math. Bull.} 60 (2017), 510--521.
+
   \bibitem{HPPS-survey}
 Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
 %Preprint May 2014, updated December 2017, 89 pages. 
@@ -933,6 +977,11 @@ DOI: 10.4007/annals.2012.176.1.7
 Francisco Santos and G{\"u}nter~M. Ziegler.
 \newblock {Unimodular triangulations of dilated 3-polytopes}, 
 \newblock {\em Trans. Moscow Math. Soc.} (2013), 293--311. % \MR{3235802}
+
+\bibitem{Tsuchiya}
+Akiyoshi Tsuchiya.
+Cayley sums and Minkowski sums of 2-convex-normal lattice polytopes.
+Preprint, arXiv:1804.10538, April 2018.
 
 \bibitem{White1964}
 G.~K.~White.
