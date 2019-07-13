@@ -158,21 +158,20 @@ Every smooth lattice polytope is IDP.
 Motivated by  \Cref{conj:Oda}\eqref{itm:mixedIDP}, we recall the following definitions:
 
 \begin{definition}
-We say that $P$ is a weak Minkowski summand of $Q$ if the normal fan of $Q$ refines that of $P$.
+We say that $P$ is a \emph{weak Minkowski summand} of $Q$ if the normal fan of $Q$ refines that of $P$.
 \end{definition}
 The name is due to the fact that the condition on the refinement of the normal fans is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$~\cite[??]{Grunbaum}. 
 It has the following algebraic implication for the projective toric variety $X_Q$ corresponding to (the normal fan of) $Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the corresponding Cartier divisor $D_P$ on  $X_Q$ is \emph{numerically effective}, or ``nef''~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}; (observe that~\cite{CLS} use ``Minkowski summand'' meaning what we call ``weak Minkowski summand''). 
 \paco{added this explanation}
 
 \begin{definition}
-The pair $(P, Q)$ has the integer decomposition property, or is IDP, if 
+The pair $(P, Q)$ has the integer decomposition property, or \emph{the pair $(P,Q)$ is IDP}, if 
 \begin{align*}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
 \end{definition}
  
-In this language,  \Cref{conj:Oda}\eqref{itm:mixedIDP} can be rephrased as if $P$ is a weak Minkowski summand of $Q$ and $Q$ is smooth, then the pair $(P,Q)$ is IDP.
-
+In this language,  \Cref{conj:Oda}\eqref{itm:mixedIDP} can be rephrased as: if $P$ is a weak Minkowski summand of $Q$ and $Q$ is smooth, then the pair $(P,Q)$ is IDP.
 
 Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
 %
@@ -240,7 +239,6 @@ Let $P$ and $Q$ be lattice polygons with the normal fan of $Q$ refining that of 
 
 This also implies the following two statements, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
-\paco{Wait; ``width one'' is only a special case of ``prismatoid'' if we allow prismatoids to have vertices in two parallel \emph{faces}, not \emph{facets}. But \Cref{coro:prismatoid} is not so obvious in that more general case. Either prove it or remove the phrase ``special case''} \giulia{true...}
 A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being $SL(\Z,d)$-equivalent to a Cayley sum.
 
 \begin{corollary}
@@ -325,7 +323,7 @@ Now, the translation of vector $\left(\frac{a-1}2,\frac{b}2,1\right)$ sends the 
 
 \begin{lemma}
 \label{lemma:3<4}
-Let $P$ be a lattice parallelepiped and let $T\subset P$ be an empty tetrahedron. Then, at least one of the four corner tetrahedra $T_i$ of the circumscribed parallelogram $C(T)$ is fully contained in $P$.
+Let $P$ be a lattice parallelepiped and let $T\subset P$ be a tetrahedron. Then, at least one of the four corner tetrahedra $T_i$ of the circumscribed parallelogram $C(T)$ is fully contained in $P$.
 \end{lemma}
 
 \begin{proof}
@@ -401,7 +399,7 @@ S_1= \conv(p_2,p_3,p_4, u),
 S_2=\conv(p_1,p_3,p_4, u),
 S_3=\conv(p_1,p_2,p_4, u).
 \]
-Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. By inductive hypothesis they can be covered unimodularly, and we are done,
+Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, because, for each $i$, $p_i$ is the unique point of $C(T)$ maximizing the distance to the opposite facet $\conv(p_j,p_k,p_l)$ of $T$. Thus, $S_1$, $S_2$ and $S_3$ cover $T$ and have volume strictly smaller than $T$. The $S_i$ may not be empty, but we can triangulate them into empty tetrahedra, which by inductive hypothesis they can be covered unimodularly, and we are done.
 
 %Observe that  $T'_4$ and/or one of the $S_i$ can degenerate to a triangle, if $u$ lies in $\conv(p_1,p_2,p_3)$, but this does not affect the argument.
 %
@@ -409,7 +407,7 @@ Each of the tetrahedra $S_i$ has lattice volume strictly smaller than $T$, becau
 \end{proof}
 
 \begin{proof}[Proof of \Cref{thm:parallelepipeds}]\giulia{see comment above}
-Arbitrarily triangulate the parallelepiped into lattice tetrahedra and apply \Cref{coro:coverpara} to these tetrahedra.
+Arbitrarily triangulate the parallelepiped into empty lattice tetrahedra and apply \Cref{coro:coverpara} to these tetrahedra.
 %Let $P \subseteq \R^3$ be a lattice parallelepiped. It can be triangulated into empty lattice tetrahedra, simply by taking a triangulation which uses all lattice points as vertices.  If all the tetrahedra in the triangulation are unimodular we are done. Otherwise, suppose $T$ is an empty tetrahedron in the triangulation which is not unimodular. \Cref{lemma:3<4} guarantees that one of the corner tetrahedra $T_i$ of the parallelepiped $C(T)$ circumscribed to $T$ is contained in $P$. Without loss of generality, suppose $T_4 = \conv(p_1, p_2, p_3,q_4)$ is in $P$. By \Cref{lemma:corner}, we know that $T_4$ contains a lattice point, which we denote by $u$. 
 %
 %
