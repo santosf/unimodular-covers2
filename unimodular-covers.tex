@@ -621,11 +621,10 @@ kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 \label{sec:the_lemma}
 Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
 
-Observe that in the strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
-%We call that point $q^+$. Similarly, $q +\vecline p$ has a unique lattice point at $f_q(x)=-1$, which we call $q_-$. Observe that $q_++q_-=q_1+q_2$ and that the triangles $\conv(q_1, q_2, q_+)$ and $\conv(q_1, q_2, q_1)$ are unimodular.
+Observe that in the strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=-1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
 Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
-We let $H_1=\{f_q(x) < 0\}$ and $H_2=\{f_q(x) > 0\}$; similarly let $V_1=\{f_p(x) < 0\}$ and $V_2=\{f_p(x) > 0\}$. 
+We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq 0\}$ and $V_2=\{f_p(x) \geq 0\}$. \giulia{we need to make these closed, so that the case $P$ one dimensional fits into this same proof}
 In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, so that $H_i \cap V_j$ are the four quadrants. 
 
 Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then 
@@ -640,7 +639,7 @@ w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +
 \end{figure}
 
 \begin{proof}[Proof of \Cref{lemma:cayley}]
-Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no vertex of $P$ can be in the strip $p + \vecline q$.  Thus $P$ has two primitive segments in the boundary which each have one vertex on each side of the strip $p + \vecline q$; we will call these $\ell=[l_1, l_2]$ and $r=[r_1, r_2]$, with $\ell$ and $r$ crossing the strip $p + \vecline q$  in $V_1$ and $ V_2$ respectively and the convention that $f_q(l_2) >f_q(l_1)$ and $f_q(r_2) >f_q(r_1)$. This readily implies 
+Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no lattice point on the boundary of $P$ can be in the interior of the strip $p + \vecline q$.  Thus the boundary of $P$ contains two primitive segments which each have one vertex on each side of the strip $p + \vecline q$; we will call these $\ell=[l_1, l_2]$ and $r=[r_1, r_2]$, with $\ell$ and $r$ crossing the strip $p + \vecline q$  in $V_1$ and $ V_2$ respectively and the convention that $f_q(l_2) >f_q(l_1)$ and $f_q(r_2) >f_q(r_1)$. This readily implies 
 \begin{gather}
 \label{eq:widthp}
 \begin{array}{cc}
@@ -664,20 +663,7 @@ f_p(b_2) \geq f_p(q_2).
 \end{gather}
 
 Observe that a priori one of $l$ and $r$ can coincide with $p$, if this is on the boundary of $P$, and similarly one of $t,b$ might be $q$, if this is on the boundary of $Q$. 
-\giulia{p=P ???}
 
-%To make things more explicit, we assume the following coordinates for the edge-vectors:
-%\[
-%\vec l = (l_1,l_2), \quad
-%\vec r= (r_1,r_2), \quad
-%\vec b= (b_1,b_2), \quad
-%\vec t= (t_1,t_2).
-%\]
-%Without loss of generality we assume $l_2,r_2,b_1,t_1 >0$. (They are non-zero and we can arbitrarily choose a sign for each vector).
-
-%\begin{claim}
-%$l_2, r_2, b_1, t_1 >1$.
-%\end{claim}
 
 \begin{claim}
 The following inequalities hold, 
