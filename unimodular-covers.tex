@@ -117,7 +117,7 @@ Work of F. Santos is also supported by project MTM2017-83750-P of the Spanish Mi
 \begin{document}
 
 \begin{abstract}
-We show that the following classes of three-dimensional lattice polytopes have unimodular covers: the class of all parallelepipeds, the class of all centrally symmetric polytopes, and the class of all three-dimensional Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al.~(2018) and Haase et al.~(2008) where the last two classes were shown to be IDP.
+We show that the following classes of lattice polytopes have unimodular covers, in dimension three: the class of parallelepipeds, the class of centrally symmetric polytopes, and the class of Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al.~(2018) and Haase et al.~(2008) where the last two classes were shown to be IDP.
 \end{abstract}
 
 \maketitle
@@ -135,16 +135,15 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-Oda (\cite{Oda1997}) posed several questions regarding smoothness and the IDP property for lattice polytopes.
+Oda \cite{Oda1997} posed several questions regarding smoothness and the IDP property for lattice polytopes.
 %
-\paco{I think this definition goes better here, and decided to "undeclare" it and the definition of weak Mink sum}
 Following \cite{HaaseHof, Tsuchiya}, we say that a pair $(P, Q)$ of lattice polytopes has the integer decomposition property, or that \emph{the pair $(P,Q)$ is IDP}, if 
 \begin{align*}
 \label{eq:mixedIDP}
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d.
 \end{align*}
 %
-A lattice polytope $Q$ is called \emph{smooth} if it is simple and the primitive edge directions \giulia{changed this from "edge generators", which to me was unclear} at every vertex form a linear basis for the lattice; equivalently, if the projective toric variety defined by the normal fan of $Q$ is smooth. 
+A lattice polytope $Q$ is called \emph{smooth} if it is simple and the primitive edge directions at every vertex form a linear basis for the lattice; equivalently, if the projective toric variety defined by the normal fan of $Q$ is smooth. 
 The following versions of Oda's questions are now considered conjectures~\cite{HNPS2008,mfo2007}, and they are open even in dimension three:
 \begin{conjecture}
 \label{conj:Oda}
@@ -163,8 +162,8 @@ Every smooth lattice polytope is IDP.
 \end{enumerate}
 \end{conjecture}
 
-When the normal fan of a $Q$ refines that of $P$, as in the second conjecture, we say that $P$ \emph{is a weak Minkowski summand of $Q$}, since this is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$\paco{did not find this in the google books version of \cite{Grunbaum}; found it in Postnikov-Reiner-Williams, Tsuchiya, a survey by Rekha Thomas, and other places. Perhaps we can leave it wothout reference}. 
-This property has the following algebraic implication for the projective toric variety $X_Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the Cartier divisor on  $X_Q$ defined by $P$ is \emph{numerically effective}, or ``nef'' (see~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}, but observe that there, what we call  ``weak Minkowski summand'' is called simply ``Minkowski summand''). 
+When the normal fan of a polytope $Q$ refines that of another polytope $P$, as in the second conjecture, we say that $P$ \emph{is a weak Minkowski summand of $Q$}, since this is equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$\paco{did not find this in the google books version of \cite{Grunbaum}; found it in Postnikov-Reiner-Williams, Tsuchiya, a survey by Rekha Thomas, and other places. Perhaps we can leave it wothout reference}. 
+This property has the following algebraic implication for the projective toric variety $X_Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the Cartier divisor defined by $P$ on  $X_Q$ is \emph{numerically effective}, or ``nef'' (see~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}, but observe that what we here call  ``weak Minkowski summand'' is simply called ``Minkowski summand'' there). 
 %\paco{added this explanation}
 %
 %\begin{definition}
@@ -216,15 +215,16 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 %Beck et al.~\cite{BHHHJKM2019} show that $P$ is IDP by covering it with parallelepipeds and unimodular simplices. Once we know parallelepipeds have unimodular covers (\Cref{thm:parallelepipeds}), we conclude $P$ has a unimodular cover too.
 %\end{proof}
 
-The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, it fails if $P=Q$ is any non-unimodular \emph{empty tetrahedron}, by which we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of empty tetrahedra).
-\paco{added def of empty tetrahedron}\giulia{I didn't like "details on them" and changed it to  "classification of empty tetrahedra". Is this ok?}
+The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, if we let $P=Q$ be any non-unimodular \emph{empty tetrahedron}, then $P$ is obviously a weak Minkowski summand of $Q$ but the pair $(P.Q)$ is not IDP. By an empty tetrahedron we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of them).
+\giulia{I didn't like "details on them" and changed it to  "classification of empty tetrahedra". Is this ok?}
+\paco{ok. But left it as "classification of them"}
 
 An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, which we discuss in  \Cref{sec:cayley}. 
 Recall that the \emph{Cayley sum} of two lattice polytopes $Q_1,Q_2\subset \R^d$ is the lattice polytope
 \[
 \cayley(Q_1,Q_2) := \conv(Q_1\times\{0\} \cup Q_2 \times \{1\}) \subset \R^3.
 \]
-We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but for this does not need $Q_1$ and $Q_2$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
+We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but this does not need $Q_1$ and $Q_2$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
 
 As we note in \Cref{prop:mixedIDP}, if the Cayley sum of $P$ and $Q$ is IDP then the pair $(P,Q)$ is IDP.
 In particular, the following statement from \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
@@ -234,7 +234,7 @@ In particular, the following statement from \Cref{sec:cayley} is stronger than t
 Let $P$ and $Q$ be lattice polygons, with $P$ a weak Minkowski summand of $Q$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This has the following two consequences, also proved in \Cref{sec:cayley}.
+This has the following two corollaries, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
 A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being ($SL(\Z,d)$-equivalent to) a Cayley sum.
 
@@ -272,18 +272,16 @@ C(T)=\conv(p_i,q_i: i\in[4]).
 \] 
 $C(T)$ is a parallelepiped with facets $\conv(p_i, p_j, q_k, q_l)$ for all choices of $\{i,j,k,l\}=[4]$. We call it the \emph{parallelepiped circumscribed} to $T$.
 
-For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. Together with $T$ they triangulate of $C(T)$.
+For each $i \in [4]$, let $T_i=\conv(q_i, p_j, p_k, p_l)$, with $\{i,j,k,l\}=[4]$; we call these $T_i$ the \emph{corner tetrahedra} of $C(T)$. Together with $T$ they triangulate $C(T)$.
 \end{definition}
 
-The idea to have in mind is that of the regular tetrahedron inscribed in a cube, see \Cref{fig:circumscribed_parall}. 
-Modulo an affine transformation this is exactly the situation of $T$ and $C(T)$.
-
+Modulo an affine transformation, the situation of $T$ and $C(T)$ is exactly that of the regular tetrahedron inscribed in a cube; see \Cref{fig:circumscribed_parall}. 
+%
 \begin{figure}[htb]
-\includegraphics[width=.7\textwidth]{circumscribed_parall}
-\caption{In red we have the tetrahedron $T$, in black the circumscribed parallelepiped $C(T)$, and in blue the corner simplex $T_4$.}
+\includegraphics[scale=.25]{circumscribed_parall}
+\caption{In red we have a tetrahedron $T$, in black its circumscribed parallelepiped $C(T)$, and in blue the corner simplex $T_4$.}
 \label{fig:circumscribed_parall}
 \end{figure}
-\giulia{I added a picture, now we can decide if we want it in the paper or not.}
 
 \begin{lemma}
 \label{lemma:corner}
@@ -314,17 +312,15 @@ v:=(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
 
 See \Cref{fig:corner}. Observe that $u+v=p_1+p_2=q_3+q_4$.
 Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
-
+%
+\giulia{ditto}
+\paco{not sure about this one. It looks like the red dots lie on edges of $C(T)$}
 \begin{figure}[htb]
-\includegraphics[width=.9\textwidth]{Whites}
-\caption{The parallelograms $\conv(p_1p_2q_3q_4)$ and $\conv(q_2q_1p_4p_3)$. The large red points are lattice points.}
+\includegraphics[scale=.25]{Whites}
+\caption{The parallelograms $\conv(p_1p_2q_3q_4)$ and $\conv(q_2q_1p_4p_3)$. The large red dots are lattice points.}
 \label{fig:corner}
 \end{figure}
-\giulia{ditto}
-
-
 %\paco{Alternative arguments: one can explicitly compute coordinates of lattice points in $T_1$ and $T_2$, or one can say that the isomorphism $T_{a,b} \cong T_{a^{-1},b}$ of White tetrahedra exchanges the edges at $\{z=0\}$ and at $\{z=1\}$.}
-
 \end{proof}
 
 
@@ -490,9 +486,6 @@ we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\s
 \medskip
 
 We now turn our attention to $d=2$, in order to prove \Cref{thm:cayley}. A triangulation of $\cayley(P,Q)\subset \R^3$ consists of tetrahedra of types $(1,3)$, $(2,2)$ and $(3,1)$, where the type denotes how many vertices they have in $P$ and in $Q$. Empty tetrahedra of types $(1,3)$ or $(3,1)$, which are Cayley sums of a triangle in $P$ and a point in $Q$, or viceversa, are automatically unimodular. The case that we need to study are therefore tetrahedra of type $(2,2)$, which are Cayley sums of a segment $p\subset P$ and a segment $q\subset Q$.
-\giulia{fix this}
-\paco{done, but check it}
-\giulia{just changed small things}
 The following lemma, whose proof we postpone to \Cref{sec:the_lemma}, is crucial to understand how to unimodularly cover these tetrahedra. 
 We use the following conventions: if $a, b$ are points, we denote by $[a,b]$ and $(a,b)$ respectively the closed and open segments with endpoints $a,b$. Given a segment $s=[a,b]$, we denote the vector $\vec s:= b-a$ and  the line spanned by $\vec s$ by $\vecline s$.
 
@@ -515,12 +508,13 @@ contains a lattice point. See \Cref{fig:strips}.
 %contains a lattice point.
 \end{lemma}
 
+%\giulia{added picture, we may not want it}
+%\paco{looks ok}
 \begin{figure}[htb]
 \scalebox{.75}{\input{strips.pdf_t}}
 \caption{The strips  of Lemma \ref{lemma:cayley}}
 \label{fig:strips}
 \end{figure}
-\giulia{added picture, we may not want it}
 
 \begin{corollary}
 \label{coro:covercayley}
@@ -541,7 +535,7 @@ That is, $\tilde p_i = p\times\{0\}$, $\tilde q_i = p\times\{1\}$, and $\tilde u
 Observe that the assumption $u\in((p_1, p_2) + \vecline q$ implies that of the segments $[u,q_i]$ crosses the triangle $\conv(p_1,p_2,q_j)$, where $\{i,j\}=\{1,2\}$, see \Cref{fig:flip}. 
 
 \begin{figure}[htb]
-\includegraphics[width=.9\textwidth]{flip}
+\includegraphics[scale=.3]{flip}
 \caption{$[u,q_2]$ intersects $\conv(p_1,p_2,q_1)$}
 \label{fig:flip}
 \end{figure}
@@ -569,7 +563,7 @@ Let us now show how to derive \Cref{coro:prismatoid,coro:width1} from this theor
 \[
 \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
 \]
-where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This is almost a generalization of Cayley sums, which would be the case $k=1$, except the definition of prismatoid requires $Q_1$ and $Q_2$ to be full-dimensional, while the Cayley sum only requires this for $Q_1+Q_2$. \giulia{I didn't like "this is a generalization except...}
+where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This is almost a generalization of Cayley sums, which would be the case $k=1$, except the definition of prismatoid requires $Q_1$ and $Q_2$ to be full-dimensional, while the Cayley sum only requires this for $Q_1+Q_2$.
 
 \begin{proposition}
 \label{prop:prismatoid}
@@ -612,8 +606,16 @@ Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one 
 Observe that in the strip $q +\vecline p$, there is a unique lattice point on the line $f_q(x)=-1$;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
 Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
-We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq 0\}$ and $V_2=\{f_p(x) \geq 0\}$. \giulia{we need to make these closed, so that the case $P$ one dimensional fits into this same proof}
+We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq 0\}$ and $V_2=\{f_p(x) \geq 0\}$. 
+\giulia{we need to make these closed, so that the case $P$ one dimensional fits into this same proof}\paco{ok}
 In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, so that $H_i \cap V_j$ are the four quadrants. 
+See \Cref{fig:setup}.
+%
+\begin{figure}[htb]
+\includegraphics[scale=.3]{setup.png}
+\caption{Setup for the proof of \Cref{lemma:cayley}}
+\label{fig:setup}
+\end{figure}
 
 Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then:
 \[
@@ -621,14 +623,10 @@ w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +
 \] 
 
 
-\begin{figure}
-\includegraphics[scale=.3]{setup.png}
-\caption{Setup for \Cref{lemma:cayley}}
-\end{figure}
+
 
 \begin{proof}[Proof of \Cref{lemma:cayley}]
 Suppose by contradiction that there is no lattice point as described in the lemma. In particular, no lattice point on the boundary of $Q$ can be in the interior of the strip $q + \vecline p$.  Thus the boundary of $Q$ contains two primitive segments which each have one vertex on each side of the strip $q + \vecline p$; we will call these  $b=[b_1, b_2], t=[t_1, t_2]$, with $b$ and $t$ crossing the strip in $H_1$ and $H_2$ respectively and the convention that $f_p(b_2) >f_p(b_1)$ and $f_p(t_2) >f_p(t_1)$. This readily implies 
-
 \begin{gather}
 \label{eq:widthq}
 \begin{array}{cc}
