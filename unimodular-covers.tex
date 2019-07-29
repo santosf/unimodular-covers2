@@ -197,10 +197,7 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 \end{question}
 
 
-The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, if we let $P=Q$ be any non-unimodular \emph{empty tetrahedron}, then $P$ is obviously a weak Minkowski summand of $Q$ but the pair $(P.Q)$ is not IDP. By an empty tetrahedron we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of these).
-\giulia{I didn't like "details on them" and changed it to  "classification of empty tetrahedra". Is this ok?}
-\paco{ok. But left it as "classification of them"}
-\giulia{is it of them or of these!? my grammar needs some refresh}
+The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, if we let $P=Q$ be any non-unimodular \emph{empty tetrahedron}, then $P$ is obviously a weak Minkowski summand of $Q$ but the pair $(P.Q)$ is not IDP. By an empty tetrahedron we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of them).
 
 An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, which we discuss in  \Cref{sec:cayley}. 
 Recall that the \emph{Cayley sum} of two lattice polytopes $P,Q\subset \R^d$ is the lattice polytope
@@ -215,7 +212,7 @@ In particular, the following statement from \Cref{sec:cayley} is stronger than t
 \begin{theorem}
 \label{thm:cayley}
 Let $Q$ be lattice polygon, and $P$ a weak Minkowski summand of $Q$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
-\end{theorem}\giulia{changed this so that only $Q$ need be a lattice polygon}
+\end{theorem}
 
 This has the following two corollaries, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
@@ -293,7 +290,7 @@ u:=(1,1,0)\in \conv(p_1p_2q_3) \subset T_4, \quad
 v:=(0,-1,0)\in \conv(p_1p_2q_4) \subset T_3.
 \]
 
-See \Cref{fig:corner}. Observe that $u+v=p_1+p_2=q_3+q_4$.
+Observe that $u+v=p_1+p_2=q_3+q_4$.
 Now, this implies that the quadrilateral $\conv(p_1q_4p_2q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2p_3q_1p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2p_3q_1p_4)$ must contain lattice points in both triangles $\conv(q_2p_3p_4)\subset T_1$ and $\conv(q_1p_3p_4)\subset T_2$.
 %
 
