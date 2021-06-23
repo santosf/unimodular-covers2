@@ -136,7 +136,7 @@ P \text{ is IDP.}
 \]
 Remember that a \emph{unimodular triangulation} is a triangulation of $P$ into unimodular simplices, and a \emph{unimodular cover} is a collection of unimodular simplices whose union equals $P$. 
 
-Oda (\cite{Oda1997}) posed several questions regarding smoothness and the IDP property for lattice polytopes.
+Oda \cite{Oda1997} posed several questions regarding smoothness and the IDP property for lattice polytopes.
 %
 Following \cite{HaaseHof, Tsuchiya}, we say that a pair $(P, Q)$ of lattice polytopes has the integer decomposition property, or that \emph{the pair $(P,Q)$ is IDP}, if 
 \begin{align*}
@@ -165,7 +165,8 @@ This property has the following algebraic implication for the projective toric v
 
 
 \medskip 
-Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes. 
+Motivated by these and other questions, several authors have studied the IDP property for different classes of lattice polytopes,
+with special attention to dimension $3$ (in dimension 2 is it straightforward that ever lattice polygon has unimodular triangulations). 
 %
 For example,  very recently
 Beck et al.~\cite{BHHHJKM2019} proved that all smooth centrally symmetric $3$-polytopes are IDP.
@@ -215,7 +216,7 @@ In particular, the following statement from \Cref{sec:cayley} is stronger than t
 Let $Q$ be lattice polygon, and $P$ a weak Minkowski summand of $Q$. Then the Cayley sum $\cayley(P,Q)$ has a unimodular cover.
 \end{theorem}
 
-This has the following two corollaries, also proved in \Cref{sec:cayley}.
+This has the following consequence, also proved in \Cref{sec:cayley}.
 A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
 A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being ($SL(\Z,d)$-equivalent to) a Cayley sum.
 
@@ -225,34 +226,46 @@ Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
 \Paco{
-I am a bit puzzled. After the next corollary we say that \cite[Cor.~4.2]{SantosZiegler} proves a case of this, but in fact it proves the whole of it, in a stronger form that does not need width one, and that gives a "dissection" and not a mere cover (dissection= cover by simplices with disjoint interiors). 
-
-I propose to change it to the following, related to a recent preprint of Gubeladze:
-
-\noindent{\bf Corollary}
-%\label{coro:gorenstein}
-Let $P$ be a lattice $3$-polytope with the following property: for every facet $F$ of $P$ and every edge $E$ of $P$ with (exactly) an end-point in $F$, there is a lattice point $v\in E$ at distance $1$ from $P$. Then, there is a unimodular cover of its ``lattice boundary''. 
-%\end{corollary}
-
-Here ee call ``lattice boundary'' of a polytope the union of all the prismatoids obtained translating each facet hyperplane one lattice unit towards the interior. Put differently, if $\{a_i x \le b_i, i=1,\dots,m\}$ integer is an integral facet description of $P$, the lattice boundary is $P$ minus the interior of $P'=\{a_i x \le b_i-1, i=1,\dots,m\}$. Remark: $P'$ is related to (but not exactly the same as) the ``Fine interior'' of $P$. See eg, some papers by Batyrev on this.
-
-This corollary is related (but neither implies nor is implied by) Theorem (a) in Gubeladze's recent arXiv:2012.11846
+I am a bit puzzled. After the next corollary we say that \cite[Cor.~4.2]{SantosZiegler} proves a case of this, but in fact it proves the whole of it, in a stronger form: it does not need width one, and it gives a "dissection" and not a mere cover (dissection= cover by simplices with disjoint interiors). 
+I propose to delete it:
+%
+%\noindent{\bf Corollary}
+%%\label{coro:gorenstein}
+%Let $P$ be a lattice $3$-polytope with the following property: for every facet $F$ of $P$ and every edge $E$ of $P$ with (exactly) an end-point in $F$, there is a lattice point $v\in E$ at distance $1$ from $P$. Then, there is a unimodular cover of its ``lattice boundary''. 
+%%\end{corollary}
+%
+%Here we call ``lattice boundary'' of a polytope the union of all the prismatoids obtained translating each facet hyperplane one lattice unit towards the interior. Put differently, if $\{a_i x \le b_i, i=1,\dots,m\}$ integer is an integral facet description of $P$, the lattice boundary is $P$ minus the interior of $P'=\{a_i x \le b_i-1, i=1,\dots,m\}$. Remark: $P'$ is related to (but not exactly the same as) the ``Fine interior'' of $P$. See eg, some papers by Batyrev on this.
+%
+%This corollary is related (but neither implies nor is implied by) Theorem (a) in Gubeladze's recent arXiv:2012.11846
 }
-
+{\color{red}
 \begin{corollary}
-\label{coro:width1}
+%\label{coro:width1}
 Every integer dilation $kP$, $k\ge 2$, of a lattice $3$-polytope $P$ of width $1$ has a unimodular cover.
 \end{corollary}
 
 A special case of the latter are integer dilations of empty tetrahedra. That their dilations have
 unimodular covers is \cite[Cor.~4.2]{SantosZiegler} (and is also implicit in \cite{KantorSarkaria}).
+}
 
-\medskip
-We believe that the $3$-polytopes in all these statements have unimodular triangulations, but this remains an open question.
+\paco{added ref to Gubeladze}
+Let us also mention the following recent results of Gubeladze~\cite{Gubeladze}.
+In the second one, a polytope $P$ is called \emph{very ample} if the vertex cone $\cone(P-v)$ is contained in the translation $P-v$, for every vertex $v$ of $P$.
+
+\begin{theorem}[Gubeladze~\cite{Gubeladze}]
+Let $P$ be a lattice $3$-polytope. 
+\begin{enumerate}
+\item If $P=E\cap \Z^3$ for some (solid) ellipsoid $E$, then $P$ has a unimodular cover.
+\item If $P$ is \emph{very ample} then the boundary of $P$ has a unimodular cover. That is, there are unimodular simplices contained in $P$ whose union contains $\partial P$.
+\end{enumerate}
+\end{theorem}
+
+\paco{removed closing sentence}
+%\medskip
+%We believe that the $3$-polytopes in all these statements have unimodular triangulations, but this remains an open question.
 
 
-\subsection*{Acknowledgements:} We would like to thank Akiyoshi Tsuchiya, Spencer Backman, and Johannes Hofscheier for posing these questions to us and 
-Christian Haase for helpful discussions.
+\subsection*{Acknowledgements:} We would like to thank Akiyoshi Tsuchiya, Spencer Backman, and Johannes Hofscheier for posing these questions to us and Christian Haase for helpful discussions.
 
 
 \section{Parallelepipeds}
@@ -560,7 +573,9 @@ The tetrahedra $\cayley(t, \{q_j\})$ and $\cayley(t, \{q_i\})$ are unimodular, w
 Arbitrarily triangulate $\cayley(P,Q)$ into empty lattice tetrahedra and apply \Cref{coro:covercayley} to these tetrahedra.
 \end{proof}
 
-Let us now show how to derive \Cref{coro:prismatoid,coro:width1} from this theorem.
+\paco{removed references to Coro 1.8}
+
+Let us now show how to derive \Cref{coro:prismatoid} from this theorem.
 \emph{Prismatoids} were defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. In particular, a \emph{lattice prismatoid} is any $d$-polytope $SL(\Z,d)$-equivalent to one of the form
 \[
 \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
@@ -590,8 +605,11 @@ is a Cayley polytope. For $i\in\{2,\dots,k-1\}$,  both bases have the same norma
 \end{proof}
 
 
-\begin{proof}[Proof of \Cref{coro:prismatoid,coro:width1}]
-In both cases the polytope under study satisfies the hypotheses of \Cref{prop:prismatoid}: in \Cref{coro:prismatoid}, the smoothness of the prismatoid implies that every edge of the form $[u\times \{0\}, v\times \{k\}]$ has lattice points in all slices. In \Cref{coro:width1}, since $P$ has width one, $P\cong \cayley(Q_1, Q_2)$ for some $Q_1$ and $Q_2$. Hence,
+\begin{proof}[Proof of \Cref{coro:prismatoid}]
+The polytope under study satisfies the hypotheses of \Cref{prop:prismatoid}: %in \Cref{coro:prismatoid}, 
+the smoothness of the prismatoid implies that every edge of the form $[u\times \{0\}, v\times \{k\}]$ has lattice points in all slices. 
+%In \Cref{coro:width1}, since $P$ has width one, $P\cong \cayley(Q_1, Q_2)$ for some $Q_1$ and $Q_2$. 
+Hence,
 \[
 kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 \qedhere
@@ -886,12 +904,21 @@ ISBN: 978-3-642-12970-4
 \bibitem{Fakhruddin}
 Najmuddin Fakhruddin.
 \newblock Multiplication maps of linear systems on smooth projective toric surfaces.
-  Preprint, arXiv:0208.5178, August 2002.
+  Preprint, 
+  \href{https://arxiv.org/abs/math/0208178}{arXiv:math/0208178}, August 2002.
+
 
 %\bibitem{Grunbaum}
 %{Branko Gr\"unbaum}.
 %{\em {C}onvex {P}olytopes}.
 %Wiley, London, 1967.
+
+\bibitem{Gubeladze}
+Joseph Gubeladze,
+Normal polytopes and ellipsoids,
+preprint, \href{https://arxiv.org/abs/2012.11846}{arXiv:2012.11846}, December 2012.
+  
+
 
 \bibitem{HaaseHof}
 Christian Haase and Jan Hofmann, 
@@ -943,7 +970,8 @@ Francisco Santos and G{\"u}nter~M. Ziegler.
 \bibitem{Tsuchiya}
 Akiyoshi Tsuchiya.
 Cayley sums and Minkowski sums of 2-convex-normal lattice polytopes.
-Preprint, arXiv:1804.10538, April 2018.
+Preprint,  \href{https://arxiv.org/abs/1804.10538}{arXiv:1804.10538}, April 2018.
+
 
 \bibitem{White1964}
 G.~K.~White.
