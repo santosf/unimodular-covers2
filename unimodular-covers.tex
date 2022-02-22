@@ -108,7 +108,7 @@ Department of Mathematics, Statistics and Computer Science, University of Cantab
 \email{francisco.santos@unican.es}
 
 \thanks{The authors were supported by the Einstein Foundation Berlin under grant EVF-2015-230. 
-Work of F. Santos is also supported by grants  MTM2017-83750-P/AEI/10.13039/501100011033 and PID2019-106188GB-I00/AEI/10.13039/501100011033 of the Spanish State Research Agency}
+Work of F. Santos is also supported by grants  MTM2017-83750-P/AEI/10.13039/501100011033 and PID2019-106188GB-I00/AEI/10.13039/501100011033 of the Spanish State Research Agency and by project CLaPPo (21.SI03.64658) of Universisdad de Cantabria and Banco Santander}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,7 +119,6 @@ Work of F. Santos is also supported by grants  MTM2017-83750-P/AEI/10.13039/5011
 \begin{abstract}
 We show that the following classes of lattice polytopes have unimodular covers, in dimension three:  parallelepipeds,  smooth centrally symmetric polytopes, and  Cayley sums $\cayley(P,Q)$ where the normal fan of $Q$ refines that of $P$. This improves results of Beck et al.~(2018) and Haase et al.~(2008) where the last two classes were shown to be IDP.
 \end{abstract}
-\paco{added ``smooth'' to c.s. polytopes in abstract}
 
 \maketitle
 
@@ -160,7 +159,7 @@ Every smooth lattice polytope is IDP.
 \end{conjecture}
 
 When the normal fan of a polytope $Q$ refines that of another polytope $P$, as in the second conjecture, we say that $P$ \emph{is a weak Minkowski summand of $Q$}, since this is easily seen to be equivalent to the existence of a polytope $P'$ such that $P+P' = k Q$ for some dilation constant $k>0$.
-%\paco{did not find this in the google books version of \cite{Grunbaum}; found it in Postnikov-Reiner-Williams, Tsuchiya, a survey by Rekha Thomas, and other places. Perhaps we can leave it wothout reference} 
+%\paco{did not find this in the google books version of \cite{Grunbaum}; found it in Postnikov-Reiner-Williams, Tsuchiya, a survey by Rekha Thomas, and other places. Perhaps we can leave it without reference} 
 This property has the following algebraic implication for the projective toric variety $X_Q$: $P$ is a weak Minkowski summand of $Q$ if and only if the Cartier divisor defined by $P$ on  $X_Q$ is \emph{numerically effective}, or ``nef'' (see~\cite[Cor.~6.2.15, Prop.~6.3.12]{CLS}, but observe that what we here call  ``weak Minkowski summand'' is simply called ``Minkowski summand'' there). 
 
 
@@ -225,32 +224,24 @@ A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel 
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
-\Paco{
-I am a bit puzzled. After the next corollary we say that \cite[Cor.~4.2]{SantosZiegler} proves a case of this, but in fact it proves the whole of it, in a stronger form: it does not need width one, and it gives a "dissection" and not a mere cover (dissection= cover by simplices with disjoint interiors). 
-I propose to delete it:
+\paco{deleted former corollary}
+%\Paco{
+%I am a bit puzzled. After the next corollary we say that \cite[Cor.~4.2]{SantosZiegler} proves a case of this, but in fact it proves the whole of it, in a stronger form: it does not need width one, and it gives a "dissection" and not a mere cover (dissection= cover by simplices with disjoint interiors). 
+%I propose to delete it:
+%}
+%{\color{red}
+%\begin{corollary}
+%%\label{coro:width1}
+%Every integer dilation $kP$, $k\ge 2$, of a lattice $3$-polytope $P$ of width $1$ has a unimodular cover.
+%\end{corollary}
 %
-%\noindent{\bf Corollary}
-%%\label{coro:gorenstein}
-%Let $P$ be a lattice $3$-polytope with the following property: for every facet $F$ of $P$ and every edge $E$ of $P$ with (exactly) an end-point in $F$, there is a lattice point $v\in E$ at distance $1$ from $P$. Then, there is a unimodular cover of its ``lattice boundary''. 
-%%\end{corollary}
-%
-%Here we call ``lattice boundary'' of a polytope the union of all the prismatoids obtained translating each facet hyperplane one lattice unit towards the interior. Put differently, if $\{a_i x \le b_i, i=1,\dots,m\}$ integer is an integral facet description of $P$, the lattice boundary is $P$ minus the interior of $P'=\{a_i x \le b_i-1, i=1,\dots,m\}$. Remark: $P'$ is related to (but not exactly the same as) the ``Fine interior'' of $P$. See eg, some papers by Batyrev on this.
-%
-%This corollary is related (but neither implies nor is implied by) Theorem (a) in Gubeladze's recent arXiv:2012.11846
-}
-{\color{red}
-\begin{corollary}
-%\label{coro:width1}
-Every integer dilation $kP$, $k\ge 2$, of a lattice $3$-polytope $P$ of width $1$ has a unimodular cover.
-\end{corollary}
-
-A special case of the latter are integer dilations of empty tetrahedra. That their dilations have
-unimodular covers is \cite[Cor.~4.2]{SantosZiegler} (and is also implicit in \cite{KantorSarkaria}).
-}
+%A special case of the latter are integer dilations of empty tetrahedra. That their dilations have
+%unimodular covers is \cite[Cor.~4.2]{SantosZiegler} (and is also implicit in \cite{KantorSarkaria}).
+%}
 
 \paco{added ref to Gubeladze}
 Let us also mention the following recent results of Gubeladze~\cite{Gubeladze}.
-In the second one, a polytope $P$ is called \emph{very ample} if the vertex cone $\cone(P-v)$ is contained in the translation $P-v$, for every vertex $v$ of $P$.
+In part (2), a polytope $P$ is called \emph{very ample} if the vertex cone $\cone(P-v)$ is contained in the translation $P-v$, for every vertex $v$ of $P$.
 
 \begin{theorem}[Gubeladze~\cite{Gubeladze}]
 Let $P$ be a lattice $3$-polytope. 
@@ -434,25 +425,17 @@ Arbitrarily triangulate the parallelepiped into empty lattice tetrahedra and app
 Let us say that a lattice $3$-polytope $P$ \emph{has the circumscribed parallelepiped property} if it satisfies the conclusion of \Cref{lemma:3<4}:  ``for every empty tetrahedron $T$ contained in $P$ at least one of the four corner tetrahedra in $C(T)$ is 
 contained in $P$''. 
 If this holds then $P$ has a unimodular cover, since then the proofs of \Cref{coro:coverpara} and \Cref{thm:parallelepipeds} work for $P$.
-Hence, a positive answer to the following question would imply that every smooth $3$-polytope has a unimodular cover, which in turn implies \Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three. 
+In turn, our proof that parallelepipeds have the property (\Cref{lemma:3<4}) is based on the fact that they have only three (pairs of) normal vectors. 
+In the following two examples we show a smooth $3$-polytope and two $3$-polytope with four normal vectors that do not have the property. The latter are not IDP:
 
 
-\begin{question}
-Does every smooth 3-polytope have the circumscribed parallelepiped property? 
-\end{question}
-\Paco{
-The following is a counter-example: Let $P$ be the Cayley embedding of a long horizontal rectangle and a long vertical rectangle. That is,
-$P=conv([0,a]\times [0,1] \times\{0\} \cup [0,1]\times [0,b] \times\{1\})$, for big $a$ and $b$. This is smooth and contains the big empty tetrahedron $T$ with vertices (0,0,0), (a,1,0), (0,0,1), (1,b,1) which occupies most of its volume. In particular, none of the corner tetrahedra of $T$ is contained in $P$.
 
-A weaker version of the question is: 
-
-Question 2.5Õ. If $T$ is an empty tetrahedron contained in a smooth 3-polytope $P$, can one guarantee that there is a lattice point of $P$ in the circumscribed parallelepiped of $T$ (apart of the vertices of $T$)?
-
-A positive answer would still imply that $P$ can be unimodularly covered.
-}
+\begin{example}[A smooth 3-polytope without the circumscribed parallelepiped property]
+ Let $P$ be the Cayley embedding of a long horizontal rectangle and a long vertical rectangle. That is,
+$P=\conv([0,a]\times [0,1] \times\{0\} \cup [0,1]\times [0,b] \times\{1\})$, for big $a$ and $b$. This is smooth and contains the big empty tetrahedron $T$ with vertices (0,0,0), (a,1,0), (0,0,1), (1,b,1) which occupies most of its volume. In particular, none of the corner tetrahedra of $T$ is contained in $P$.
+\end{example}
 
 
-Our proof that parallelepipeds have the property (\Cref{lemma:3<4}) is based on the fact that they have only three (pairs of) normal vectors. The proof, and the property of being IDP, fail if there are four of them:
 
 \begin{example}[Non-IDP octahedron and triangular prism]
 \label{ex:non-IDP}
@@ -464,6 +447,15 @@ P=\conv((0,1,1),(1,0,1),(1,1,0),(-1,0,0),(0,-1,0),(0,0,-1)).
 
 Indeed, in both polytopes the only lattice points are the six vertices and the origin. The point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. Hence, they are not IDP, which implies they do not admit unimodular covers.
 \end{example}
+
+An affirmative answer to the following question (weaker than the circumscribed parallelepiped property) would still  imply that smooth $3$-polytopes can be unimodularly covered, and hence\Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three is:
+
+\begin{question}
+If $T$ is an empty tetrahedron contained in a smooth 3-polytope $P$, can one guarantee that there is a lattice point of $P$ in the circumscribed parallelepiped of $T$ (apart of the vertices of $T$)?
+\end{question}
+
+
+
 
 \section{ Cayley sums}
 \label{sec:cayley}
@@ -573,8 +565,6 @@ The tetrahedra $\cayley(t, \{q_j\})$ and $\cayley(t, \{q_i\})$ are unimodular, w
 Arbitrarily triangulate $\cayley(P,Q)$ into empty lattice tetrahedra and apply \Cref{coro:covercayley} to these tetrahedra.
 \end{proof}
 
-\paco{removed references to Coro 1.8}
-
 Let us now show how to derive \Cref{coro:prismatoid} from this theorem.
 \emph{Prismatoids} were defined in~\cite{Santos-hirsch} as polytopes whose vertices all lie in two parallel facets. In particular, a \emph{lattice prismatoid} is any $d$-polytope $SL(\Z,d)$-equivalent to one of the form
 \[
@@ -627,7 +617,6 @@ Observe that in the strip $q +\vecline p$, there is a unique lattice point on th
 Since translating the polytopes by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
 We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq 0\}$ and $V_2=\{f_p(x) \geq 0\}$. 
-%\giulia{we need to make these closed, so that the case $P$ one dimensional fits into this same proof}\paco{ok}
 In the figures, we draw $p$ as a vertical segment and $q$ as a horizontal one, so that $H_i \cap V_j$ are the four quadrants. 
 See \Cref{fig:setup}.
 %
