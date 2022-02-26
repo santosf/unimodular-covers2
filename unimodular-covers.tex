@@ -8,6 +8,7 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage[colorlinks=true]{hyperref}
+\usepackage{doi}
 %\usepackage{pictex}
 
 
@@ -198,7 +199,7 @@ Higher dimensional parallelotopes (affine images of cubes) are IDP. Do they have
 \end{question}
 
 
-The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, if we let $P=Q$ be any non-unimodular \emph{empty tetrahedron}, then $P$ is obviously a weak Minkowski summand of $Q$ but the pair $(P.Q)$ is not IDP. By an empty tetrahedron we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of them).
+The two-dimensional case of \Cref{conj:Oda}\eqref{itm:mixedIDP} is known to hold, with three different proofs by Fakhruddin~\cite{Fakhruddin}, Ogata~\cite{Ogata} and Haase et al.~\cite{HNPS2008}. This last one actually shows that smoothness of $Q$ is not needed. In dimension three, however, the conjecture fails without the smoothness assumption. Indeed, if we let $P=Q$ be any non-unimodular \emph{empty tetrahedron}, then $P$ is obviously a weak Minkowski summand of $Q$ but the pair $(P, Q)$ is not IDP. By an empty tetrahedron we mean a lattice tetrahedron containing no lattice points other than its vertices (see the proof of \Cref{lemma:corner} for a classification of them).
 
 An alternative approach to \Cref{conj:Oda}\eqref{itm:mixedIDP} is via Cayley sums, which we discuss in  \Cref{sec:cayley}. 
 Recall that the \emph{Cayley sum} of two lattice polytopes $P,Q\subset \R^d$ is the lattice polytope
@@ -208,7 +209,7 @@ Recall that the \emph{Cayley sum} of two lattice polytopes $P,Q\subset \R^d$ is 
 We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but this does not need $P$ and $Q$ to be full-dimensional. It only requires the linear subspaces parallel to them to span $\R^d$.
 
 As we note in \Cref{prop:mixedIDP}, if the Cayley sum of $P$ and $Q$ is IDP then the pair $(P,Q)$ is IDP.
-In particular, the following statement from \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
+Hence, the following statement proved in \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
 
 \begin{theorem}
 \label{thm:cayley}
@@ -216,15 +217,15 @@ Let $Q$ be lattice polygon, and $P$ a weak Minkowski summand of $Q$. Then the Ca
 \end{theorem}
 
 This has the following consequence, also proved in \Cref{sec:cayley}.
-A  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
-A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being ($SL(\Z,d)$-equivalent to) a Cayley sum.
+Here a  \emph{prismatoid} is a polytope whose vertices all lie in two parallel facets. 
+%A polytope has width $1$ if its vertices lie in two \emph{consecutive} parallel lattice hyperplanes. Observe that this is the same as being ($SL(\Z,d)$-equivalent to) a Cayley sum.
 
 \begin{corollary}
 \label{coro:prismatoid}
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
-\paco{deleted former corollary}
+%\paco{deleted former corollary}
 %\Paco{
 %I am a bit puzzled. After the next corollary we say that \cite[Cor.~4.2]{SantosZiegler} proves a case of this, but in fact it proves the whole of it, in a stronger form: it does not need width one, and it gives a "dissection" and not a mere cover (dissection= cover by simplices with disjoint interiors). 
 %I propose to delete it:
@@ -241,8 +242,10 @@ Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 
 \paco{added ref to Gubeladze}
 \giulia{changed it}
- 
-To date there are no known example of IDP $3$-polytopes without a unimodular cover. Recent work of Gubeladze~\cite{Gubeladze} shows that another class of IDP 3-polytopes has unimodular covers, lattice polytopes which are convex hulls of all lattice points inside an ellipsoid. It remains open in general whether the classes are distinct in dimension $3$. 
+\paco{changed again, adding more references}
+
+Let us mention that recent work of Gubeladze~\cite{Gubeladze} shows another class of 3-polytopes admitting unimodular covers: the convex hulls of all lattice points inside an ellipsoid; these had previously been shown to be IDP by Bruns, Gubeladze and Michalek~\cite{BGM}.
+To date there are no known examples of IDP $3$-polytopes without a unimodular cover, although such polytopes exist in higher dimension~\cite{BG}.
 %Let us also mention the following recent results of Gubeladze~\cite{Gubeladze}.
 %In part (2), a polytope $P$ is called \emph{very ample} if the vertex cone $\cone(P-v)$ is contained in the translation $P-v$, for every vertex $v$ of $P$.
 
@@ -254,7 +257,7 @@ To date there are no known example of IDP $3$-polytopes without a unimodular cov
 %\end{enumerate}
 %\end{theorem}
 
-\paco{removed closing sentence}
+%\paco{removed closing sentence}
 %\medskip
 %We believe that the $3$-polytopes in all these statements have unimodular triangulations, but this remains an open question.
 
@@ -629,12 +632,11 @@ See \Cref{fig:setup}.
 \label{fig:setup}
 \end{figure}
 
-Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. Then:
+Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. In what follows, the width of a functional $f$ on a set $S$, denoted $\width_f(S)$ is defined as the difference $\sup_{x\in S} f(x)-\inf_{x\in S} f(x)$
+Then:
 \[
 w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ). 
 \] 
-
-
 
 
 \begin{proof}[Proof of \Cref{lemma:cayley}]
@@ -875,12 +877,19 @@ and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)
 \bibitem{BHHHJKM2019}
 Matthias Beck, Christian Haase, Akihiro Higashitani, Johannes Hofscheier, Katharina Jochemko, Lukas Katth\"an, Mateusz Micha{\l}ek,
 Smooth Centrally Symmetric Polytopes in Dimension 3 are IDP,
-\emph{Ann.~Combin.}, in press, 2019.
-\url{https://doi.org/10.1007/s00026-019-00418-x}
+\emph{Ann.~Combin.}, 23 (2019), 255--262.
+\doi{10.1007/s00026-019-00418-x}
+
+
+\bibitem{BG}
+Winfried Bruns and Joseph Gubeladze, Normality and covering properties of affine semigroups, \emph{J. Reine Angew. Math.} 510 (1999), 151--178. \doi{10.1515/crll.1999.044}
 
 \bibitem{BGbook}
 Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Monographs in Mathematics,
   Springer-Verlag, 2009, XIV, 461 p. 52 illus.
+  
+\bibitem{BGM}
+  Winfried Bruns, Joseph Gubeladze, and Mateusz Michalek. Quantum Jumps of Normal Polytopes. \emph{Discrete Comput. Geom.}, 56(1) (2016), 181--215. \doi{10.1007/s00454-016-9773-7}
   
 \bibitem{CLS}
 David A.~Cox, John B.~Little, and Hal K.~Schenck.
@@ -908,35 +917,35 @@ Najmuddin Fakhruddin.
 \bibitem{Gubeladze}
 Joseph Gubeladze,
 Normal polytopes and ellipsoids,
-preprint, \href{https://arxiv.org/abs/2012.11846}{arXiv:2012.11846}, December 2012.
-  
-
+\emph{Elect. J. Combin.}, 28:4 (2021), P4.7.
+\doi{10.37236/10338}
+    
 
 \bibitem{HaaseHof}
 Christian Haase and Jan Hofmann, 
 Convex-normal (Pairs of) Polytopes, 
-\emph{Canad. Math. Bull.} 60 (2017), 510--521.
+\emph{Canad. Math. Bull.} 60:3 (2017), 510--521. \doi{10.4153/CMB-2016-057-0}
 
   \bibitem{HPPS-survey}
 Christian Haase, Andreas Paffenholz, Lindsay C. Piechnik, Francisco Santos. Existence of unimodular triangulations - positive results. 
-%Preprint May 2014, updated December 2017, 89 pages. 
- \emph{Mem. Amer. Math. Soc.}, to appear.
- Available as arXiv preprint \href{https://arxiv.org/abs/1405.1687}{arXiv:1405.16878}
+ \emph{Mem. Amer. Math. Soc.},  Vol.~270 1N.~321, American Math. Society, 2021. DOI: \doi{10.1090/memo/1321}
+%ISBNs: 978-1-4704-4716-8 (print); 978-1-4704-6530-8 (online)
  
 \bibitem{HNPS2008}
 Christian Haase, Benjamin Nill, Andreas Paffenholz, and Francisco Santos, Lattice points in Minkowski sums, 
-\emph{Electron.~J.~Combin.}, 15 (2008), no. 1, Note 11, 5 pp.
+\emph{Electron.~J.~Combin.}, 15:1 (2008), Note 11, 5 pp. \doi{10.37236/886}
+
 
 \bibitem{KantorSarkaria}
 Jean-Michel Kantor and Karanbir~S.\ Sarkaria.
 On primitive subdivisions of an elementary tetrahedron, 
-\emph{Pacific J.~Math.} \textbf{211} (2003), no.~1,  123--155.
+\emph{Pacific J.~Math.} \textbf{211} (2003), no.~1,  123--155. \doi{10.2140/pjm.2003.211.123}
 
 \bibitem{mfo2004}
-Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. MR MR2144157
+Mini-workshop: Ehrhart Quasipolynomials: Algebra, Combinatorics, and Geometry, Oberwolfach Rep. 1 (2004), no. 3, 2071-2101, Abstracts from the mini-workshop held August 15-21, 2004, Organized by Jes\'us A.~De Loera and Christian Haase, Oberwolfach Reports. Vol. 1, no. 3. \doi{10.14760/OWR-2004-39}
 
 \bibitem{mfo2007}
-Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan.
+Mini-workshop: Projective normality of smooth toric varieties, Oberwolfach Rep. 4 (2007), no. 39/2007, Abstracts from the mini-workshop held August 12-18, 2007. Organized by Christian Haase, Takayuki Hibi and Diane MacLagan. \doi{10.14760/OWR-2007-39}
 
 \bibitem{Oda1997}
 Tadao Oda. Problems on Minkowski sums of convex lattice polytopes. 
@@ -946,18 +955,18 @@ Available as arXiv preprint \href{https://arxiv.org/abs/0812.1418}{arXiv:0812.14
 \bibitem{Ogata}
 Shoetsu Ogata.
 \newblock {Multiplication maps of complete linear systems on projective toric surfaces.}
-\newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006.
+\newblock {\em Interdiscip. Inf. Sci.}, 12(2):93--107, 2006. \doi{10.4036/iis.2006.93}
 
 \bibitem{Santos-hirsch}
 Francisco Santos.
 A counter-example to the Hirsch Conjecture.
 \emph{Ann.~Math.~(2)}, 176 (July 2012), 383--412. 
-DOI: 10.4007/annals.2012.176.1.7
+\doi{10.4007/annals.2012.176.1.7}
 
 \bibitem{SantosZiegler}
 Francisco Santos and G{\"u}nter~M. Ziegler.
 \newblock {Unimodular triangulations of dilated 3-polytopes}, 
-\newblock {\em Trans. Moscow Math. Soc.} (2013), 293--311. % \MR{3235802}
+\newblock {\em Trans. Moscow Math. Soc.} (2013), 293--311. \doi{10.1007/s00493-014-2959-9}
 
 \bibitem{Tsuchiya}
 Akiyoshi Tsuchiya.
@@ -968,7 +977,7 @@ Preprint,  \href{https://arxiv.org/abs/1804.10538}{arXiv:1804.10538}, April 2018
 \bibitem{White1964}
 G.~K.~White.
 Lattice tetrahedra.
-\emph{Canadian J.~Math.} 16 (1964), 389--396.
+\emph{Canadian J.~Math.} 16 (1964), 389--396. \doi{10.4153/CJM-1964-040-2}
 
 \end{thebibliography}
 
