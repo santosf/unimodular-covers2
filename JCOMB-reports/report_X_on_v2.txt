@@ -1,0 +1,40 @@
+Report on "Unimodular covers of 3-dimensional parallelepipeds and Cayley sums"
+
+Summary: The manuscript under review discusses the existence of a unimodular cover of lattice 3-polytopes whose IDP was already known. 
+The main results of the manuscript are the following: 
+1. Every lattice parallelepiped of dimension 3 has a unimodular cover (Theorem 1.2). 
+As an immediate corollary of this theorem, we can see that every centrally symmetric smooth 3-polytope has a unimodular cover (Corollary 1.3) by using an observation in [1]. 
+2. The Cayley sum of a lattice polygon and its weak Minkowski summand has a unimodular cover (Theorem 1.6). 
+As an immediate corollary of this theorem, we can see that every 3-dimensional smooth lattice prismatoid has a unimodular cover. 
+
+Impression: 
+The hierarchy of several properties on lattice polytopes has been studied in many papers, e.g., 
+unimodular triangulation => unimodular covering => IDP => very ample. 
+Since the converse of each of those implications is not true in general, the improvement of the known property (e.g. IDPness of centrally symmetric smooth 3-polytopes) has a certain meaning. 
+However, at least for the referee, the results themselves are not so surprising since the referee always feels like there is almost no difference between unimodular covers and IDP for lattice 3-polytopes. 
+Moreover, the proofs strongly rely on White's classification of empty 3-simplex, so it looks quite difficult to generalize the method here to higher dimensional cases. 
+On the other hand, the main idea of the proofs "parallelepiped circumscribed to empty tetrahedron" is quite nice. A little weaker property is also mentioned in Question 2.7. 
+In referee's opinion, at least in dimension 3 case, not only Oda's conjecture is true but also existence of a unimodular cover also holds. 
+So the manuscript potentially suggests an effective method for the solution of Oda's conjecture in 3-dimensional case. 
+
+Conclusion: 
+By the reasons above, the referee recommends (but not strongly) the publication for "Combinatorial Theory". 
+Even if accepted, the comments below should be considered. 
+
+Revisions: 
+1. P1, l-1: "is it" should  be "it is", and "ever" should be "every"
+2. P3, Definition 2.1: It's better to write {1,2,3,4} instead of [4], which looks a reference. 
+3. P3, l-7: I think conv(p_1,p_2,q_3) should be contained in T_3, and conv(p_1,p_2,q_4) should be contained in T_4. 
+4. P3, Proof of Lemma 2.2: "," should be added inside of the convex hull, e.g., not conv(p1p2q3) but conv(p1,p2,q3). 
+5. P4, Eq. (2): f(q2)=f(q1)+f(p1)-f(p2)?
+6. P5, just before Question 2.7: "... henceConjecture ..." must be fixed. 
+7. P6, Lemma 3.2: Give a definition of unimodularity of the parallelogram. Moreover, make sure whether P and Q sit in R^2 or just in the same ambient space. 
+8. Lemma 3.2 is a crucial part of the proof of Theorem 1.6, but the proof looks very complicated. I suggest to supply a concrete example for readers' help. 
+For example, can you give a lattice point stated in Lemma 3.2 for some P and Q? 
+9. P6, l-7: The sentence starting from "Observe that ... " looks weird. 
+For example, "of" in ".... that of the segments ..." looks redundant, and "... the segments [u,q_i] crosses" should be "cross". 
+The most important mistake is that Figure 3 shows that [u,q_1] does NOT cross conv(p_1,p_2,q_2). Modify this part. 
+10. P8, second paragraph: I couldn't follow why we can assume p_1 is a unique lattice point in the strip by translation. 
+Since this looks the very starting point of the proof, I suggest the authors to try to clarify more. 
+11. I found many other places which should be fixed (e.g. miss spelling, grammatical error, bad notation, and so on). 
+The authors should do more careful proof-reading.
