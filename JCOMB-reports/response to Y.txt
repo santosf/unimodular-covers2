@@ -1,0 +1,19 @@
+Response to Y
+
+We have carefully gone through all the (very helpful and detailed) suggestions of referee Y and we have implemented almost all of them. Below is a response to the key points:
+
+1: agreed & changed
+2: TBD
+3-9: agreed & changed
+10: here there seems to be a misunderstanding, since the points q_i are not necessarily lattice points. We have added a line to this effect.
+11-15: agreed & changed
+16: this would be another way to go, but we have decided to keep the original formulation
+17-23: agreed & changed
+24: added a line in the explanation above lemma 3.2 explaining that the prod-simplices we are interested in are sums of segments, ie. parallelograms
+25-30: agreed & changed
+31: here we do not agree. We can assume that p is a vertical segment by applying an affine transformation. This of course changes the lattice, but is not a problem here. But in fact, we don't ever make the assumption that p is vertical, we just draw it this way for convenience.
+32-38: agreed & changed
+39: again, we only use the "vertical" segment in the pictures, and it is possible by a transformation of the lattice
+40: thank you! There was a sign mistake, with a "-1" instead of "+1" in the equation of g the inequalities are now correct.
+41: agreed & changed
+42-42: the conclusion of the proof of lemma 3.2 has been revised for clarity and to correct the mistake from comment 40. 
