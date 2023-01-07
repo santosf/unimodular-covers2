@@ -1,19 +1,33 @@
-Response to Y
+Response to referee X
+
+
+1-7: agreed and corrected.
+
+8: we agree that the proof of Lemma 3. is complicated. This is why we put it in its own section 4, and in section 3 use Lemma 3.2 as a black-box to proof The 1.6. We are not sure what kind of example ae could/should put.
+
+9: agreed and corrected.
+
+10: we have rephrased in a hopefully clearer way.
+
+11: we have hopefully solved this too. In particular, the proofs of Claims 4.2, 4.3 and of the conclusion after 4.4, have been edited quite a bit.
+
+
+Response to referee Y
 
 We have carefully gone through all the (very helpful and detailed) suggestions of referee Y and we have implemented almost all of them. Below is a response to the key points:
 
 1: agreed & changed
-2: TBD
+2: added definition of Minkowski sum where it is first used (in the definition of IDP-ness).
 3-9: agreed & changed
-10: here there seems to be a misunderstanding, since the points q_i are not necessarily lattice points. We have added a line to this effect.
+10: here the referee seems not to notice that the points q_i are not necessarily lattice points. We have added a line to this effect.
 11-15: agreed & changed
 16: this would be another way to go, but we have decided to keep the original formulation
 17-23: agreed & changed
 24: added a line in the explanation above lemma 3.2 explaining that the prod-simplices we are interested in are sums of segments, ie. parallelograms
 25-30: agreed & changed
-31: here we do not agree. We can assume that p is a vertical segment by applying an affine transformation. This of course changes the lattice, but is not a problem here. But in fact, we don't ever make the assumption that p is vertical, we just draw it this way for convenience.
+31: in the text we never make the assumption that the segments p and q are vertical and horizontal. We just draw them that way and use the letters $V$ and $H$ for the half-planes that they define for convenience. And, anyway, p and q can be made vertical and horizontal via a linear transformation (which of course changes the lattice, but is not a problem here). We have added a sentence to this affect before Figure 3.2, which already shows $p$ and $q$ as vertical and horizontal.
 32-38: agreed & changed
-39: again, we only use the "vertical" segment in the pictures, and it is possible by a transformation of the lattice
+39: see our comment to 31. What may actually be misleading is that in some of our pictures the lattice still looks orthogonal (that is, having a square fundamental domain), but that fact is never used in the proofs, which are totally "affine".
 40: thank you! There was a sign mistake, with a "-1" instead of "+1" in the equation of g the inequalities are now correct.
 41: agreed & changed
-42-42: the conclusion of the proof of lemma 3.2 has been revised for clarity and to correct the mistake from comment 40. 
+42-43: the conclusion of the proof of lemma 3.2 has been edited for clarity and to correct the mistake from comment 40. 
