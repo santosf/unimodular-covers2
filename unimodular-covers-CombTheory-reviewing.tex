@@ -147,7 +147,7 @@ Following \cite{HaaseHof, Tsuchiya}, we say that a pair $(P, Q)$ of lattice poly
 (P+Q) \cap \Z^d = P \cap \Z^d + Q \cap \Z^d,
 \end{align*}
 where $A+B :=\{a+b: a\in A, b\in B\}$ denotes the \emph{Minkowski sum} of two sets $A,B\subset \R^d$.
-
+\paco{added def of Minkowski sum}
 
 A lattice polytope $Q$ is called \emph{smooth} if it is simple and the primitive edge directions at every vertex form a linear basis for the lattice; equivalently, if the projective toric variety defined by the normal fan of $Q$ is smooth. 
 The following versions of Oda's questions are now considered conjectures~\cite{HNPS2008,mfo2007}, and they are open even in dimension three:
@@ -372,9 +372,9 @@ In the following two examples we show a smooth $3$-polytope and two $3$-polytope
 $P=\conv([0,a]\times [0,1] \times\{0\} \cup [0,1]\times [0,b] \times\{1\})$, for big $a$ and $b$. This is smooth and contains a big empty tetrahedron $T$ with vertices $(0,0,0)$, $(a,1,0)$, $(0,0,1)$, $(1,b,1)$ which occupies most of its volume. In particular, none of the corner tetrahedra of $T$ is contained in $P$. 
 
 More explicitly, the the remaining vertices $q_i$ of the circumscribed parallelepiped are $(\frac{a+1}{2}, \frac{b+1}{2}, 1), (\frac{a+1}{2}, \frac{b+1}{2}, 0), (\frac{1-a}{2}, \frac{b-1}{2}, 1), (\frac{a-1}{2}, \frac{1-b}{2}, 1)$. None of these points are contained in $P$, and therefore none of the corner tetrahedra are either.
+\giulia{Added the last part to answer comment Y.19}
+\paco{edited it}
 \end{example}
-%\giulia{Added the last part to answer comment Y.19}
-
 
 
 \begin{example}[Non-IDP polytopes with four facet directions]
@@ -386,9 +386,8 @@ Q= \conv((0,1,1),(1,0,1),(1,1,0),(0,-1,-1),(-1,0,-1),(-1,-1,0)).
 \end{gather}
 
 Indeed, in both cases the 
-%only lattice points are the six vertices and the origin. The 
+\paco{shortened}
 point $(1,1,1)$ lies in the second dilation but is not the sum of two lattice points in the polytope. 
-%Hence, they are not IDP, which implies they do not admit unimodular covers.
 \end{example}
 
 An affirmative answer to the following question (weaker than the circumscribed parallelepiped property) would still  imply that smooth $3$-polytopes can be unimodularly covered and, hence,~\Cref{conj:Oda}\eqref{itm:smoothIDP} in dimension three:
@@ -419,7 +418,8 @@ which easily implies:
 \label{prop:mixedIDP}
 If $\cayley(P,Q)$ is IDP then the pair $(P,Q)$ is IDP.
 \end{proposition} 
-%\giulia{We just called the pair IDP in the introduction... Which notation do we prefer?}
+\giulia{We just called the pair IDP in the introduction... Which notation do we prefer?}
+\paco{we stick to just IDP}
 
 The Cayley Trick also provides the following canonical bijections:
 \[
