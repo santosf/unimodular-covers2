@@ -1,10 +1,10 @@
 
-We have carefully gone through all the (very helpful and detailed) suggestions of both referees and we have implemented almost all of them. Below is a response explaining what we did:
+We have carefully gone through all the (very helpful and detailed) suggestions of the referees and we have implemented almost all of them. Below is a response explaining what we did:
 
 Response to referee X
 ---------------------
 1-7: agreed and corrected.
-8: we are aware that the proof of Lemma 3.2 is complicated. This is why we put it in its own section 4, and in section 3 we use Lemma 3.2 as a black-box to prove Theorem 1.6. We are not sure what kind of example we could/should put.
+8: we are aware that the proof of Lemma 3.2 is complicated. This is why we put it in its own section 4, and in section 3 we use Lemma 3.2 as a black-box to prove Theorem 1.6. We are not sure what kind of example we could/should add to clarify the statement, but have streamlined some of the steps in the proof.
 9: agreed and corrected.
 10: we have rephrased in a hopefully clearer way.
 11: we have hopefully solved this too. In particular, the proofs of Claims 4.2, 4.3 and the conclusion after 4.4 have been edited and clarified.
@@ -21,9 +21,9 @@ Response to referee Y
 17-23: agreed & changed
 24: added a line in the explanation above lemma 3.2 explaining that the prod-simplices we are interested in are sums of segments, ie. parallelograms
 25-30: agreed & changed
-31: in the text we never make the assumption that the segments p and q are vertical and horizontal. We just draw them that way and use the letters $V$ and $H$ for the half-planes that they define for convenience. And, anyway, p and q can be made vertical and horizontal via a linear transformation (which of course changes the lattice, but is not a problem here. The proof never assumes the lattice to be the integers). We have added a sentence to this effect before Figure 3.2, which already shows $p$ and $q$ as vertical and horizontal.
+31: in the text we never make the assumption that the segments p and q are vertical and horizontal. We just draw them that way and use the letters $V$ and $H$ for the half-planes that they define for convenience. And, anyway, p and q could be made vertical and horizontal via a linear transformation (which of course changes the lattice, but is not a problem here. The proof never assumes the lattice to be the integers). We have added a sentence to this effect before Figure 3.2.
 32-38: agreed & changed
 39: see our comment to 31. What may actually be misleading is that in some of our pictures the lattice still looks orthogonal (that is, having a square fundamental domain), but that fact is never used in the proofs, which are totally "affine".
-40: thank you! There was a sign mistake, with a "-1" instead of "+1" in the equation of g the inequalities are now correct.
+40: thank you for this correction! There was a sign mistake, with a "-1" instead of "+1" in the equation of g the inequalities are now correct.
 41: agreed & changed
 42-43: the conclusion of the proof of lemma 3.2 has been edited for clarity and to correct the mistake from comment 40. 

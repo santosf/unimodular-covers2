@@ -1,0 +1,15 @@
+Report on "Unimodular covers of 3-dimensional parallelepipeds and Cayley sums"
+
+
+The revised version of the paper under review becomes more readable. 
+Espacially, the beginning of Lemma 3.2 is reorganized, so I think the organization of the proof of Lemma 3.2 becomes better. 
+Although there are still some mistakes, I can now recommend the publication to "Combinatorial Theory" for more than before. 
+
+
+Minor mistakes: 
+1. P2 l-18: fulldimensional -> full-dimensional
+2. P2 l-4 and Reference: Michalek -> Micha{\l}ek
+3. P5 l-5: from -> form
+4. P7 l1,2: u,q_i,p_1,p_2 q_j should be "\tilde{ }". 
+5. P7 l7,8: {q_2} and {q_1} appearing in T^+ and T^-, respectively, should be swapped. Right? 
+6. p7 l-9: Parenthesis ")" is missing.

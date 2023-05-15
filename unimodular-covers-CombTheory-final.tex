@@ -209,7 +209,7 @@ Recall that the \emph{Cayley sum} of two lattice polytopes $P,Q\subset \R^d$ is 
 \[
 \cayley(P,Q) := \conv(P\times\{0\} \cup Q \times \{1\}) \subset \R^{d+1}.
 \]
-We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but $P$ or $Q$ do not necessarily need to be fulldimensional. We only require the linear subspaces parallel to them to span $\R^d$.
+We normally require $\cayley(P,Q)$ to be full-dimensional (otherwise we can delete coordinates) but $P$ or $Q$ do not necessarily need to be full-dimensional. We only require the linear subspaces parallel to them to span $\R^d$.
 
 As we note in \Cref{prop:mixedIDP}, if the Cayley sum of $P$ and $Q$ is IDP then the pair $(P,Q)$ is IDP.
 Hence, the following statement proved in \Cref{sec:cayley} is stronger than the afore-mentioned result of \cite{Fakhruddin,HNPS2008,Ogata}:
@@ -228,7 +228,7 @@ Here a  \emph{prismatoid} is a polytope whose vertices all lie in two parallel f
 Every smooth $3$-dimensional lattice prismatoid has a unimodular cover.
 \end{corollary}
 
-Let us mention that recent work of Gubeladze~\cite{Gubeladze} shows another class of 3-polytopes admitting unimodular covers: the convex hulls of all lattice points inside an ellipsoid; these had previously been shown to be IDP by Bruns, Gubeladze and Michalek~\cite{BGM}.
+Let us mention that recent work of Gubeladze~\cite{Gubeladze} shows another class of 3-polytopes admitting unimodular covers: the convex hulls of all lattice points inside an ellipsoid; these had previously been shown to be IDP by Bruns, Gubeladze and Micha{\l}ek~\cite{BGM}.
 To date there are no known examples of IDP $3$-polytopes without a unimodular cover, although such polytopes exist in higher dimension~\cite{BG}.
 
 
@@ -288,7 +288,7 @@ v:=(0,-1,0)\in \conv(p_1,p_2,q_4) \subset T_4.
 \]
 
 Observe that $u+v=p_1+p_2=q_3+q_4$.
-Now, this implies that the quadrilateral $\conv(p_1,q_4,p_2,q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2,p_3,q_1,p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,-\frac{b}2,1\right)$, $\conv(q_2,p_3,q_1,p_4)$ must contain lattice points in both triangles $\conv(q_2,p_3,p_4)\subset T_1$ and $\conv(q_1,p_3,p_4)\subset T_2$.
+Now, this implies that the quadrilateral $\conv(p_1,q_4,p_2,q_3)$ contains a fundamental domain for the lattice $\Z^2\times\{0\}$. Hence, its translate $\conv(q_2,p_3,q_1,p_4)$ contains a fundamental domain for $\Z^2\times\{1\}$ and, in particular, it contains at least one lattice point other than $p_3$ and $p_4$. By central symmetry around its center $\left(\frac{a}2,\frac{b}2,1\right)$, $\conv(q_2,p_3,q_1,p_4)$ must contain lattice points in both triangles $\conv(q_2,p_3,p_4)\subset T_1$ and $\conv(q_1,p_3,p_4)\subset T_2$.
 
 \end{proof}
 
@@ -368,7 +368,7 @@ In the following two examples we show a smooth $3$-polytope and two $3$-polytope
  Let $P$ be the Cayley embedding of a long horizontal rectangle and a long vertical rectangle. That is,
 $P=\conv([0,a]\times [0,1] \times\{0\} \cup [0,1]\times [0,b] \times\{1\})$, for big $a$ and $b$. This is smooth and contains a big empty tetrahedron $T$ with vertices $(0,0,0)$, $(a,1,0)$, $(0,0,1)$, $(1,b,1)$ which occupies most of its volume. In particular, none of the corner tetrahedra of $T$ is contained in $P$. 
 
-More explicitly, the the remaining vertices $q_i$ of the circumscribed parallelepiped are $(\frac{a+1}{2}, \frac{b+1}{2}, 1), (\frac{a+1}{2}, \frac{b+1}{2}, 0), (\frac{1-a}{2}, \frac{b-1}{2}, 1), (\frac{a-1}{2}, \frac{1-b}{2}, 1)$. None of these points are contained in $P$, and therefore none of the corner tetrahedra are either.
+More explicitly, the remaining vertices $q_i$ of the circumscribed parallelepiped are $(\frac{a+1}{2}, \frac{b+1}{2}, 1), (\frac{a+1}{2}, \frac{b+1}{2}, 0), (\frac{1-a}{2}, \frac{b-1}{2}, 1), (\frac{a-1}{2}, \frac{1-b}{2}, 1)$. None of these points are contained in $P$, and therefore none of the corner tetrahedra are either.
 \end{example}
 
 
@@ -424,7 +424,7 @@ The Cayley Trick also provides the following canonical bijections:
 \]
 See \cite{DLRS2010} for more details on the Cayley Trick and on triangulations and polyhedral subdivisions of polytopes.
 In fact these bijections can be taken as definitions of the objects in the right-hand sides. In particular, 
-we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\subset P$ and $T_2\subset Q$ are simplices with complementary affine spans. A prod-simplex is \emph{unimodular} if the edge vectors from any vertex of $T_1$ and from any vertex of $T_2$ form a unimodular basis.
+we call \emph{prod-simplices} in $P+Q$ the Minkowski sums $T_1+T_2$ where $T_1\subset P$ and $T_2\subset Q$ are simplices with complementary affine spans. A prod-simplex is \emph{unimodular} if the union of edge-vectors from any vertex of $T_1$ and any vertex of $T_2$ form a unimodular basis.
 
 \medskip
 
@@ -471,7 +471,7 @@ and call $t$ the triangle $t=\conv( u,  p_1,  p_2)\subset P$.
 
 Let us denote $\tilde u$, $\tilde p_1$, $\tilde p_2$, $\tilde q_1$, $\tilde q_2$ the points corresponding to $u, p_1, p_2, q_1, q_2$ in $\cayley(P,Q)$.
 That is, $\tilde p_i = p_i\times\{1\}$, $\tilde q_i = 	q_i\times\{0\}$, and $\tilde u = u\times\{1\}$.
-Observe that the assumption $u\in((p_1, p_2) + \vecline q$ implies that one of the segments $[u,q_i]$ crosses the interior of one of the triangles $\conv(p_1,p_2,q_j)$, where $\{i,j\}=\{1,2\}$. Without loss of generality assume that $[\tilde{u},\tilde{q}_2]$ crosses $\conv(\tilde{p}_1,\tilde{p}_2,\tilde{q}_1)$, as in \Cref{fig:flip}. 
+Observe that the assumption $u\in((p_1, p_2) + \vecline q$ implies that one of the segments $[\tilde u,\tilde q_i]$ crosses the interior of one of the triangles $\conv(\tilde p_1,\tilde p_2,\tilde q_j)$, where $\{i,j\}=\{1,2\}$. Without loss of generality assume that $[\tilde{u},\tilde{q}_2]$ crosses $\conv(\tilde{p}_1,\tilde{p}_2,\tilde{q}_1)$, as in \Cref{fig:flip}. 
 
 \begin{figure}[htb]
 \includegraphics[scale=.3]{flip}
@@ -482,9 +482,9 @@ Observe that the assumption $u\in((p_1, p_2) + \vecline q$ implies that one of t
 In turn, this means that the polytope $\conv(\tilde u, \tilde p_1, \tilde p_2, \tilde q_1, \tilde q_2) = \cayley(t,q)$
  has the following two triangulations:
 \begin{gather*}
-\mathcal T^+:= \left\{ \cayley(p,q), \cayley(t, \{q_2\}) \right\},
+\mathcal T^+:= \left\{ \cayley(p,q), \cayley(t, \{q_1\}) \right\},
 \\
-\mathcal T^-:= \{ \cayley([p_1,u],q), \cayley([p_2,u],q), \cayley(t, \{q_1\}) \}.
+\mathcal T^-:= \{ \cayley([p_1,u],q), \cayley([p_2,u],q), \cayley(t, \{q_2\}) \}.
 \end{gather*}
 The tetrahedra $\cayley(t, \{q_1\})$ and $\cayley(t, \{q_2\})$ are unimodular, which implies that $T=\cayley(p,q)$ has volume equal to the sum of the volumes of $\cayley([p_1,u],q)$ and $\cayley([p_2,u],q)$. In particular, we have covered $T$ by the three tetrahedra in $\mathcal T^-$, which are of smaller volume and hence have unimodular covers by induction hypothesis.
 \end{proof}
@@ -504,7 +504,7 @@ where $Q_1,Q_2$ are lattice $(d-1)$-polytopes and $k\in \Z_{>0}$. This is almost
 \label{prop:prismatoid}
 Let $Q_1$, $Q_2$ be two lattice polygons and consider the prismatoid 
 \[
-P:= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\},
+P:= \conv(Q_1\times\{0\} \cup Q_2 \times \{k\}),
 \]
 with $k\ge 2$. 
 %Assume that $P\cap(\R^2\times\{i\})$ is a lattice polytope for every $i=0,\dots, k$. This is equivalent to assuming that $P\cap(\R^2\times\{1\})$ is a lattice polytope:
@@ -727,7 +727,7 @@ Winfried Bruns and Joseph Gubeladze, \emph{Polytopes, rings, and k-theory}, Mono
   Springer-Verlag, 2009, XIV, 461 p. 52 illus.
   
 \bibitem{BGM}
-  Winfried Bruns, Joseph Gubeladze, and Mateusz Michalek. Quantum Jumps of Normal Polytopes. \emph{Discrete Comput. Geom.}, 56(1) (2016), 181--215. \doi{10.1007/s00454-016-9773-7}
+  Winfried Bruns, Joseph Gubeladze, and Mateusz Micha{\l}ek. Quantum Jumps of Normal Polytopes. \emph{Discrete Comput. Geom.}, 56(1) (2016), 181--215. \doi{10.1007/s00454-016-9773-7}
   
 \bibitem{CLS}
 David A.~Cox, John B.~Little, and Hal K.~Schenck.
