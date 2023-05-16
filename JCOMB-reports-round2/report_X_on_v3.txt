@@ -13,3 +13,5 @@ Minor mistakes:
 4. P7 l1,2: u,q_i,p_1,p_2 q_j should be "\tilde{ }". 
 5. P7 l7,8: {q_2} and {q_1} appearing in T^+ and T^-, respectively, should be swapped. Right? 
 6. p7 l-9: Parenthesis ")" is missing.
+
+ALL DONE
