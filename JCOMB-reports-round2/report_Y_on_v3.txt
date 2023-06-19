@@ -13,7 +13,7 @@ DONE
 DONE
 
 3.	Page 7: I am confused by the two given triangulations. For example, consider \mathcal{T}^+ which has two maximal simplices S_1:=Cay(p,q) and S_2:=Cay(t,{q_2}). Now, by assumption, [\tilde{u},\tilde{q}_2] \subset S_2 crosses conv(\tilde{p}_1,\tilde{p}_2,\tilde{q}_1) \subset S_1. However, if S_1 and S_2 constitute the maximal cells of a triangulation they should intersect in a common face.
-I GUESS THE REFEREE IS CONFUSED BY THE SAME TYPO NOTICED BY THE OTHER REFEREE.
+WE GUESS THE REFEREE IS CONFUSED BY THE SAME TYPO NOTICED BY THE OTHER REFEREE. "{q_2} and {q_1} appearing in T^+ and T^-, respectively, should be swapped"
 
 4.	Page 8, second paragraph of Section 4: it would help the reader if the author(s) would include a few further guiding sentences explaining how to get to the configuration illustrated in Figure 4. For example, to show that f_q(p_2)=0 is not possible, one may use a proof by contradiction and use an appropriate shearing to get that in this case p+q \cong [0,1]^2. A similar argument (using a shearing), can be used to show that p_1 and p_2 have to be in the interior of the strip q + \langle \vec{p} \rangle.
 TO DO
