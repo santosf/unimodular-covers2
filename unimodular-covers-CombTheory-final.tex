@@ -539,9 +539,12 @@ kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 \section{Proof of \Cref{lemma:cayley}}
 \label{sec:the_lemma}
 Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
+Observe that since the segments $p_1p_2$ and $q_1q_2$ are primitive, the fact the $f_p$ and $f_q$ are also primitive implies that the area of the parallelogram $p+q$ equals both $f_p(q_2) - f_p(q_1)$ and $f_q(p_2) - f_q(p_1)$.
+%
+Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that $q_1$ is the origin, that $p$ belongs to the strip $q+\vecline p$  and that $f_q(p_1)=-1$. 
 
-Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that $q_1$ is the origin and that $f_q(p_1)=-1$. 
-Observe that then $f_q(p_2)$ must be strictly positive, since $f_q(p_2)=0$ would imply that $p+q$ is a unimodular paralellogram. Moreover, since $p$ is primitive $p_1$ and $p_2$ cannot be in the boundary of $q +\vecline p$, which implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
+Then $f_q(p_2)$ must be strictly positive, since $f_q(p_2)=0$ would imply that $p+q$ is a unimodular paralellogram. Moreover, since $p$ is primitive  $p$ must be in the interior of $q +\vecline p$ or otherwise we would have $p_2$ equal to one of $q_1$ or $q_2$, and then $f_q(p_2)=0$.
+This implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
 
 %
 %;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
@@ -642,7 +645,7 @@ That is, $f_q$ decreases (perhaps weakly) along $t$ and increases along $b$, as 
 %	
 %Suppose by contradiction that the maximum of $f_q$ on $t$  lies in $V_1$ and that the maximum on $b$ lies in $V_2$. %
 %Then $Q \cap V_2$ is contained in the open strip $\{-1<f_q(x)<w-1\}$, of width $w$. 
-This strip cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$, which gives a contradiction: since $P$ is a weak Minkowski summand of $Q$,  $Q$ must have edges parallel to $r$ both in $V_1$ and $V_2$.
+This strip cannot contain a translated copy of $r$, since $\width_{f_q}(r) \geq w$, which gives a contradiction: since $P$ is a weak Minkowski summand of $Q$, $Q$ must have an edge parallel to $r$ and with exterior normal pointing to the right. This edge must lie in $V_2$, which is impossible.
 \end{proof}
 
 \begin{figure}[htb]
@@ -701,11 +704,12 @@ The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-q
 \end{figure}
 
 
-We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must have an edge $r'$ which is a translated copy of $r$. Let $r_1'$ and $r_2'$ be its endpoints. 
+We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must contain an edge parallel to $r$ on the right. Let $r'$ be a primitive segment along this edge, so that $r'$ is a translated copy of $r$.
+ Let $r_1'$ and $r_2'$ be its endpoints. 
 
-Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ on $d$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$, which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
+Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$, which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
 
-We now observe that $g(r_2) < g(s_2)$, because $r_2$ lies to the right of $s_2$ ($r$ has positive slope) and below the line spanned by $t$, and $g$ decreases moving to the right along $t$ (\Cref{claim:g}). Thus $g(r_2)-g(r_1) = g(r'_2)-g(r'_1) < g(s_2)-g(s_1) <1$, that is, $g(r_2)=g(r_1)$. This contradicts \Cref{claim:g}.
+We now observe that $g(r'_2) < g(s_2)$, because $r'_2$ lies to the right of $s_2$ ($r$ has positive slope) and below the line spanned by $t$, and $g$ decreases moving to the right along $t$ (\Cref{claim:g}). Thus $g(r_2)-g(r_1) = g(r'_2)-g(r'_1) < g(s_2)-g(s_1) <1$, that is, $g(r_2)=g(r_1)$. This contradicts \Cref{claim:g}.
 %Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$, and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
 \end{proof}
 
