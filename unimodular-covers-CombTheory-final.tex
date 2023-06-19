@@ -549,14 +549,6 @@ w=&\width_{f_q}(p + \vecline q )=\width_{f_q}(p) = f_q(p_2) - f_q(p_1) =\\
 
 
 
-We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq f_p(p)\}$ and $V_2=\{f_p(x) \geq f_p(p)\}$.%
-\footnote{Since in our figures $p$ and $q$ are vertical and horizontal, we use the letters $V$ and $H$ for the half-planes they defined. Similarly, later in the proof we use the letters $b$, $t$, $r$, and $l$ for certain  points and segments meaning ``bottom'', ``top'', ``right'' and ``left''.}
-%
-\begin{figure}[htb]
-\includegraphics[scale=.3]{setup.png}
-\caption{Setup for the proof of \Cref{lemma:cayley}}
-\label{fig:setup}
-\end{figure}
 
 
 %
@@ -567,7 +559,16 @@ Since we can perform without loss of generality respective lattice translations 
 \]
 In particular, $p$ must be in the interior of $q +\vecline p$ and $q$ in the interior of $p +\vecline q$
 Our assumption also implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
+
+Finally, we let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq f_p(p)\}$ and $V_2=\{f_p(x) \geq f_p(p)\}$.%
+\footnote{Since in our figures $p$ and $q$ are vertical and horizontal, we use the letters $V$ and $H$ for the half-planes they defined. Similarly, later in the proof we use the letters $b$, $t$, $r$, and $l$ for certain  points and segments meaning ``bottom'', ``top'', ``right'' and ``left''.}
 See Figure~\ref{fig:setup} for an illustration of this setup.
+%
+\begin{figure}[htb]
+\includegraphics[scale=.3]{setup.png}
+\caption{Setup for the proof of \Cref{lemma:cayley}}
+\label{fig:setup}
+\end{figure}
 
 %
 %;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
@@ -711,14 +712,24 @@ The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-q
 \label{fig:claim4}
 \end{figure}
 
+\begin{claim}
+\label{claim:g2}
+$g(r_2) - g(r_1) <1$.
+\end{claim}
 
-We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, $Q$ must contain an edge parallel to $r$ on the right. Let $r'$ be a primitive segment along this edge, so that $r'$ is a translated copy of $r$.
+\begin{proof}
+UNFINISHED
+
+Since the normal fan of $Q$ refines that of $P$, $Q$ must contain an edge parallel to $r$ on the right. Let $r'$ be a primitive segment along this edge, so that $r'$ is a translated copy of $r$.
  Let $r_1'$ and $r_2'$ be its endpoints. 
 
 Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$, which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
 
 We now observe that $g(r'_2) < g(s_2)$, because $r'_2$ lies to the right of $s_2$ ($r$ has positive slope) and below the line spanned by $t$, and $g$ decreases moving to the right along $t$ (\Cref{claim:g}). Thus $g(r_2)-g(r_1) = g(r'_2)-g(r'_1) < g(s_2)-g(s_1) <1$, that is, $g(r_2)=g(r_1)$. This contradicts \Cref{claim:g}.
 %Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$, and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
+\end{proof}
+
+We now have a contradiction. Claim~\ref{claim:g} says that $g(r_2) - g(r_1) >0$ and Claim~\ref{claim:g2}  that $g(r_2) - g(r_1) <1$. Since  $g(r_2) - g(r_1)$ is an integer, this is impossible.
 \end{proof}
 
 
