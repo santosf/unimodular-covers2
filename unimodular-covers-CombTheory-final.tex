@@ -436,7 +436,7 @@ We use the following conventions: if $a, b$ are points, we denote by $[a,b]$ and
 \begin{lemma}
 \label{lemma:cayley}
 Let $Q\subset \R^2$ be a two-dimensional lattice polytope and $P\subset \R^2$ a weak Minkowski summand of it. 
-Let $p=[p_1,p_2] \subset P$ and $q=[q_1,q_2]\subset Q$ be two primitive and non-parallel lattice segments, and let $\vecline p$ and $ \vecline q$ be the lines spanned by them.  If the parallelogram $p + q$ is not unimodular, then at least one of the regions
+Let $p=[p_1,p_2] \subset P$ and $q=[q_1,q_2]\subset Q$ be two primitive and non-parallel lattice segments, and let $\vecline p$ and $ \vecline q$ be the vector lines spanned by them.  If the parallelogram $p + q$ is not unimodular, then at least one of the regions
 \[
 ((p_1, p_2) + \vecline q ) \cap P, 
 \qquad \text{and} \qquad
@@ -538,17 +538,16 @@ kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 
 \section{Proof of \Cref{lemma:cayley}}
 \label{sec:the_lemma}
-Let $f_q$ be the primitive lattice functional constant on $q$ and $f_p$ the one constant on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
-Observe that since the segments $p_1p_2$ and $q_1q_2$ are primitive, the fact the $f_p$ and $f_q$ are also primitive implies that the area of the parallelogram $p+q$ equals both $f_p(q_2) - f_p(q_1)$ and $f_q(p_2) - f_q(p_1)$.
-%
-Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that $q_1$ is the origin, that $p$ belongs to the strip $q+\vecline p$  and that $f_q(p_1)=-1$. 
 
-Then $f_q(p_2)$ must be strictly positive, since $f_q(p_2)=0$ would imply that $p+q$ is a unimodular paralellogram. Moreover, since $p$ is primitive  $p$ must be in the interior of $q +\vecline p$ or otherwise we would have $p_2$ equal to one of $q_1$ or $q_2$, and then $f_q(p_2)=0$.
-This implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
+Let $f_q$ be the primitive lattice (affine) functional vanishing on $q$ and $f_p$ the one vanishing on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
+Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. In what follows, the width of a functional $f$ on a set $S$, denoted $\width_f(S)$ is defined as the difference $\sup_{x\in S} f(x)-\inf_{x\in S} f(x)$.
+Then primitiveness of $p$, $q$, $f_p$ and $f_q$ implies that:
+\begin{align*}
+w=&\width_{f_q}(p + \vecline q )=\width_{f_q}(p) = f_q(p_2) - f_q(p_1) =\\
+=&\width_{f_p}(q +\vecline p ) = \width_{f_p}(q)= f_p(q_2) - f_p(q_1).
+\end{align*}
 
-%
-%;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
-%Since translating the polytopes independently by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
+
 
 We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq f_p(p)\}$ and $V_2=\{f_p(x) \geq f_p(p)\}$.%
 \footnote{Since in our figures $p$ and $q$ are vertical and horizontal, we use the letters $V$ and $H$ for the half-planes they defined. Similarly, later in the proof we use the letters $b$, $t$, $r$, and $l$ for certain  points and segments meaning ``bottom'', ``top'', ``right'' and ``left''.}
@@ -559,11 +558,20 @@ We let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\
 \label{fig:setup}
 \end{figure}
 
-Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. In what follows, the width of a functional $f$ on a set $S$, denoted $\width_f(S)$ is defined as the difference $\sup_{x\in S} f(x)-\inf_{x\in S} f(x)$.
-Then:
+
+%
+Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that the segments $p$ and $q$ intersect in their relative interiors and that $f_q(p_1)=-1$. That is,
 \[
-w=\width_{f_q}(p + \vecline q )=\width_{f_q}(p)=\width_{f_p}(q)=\width_{f_p}(q +\vecline p ). 
-\] 
+-1=f_q(p_1) < 0 < f_q(p_1), \quad
+-f_p(q_1) < 0 < f_p(q_2).
+\]
+In particular, $p$ must be in the interior of $q +\vecline p$ and $q$ in the interior of $p +\vecline q$
+Our assumption also implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
+See Figure~\ref{fig:setup} for an illustration of this setup.
+
+%
+%;  indeed, since $q$ is primitive, the only way that in the strip there could be two lattice points on $f_q(x)=-1$ is if they were on the boundary of the strip, which would however imply that $p+q$ is a unimodular paralellogram, against our assumptions.
+%Since translating the polytopes independently by lattice vectors will not result in any loss of generality, we can assume that $p_1$ is that unique lattice point. That is, $f_q(p_1)=-1$, or equivalently, the triangle $\conv(q_1, q_2, p_1)$ is unimodular. Similarly, the unique lattice point in the strip on the line $f_q(x)=1$ is then $q_1+q_2 -p_1$.
 
 
 \begin{proof}[Proof of \Cref{lemma:cayley}]
@@ -682,7 +690,7 @@ For part (2), recall that by \Cref{claim:width}, $\width_{f_q}(r) \geq w$. If $f
 The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope. Observe that this implies that $q$ is not in the boundary of $Q$ and $p \neq r$, so both $P$ and $Q$ are full dimensional.
 
 
-Let $g$ be the primitive lattice functional constant on $[p_1, q_2]$ (and therefore constant also on $[q_1, q_1+q_2-p_1]$). By the assumption on $p_1$, the values of $g$ on these segments differ by $1$. We choose the sign of $g$ so that 
+Let $g$ be the primitive lattice functional constant on $[p_1, q_2]$ (and therefore constant also on $[q_1, q_1+q_2-p_1]$). By the assumption that $f_q(p_1)=-1$ the quadrilateral spanned by these two parallel segments is unimodular, so  the values of $g$ on them differ by $1$. We choose the sign of $g$ so that 
 \[
 g([p_1, q_2])= g( [q_1, q_1+q_2-p_1]) -1. 
 \]
