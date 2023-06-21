@@ -673,6 +673,7 @@ Assume without loss of generality that $b$ and $t$ either are parallel or their 
 \item $f_p(r_2) > f_p(r_1)$, that is, $f_p$ achieves its maximum over $r$ in $H_2$.
 \end{enumerate}
 \end{claim}
+\Giulia{Do we ever use the claim 3(1), other than to prove 3(2)? If not, we can remove it from the statement...}
 
 \begin{proof}
 Both $t$ and $b$ must intersect $p$, as said in the proof of \Cref{claim:b_and_t}.  Their intersections with $p$ are thus endpoints of a segment of width with respect to $f_q$ less than $w$, the width of $p$. Since $t$ and $b$ cross in $V_2$, the same is true for any segment parallel to $p$ contained in $Q \cap V_2$.  
@@ -717,11 +718,12 @@ We are now ready to show a contradiction. Since the normal fan of $Q$ refines th
  Let $r_1'$ and $r_2'$ be its endpoints. 
 
 We consider two cases, depending on whether $q_1+q_2-p_1$ lies ``to the right'' or ``to the left'' of $p_1$. That is, whether $f_p(q_1+q_2-p_1)$ is positive or negative. %For illustration use the left part of Figure~\ref{fig:claim4} in which $f_p(q_1+q_2-p_1)=0$, and in which both arguments work:
+\giulia{we put the origin in $q_1$, so the functional $f_p$ is not $0$ at $p$... so we could say $q_1 + q_2-p_1$ in $V_1$ or $V_2$... Though I'm not against changing our origin to lie in the intersection of $p$ and $q$}
  
 \begin{itemize}
 \item \underline{$f_p(q_1+q_2-p_1)> 0$}. In this case the segment $r$ in the boundary of $P$ separates $p$ from  $q_1+q_2-p_1$.
 Let $r''_1$ and $r''_2$ be the intersection points of the line containing $r$ with $b$ and $t$ respectively. We have that
-$r'=[r'_1,r'_2]$ is parallel to $[r''_1,r''_2]$ but shorter, so that
+$r'=[r'_1,r'_2]$ is parallel to $[r''_1,r''_2]$ but shorter, \giulia{I would say that $r'$ needs to lie between the lines along $b$ and $t$ to explain why it's shorter} so that
 \[
 w= \width_{f_q}(p) \le \width_{f_q}(r) = \width_{f_q}(r') \le  f_q(r''_2) -f_q(r''_1), 
 \]
@@ -734,7 +736,7 @@ which leads to the contradiction $w<2$.
 
 
 \item \underline{$f_p(q_1+q_2-p_1)\le 0$}.
-Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$, which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
+Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$,\giulia{we still need to explain why this is true...} which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
 
 We now observe that $g(r'_2) < g(s_2)$, because $r'_2$ lies to the right of $s_2$ ($r$ has positive slope) and below the line spanned by $t$, and $g$ decreases moving to the right along $t$ (\Cref{claim:g}). Thus $g(r_2)-g(r_1) = g(r'_2)-g(r'_1) < g(s_2)-g(s_1) <1$. Since $g(r_2)$ and $g(r_1)$ are integers this leads to $g(r_2)\le g(r_1)$, in contradiction with \Cref{claim:g}.
 %Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$, and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
