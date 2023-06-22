@@ -539,7 +539,7 @@ kP \cap(\R^2\times\{1\}) = (k-1)Q_1 + Q_2.
 \section{Proof of \Cref{lemma:cayley}}
 \label{sec:the_lemma}
 
-Let $f_q$ be the primitive lattice (affine) functional vanishing on $q$ and $f_p$ the one vanishing on $p$. We assume that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
+Let $f_q$ be the primitive lattice (affine) functional vanishing on $q$ and $f_p$ the one vanishing on $p$, taking their signs so that $f_q(p_1) < f_q(p_2)$ and $f_p(q_1) < f_p(q_2)$.
 Let $w=\area(p+q) \geq 2$, where $\area$ denotes the area normalized to a fundamental domain. In what follows, the width of a functional $f$ on a set $S$, denoted $\width_f(S)$ is defined as the difference $\sup_{x\in S} f(x)-\inf_{x\in S} f(x)$.
 Then primitiveness of $p$, $q$, $f_p$ and $f_q$ implies that:
 \begin{align*}
@@ -552,12 +552,13 @@ w=&\width_{f_q}(p + \vecline q )=\width_{f_q}(p) = f_q(p_2) - f_q(p_1) =\\
 
 
 %
-Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that the segments $p$ and $q$ intersect in their relative interiors and that $f_q(p_1)=-1$. That is,
+Since we can perform without loss of generality respective lattice translations to $P$ and to $Q$, we assume that 
+$p_1$ lies on the line $\{f_q=-1\}$ and in the strip $q +\vecline p$. It  must then lie in the interior of the strip, or otherwise we would have that $p_2$ equals one of  $q_1$ or $q_2$ and $w=1$. That is, we have that $p$ and $q$ intersect in their relative interiors and that
 \[
 -1=f_q(p_1) < 0 < f_q(p_1), \quad
 f_p(q_1) < 0 < f_p(q_2).
 \]
-In particular, $p$ must be in the interior of $q +\vecline p$ and $q$ in the interior of $p +\vecline q$
+%In particular, $p$ must be in the interior of $q +\vecline p$ and $q$ in the interior of $p +\vecline q$
 Our assumption also implies that $p_1$ is the unique lattice point with $f_q(x)=-1$ in $q +\vecline p$. Similarly, the unique lattice point in the strip with $f_q(x)=1$ is  $q_1+q_2 -p_1$.
 
 Finally, we let $H_1=\{f_q(x) \leq 0\}$ and $H_2=\{f_q(x) \geq 0\}$; similarly let $V_1=\{f_p(x) \leq f_p(p)\}$ and $V_2=\{f_p(x) \geq f_p(p)\}$.%
@@ -673,7 +674,6 @@ Assume without loss of generality that $b$ and $t$ either are parallel or their 
 \item $f_p(r_2) > f_p(r_1)$, that is, $f_p$ achieves its maximum over $r$ in $H_2$.
 \end{enumerate}
 \end{claim}
-\Giulia{Do we ever use the claim 3(1), other than to prove 3(2)? If not, we can remove it from the statement...}
 
 \begin{proof}
 Both $t$ and $b$ must intersect $p$, as said in the proof of \Cref{claim:b_and_t}.  Their intersections with $p$ are thus endpoints of a segment of width with respect to $f_q$ less than $w$, the width of $p$. Since $t$ and $b$ cross in $V_2$, the same is true for any segment parallel to $p$ contained in $Q \cap V_2$.  
@@ -689,7 +689,7 @@ For part (2), recall that by \Cref{claim:width}, $\width_{f_q}(r) \geq w$. If $f
 %$r'$ would need to lie inside the triangle delimited by the affine line $\langle t \rangle$ and the inequalities $f_q(x) \geq f_q(r_1)$, $f_p(x) \leq f_p(r_1)$. However, this triangular region has width less than $w$  with respect to $f_q$, by combining part (1) with the fact that $f_p$ and $f_q$ increase in the same direction along $t$, see \Cref{fig:claim3}. 
 \end{proof}
 
-The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope. Observe that this implies that $q$ is not in the boundary of $Q$ and $p \neq r$, so both $P$ and $Q$ are full dimensional.
+The last two claims can be summarized as saying that in the pictures $b$, $t$ and $r$ have positive slope and that the slope of $b$ is greater or equal than that of $t$. Observe that this implies that $q$ is not in the boundary of $Q$ and $p \neq r$, so both $P$ and $Q$ are full dimensional.
 
 
 Let $g$ be the primitive lattice functional constant on $[p_1, q_2]$ (and therefore constant also on $[q_1, q_1+q_2-p_1]$). By the assumption that $f_q(p_1)=-1$ the quadrilateral $:=\conv(q_1, p_1, q_2, q_1+q_2-p_1)$
@@ -714,32 +714,39 @@ The same argument  applied to the parallelogram  $\conv(p_1, q_2, p_2, p_1+p_2-q
 \label{fig:claim4}
 \end{figure}
 
-We are now ready to show a contradiction. Since the normal fan of $Q$ refines that of $P$, the boundary of $Q$ must contain an edge parallel to $r$ on the right. Let $r'$ be a primitive segment along this edge, so that $r'$ is a translated copy of $r$.
- Let $r_1'$ and $r_2'$ be its endpoints. 
 
-We consider two cases, depending on whether $q_1+q_2-p_1$ lies ``to the right'' or ``to the left'' of $p_1$. That is, whether $f_p(q_1+q_2-p_1)$ is positive or negative. %For illustration use the left part of Figure~\ref{fig:claim4} in which $f_p(q_1+q_2-p_1)=0$, and in which both arguments work:
-\giulia{we put the origin in $q_1$, so the functional $f_p$ is not $0$ at $p$... so we could say $q_1 + q_2-p_1$ in $V_1$ or $V_2$... Though I'm not against changing our origin to lie in the intersection of $p$ and $q$}
- 
+Let $r'=[r'_1,r'_2]$ be the segment collinear with $r$ and with endpoints $r'_1$ and $r'_2$ lying respectively on the lines containing $b$ and $t$. ($r'_1$ must in fact lie in $b$, but $r'_2$ may be outside $t$).
+
+\begin{claim}
+%\paco{new claim. Note I changed the roles of $r'$ and $r''$, since (the new) $r''$ is only used inside the claim}
+\label{claim:r}
+$r'$ has at least the same length as $r$. 
+\end{claim}
+
+\begin{proof}
+Since the normal fan of $Q$ refines that of $P$, the boundary of $Q$ must contain an edge parallel to $r$ on the right. Let $r''$ be a primitive segment along this edge. Then $r''$ is a translated copy of $r$, and parallel to $r'$. 
+
+Now, $r''$ is contained also between the lines  along $b$ and $t$, and is to the right of $r'$ (because $r$, hence $r'$, has $q_2$ on its right, and $r''$ has $q_2$ on its left). Our assumption that the lines along $b$ and $t$ are either parallel or meet in $v_2$ implies the inequality.
+\end{proof}
+
+
+We are now ready to show a contradiction. We consider two cases, depending on whether $q_1+q_2-p_1$ lies ``to the right'' or ``to the left'' of $p_1$. That is, whether $f_p(q_1+q_2-p_1)$ is positive or negative. %For illustration use the left part of Figure~\ref{fig:claim4} in which $f_p(q_1+q_2-p_1)=0$, and in which both arguments work:
+
 \begin{itemize}
-\item \underline{$f_p(q_1+q_2-p_1)> 0$}. In this case the segment $r$ in the boundary of $P$ separates $p$ from  $q_1+q_2-p_1$.
-Let $r''_1$ and $r''_2$ be the intersection points of the line containing $r$ with $b$ and $t$ respectively. We have that
-$r'=[r'_1,r'_2]$ is parallel to $[r''_1,r''_2]$ but shorter, \giulia{I would say that $r'$ needs to lie between the lines along $b$ and $t$ to explain why it's shorter} so that
+\item \underline{$f_p(q_1+q_2-p_1)> 0$}. In this case the line containing $r$ and $r'$ separates $p$ from  $q_1+q_2-p_1$.
+This implies
 \[
-w= \width_{f_q}(p) \le \width_{f_q}(r) = \width_{f_q}(r') \le  f_q(r''_2) -f_q(r''_1), 
+f_q(r'_2) < f_q(q_1+q_2-p_1) = 1, \quad f_q(r'_1) > f_q(p_1) =-1,
 \]
-where the first inequality comes from \eqref{eq:widthp}.
-But on the other hand
-\[
-f_q(r''_2) < f_q(q_1+q_2-p_1) = 1, \quad f_q(r''_1) > f_q(p_1) =-1,
-\]
-which leads to the contradiction $w<2$.
-
+while Claims~\ref{claim:r} and~\ref{claim:width} imply that $\width_{f_q}(r')\ge \width_{f_q}(r)  \ge w\ge 2$.
 
 \item \underline{$f_p(q_1+q_2-p_1)\le 0$}.
-Consider the segment $s$ contained in $r_1' + \vecline p$ with endpoints $s_1=r_1'$ and $s_2$ on the line spanned by $t$. The width of $s$ with respect to $g$ is $g(s_2)-g(s_1) <1$, because $s$ is shorter than $Q \cap p$,\giulia{we still need to explain why this is true...} which is strictly contained between the consecutive parallel lattice lines through $p_1$ and $q_2$ and through $q_1$ and $q_1+q_2-p_1$ where $g$ is constant.
-
-We now observe that $g(r'_2) < g(s_2)$, because $r'_2$ lies to the right of $s_2$ ($r$ has positive slope) and below the line spanned by $t$, and $g$ decreases moving to the right along $t$ (\Cref{claim:g}). Thus $g(r_2)-g(r_1) = g(r'_2)-g(r'_1) < g(s_2)-g(s_1) <1$. Since $g(r_2)$ and $g(r_1)$ are integers this leads to $g(r_2)\le g(r_1)$, in contradiction with \Cref{claim:g}.
-%Since $t$ separates $q_1$ and $q_1+q_2-p_1$ and $g$ decreases from $t_1$ to $t_2$ (by \Cref{claim:g}), the inequality $g(x)< g(d')$ holds on $Q\cap V_2$, and in particular for $r_2'$. Since $r_2'$ is a lattice point, $g(r_2')\leq g(d)= g(r_1')$, which contradicts \Cref{claim:g}).
+We observe that $g(r_2) - g(r_1)$ is positive (and integer) because $r$ has positive slope and separates $p_1$ from $q_2$. But Claim~\ref{claim:r} gives
+\[
+g(r_2) - g(r_1) \le g(r'_2) - g(r'_1) 
+\]
+which is in this case strictly smaller than $g(q_1+q_2-p_1) - g(p_1) =1$.
+\qedhere
 \end{itemize}
 \end{proof}
 
